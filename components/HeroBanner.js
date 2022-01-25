@@ -11,7 +11,7 @@ const HeroBanner = () => {
               <div className="">
                 <div className="text-2xl lg:text-4xl mb-4 animate-fade-in">This is</div>
                 <div className="text-5xl lg:text-8xl my-8">
-                  <div className="h-8 lg:h-24 flex items-center before:animate-name1-fade-in after:animate-name2-fade-in"></div>
+                  <div className="h-8 lg:h-24 flex items-center before:animate-name1-fade-in after:animate-name2-fade-in after:absolute"></div>
                 </div>
                 <div className="animate-fade-in">Art & Tech</div>
                 <div className="animate-fade-in">
