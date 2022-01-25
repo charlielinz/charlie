@@ -32,10 +32,10 @@ module.exports = {
         },
         fadeIn: {
           "0%, 50%": {
-            opacity: "0%"
+            opacity: "0"
           },
           "100%": {
-            opacity: "100%"
+            opacity: "100"
           },
         },
         name1FadeIn: {
