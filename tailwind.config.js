@@ -24,10 +24,10 @@ module.exports = {
         },
         slideInRight: {
           from: {
-            "margin-left": "300px",
+            "margin-left": "33vw",
           },
           to: {
-            "margin-left": "0px",
+            "margin-left": "0vw",
           },
         },
         fadeIn: {
