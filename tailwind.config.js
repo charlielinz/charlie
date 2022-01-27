@@ -40,12 +40,15 @@ module.exports = {
         },
         name1FadeIn: {
           "0%": {
+            content: "'CHARLIE'",
             opacity: "0%",
           },
           "25%": {
+            content: "'CHARLIE'",
             opacity: "100%",
           },
           "49%": {
+            content: "'CHARLIE'",
             opacity: "100%",
           },
           "50%": {
