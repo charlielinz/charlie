@@ -22,7 +22,7 @@ const HeroBanner = () => {
   });
 
   return (
-    <div>
+    <div className=" min-h-screen">
       <div
         className={
           isLoaded
