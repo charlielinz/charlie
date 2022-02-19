@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTransition, animated, easings } from "react-spring";
 import background from "../.materials/herobanner.jpg";
 
@@ -20,9 +20,15 @@ const HeroBanner = () => {
     },
     onRest: () => setIsToggle(!isToggle),
   });
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      var vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    });
+  });
 
   return (
-    <div className="absolute inset-0">
+    <div className="h-mobile-screen">
       <div
         className={
           isLoaded
