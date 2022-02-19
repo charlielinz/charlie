@@ -27,7 +27,7 @@ const HeroBanner = () => {
           <div className="max-w-screen-md mx-auto mt-96">
             <div className="text-gray-100 flex flex-col justify-end gap-6">
               <div className="text-3xl">This is</div>
-              <div className="text-7xl">Charlie</div>
+              <div className="text-9xl">Charlie</div>
             </div>
           </div>
           <ul className="absolute top-20 right-40 text-lg text-gray-300 flex gap-2">

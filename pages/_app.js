@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Open+Sans"
         ></link>
       </Head>
-      <main className="font-sans text-gray-700">
+      <main className="font-inter text-gray-700">
         <Component {...pageProps} />
       </main>
     </>
