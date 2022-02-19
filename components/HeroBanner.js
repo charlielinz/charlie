@@ -26,7 +26,7 @@ const HeroBanner = () => {
     document.documentElement.style.setProperty("--vh", `${windowHeight}px`);
   });
   return (
-    <div className="h-[calc(var(--vh,1vh)*100)]">
+    <div className="h-[calc(var(--vh)*100)]">
       <div
         className={
           isLoaded
