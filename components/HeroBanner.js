@@ -22,7 +22,7 @@ const HeroBanner = () => {
   });
 
   return (
-    <div className="flex-1">
+    <div className="absloute inset-0">
       <div
         className={
           isLoaded
