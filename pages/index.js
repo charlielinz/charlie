@@ -13,7 +13,7 @@ export default function Home() {
             : "relative w-full h-screen transition ease-out duration-2000 blur-2xl"
         }
       >
-        <HeroBanner setIsLoaded={setIsLoaded} />
+        <HeroBanner isLoaded={isLoaded} setIsLoaded={setIsLoaded} />
         <Navbar />
       </div>
     </>

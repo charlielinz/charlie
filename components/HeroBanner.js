@@ -1,9 +1,13 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTransition, animated, easings } from "react-spring";
 import background from "../.materials/herobanner.jpg";
 
-const HeroBanner = ({ setIsLoaded }) => {
+const HeroBanner = ({ isLoaded, setIsLoaded }) => {
+  // isGoingToUnmount is to solve the problem of React-spring re-rendering the component 
+  // and involving Next.js Image onLoadingComplete event.
+  // see Issue #2
+  const [isGoingToUnmount, setIsGoingToUnmount] = useState(false);
   const [isToggle, setIsToggle] = useState(true);
   const transitions = useTransition(isToggle, {
     from: {
@@ -15,24 +19,34 @@ const HeroBanner = ({ setIsLoaded }) => {
       easing: easings.easeInOutQuad,
       duration: 3000,
     },
+    reverse: isToggle,
     onRest: () => {
-      (preState) => {
-        setIsToggle(preState);
-      };
+      setIsToggle(!isToggle);
     },
   });
 
+  useEffect(() => {
+    const cleanup = () => {
+      setIsGoingToUnmount(true);
+    };
+    return cleanup;
+  }, []);
+
   return (
     <>
-      <Image
-        src={background}
-        layout="fill"
-        objectFit="cover"
-        quality={100}
-        priority={true}
-        placeholder="blur"
-        onLoadingComplete={() => setIsLoaded(true)}
-      />
+      {!isGoingToUnmount && (
+        <Image
+          src={background}
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          priority={true}
+          placeholder="blur"
+          onLoadingComplete={() => {
+            isLoaded ? "" : setIsLoaded(true);
+          }}
+        />
+      )}
       <div className="absolute top-0 left-0 w-full h-screen">
         <div className="md:max-w-screen-sm lg:max-w-screen-md mx-auto mt-96">
           <div className="text-gray-100 flex flex-col justify-end items-center md:items-start gap-6">
@@ -57,8 +71,8 @@ const HeroBanner = ({ setIsLoaded }) => {
                       margin: "0",
                       transform: "translateY(-100%)",
                       opacity: opacity.to({
-                        range: [1, 0],
-                        output: [1, 0],
+                        range: [0, 1],
+                        output: [0, 1],
                       }),
                     }}
                   >
