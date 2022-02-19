@@ -18,7 +18,6 @@ const HeroBanner = () => {
       easing: easings.easeInOutQuad,
       duration: 1500,
     },
-    delay: 1500,
     onRest: () => setIsToggle(!isToggle),
   });
 
