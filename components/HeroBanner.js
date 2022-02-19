@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTransition, animated, easings } from "react-spring";
 import background from "../.materials/herobanner.jpg";
-import useWindowHeight from "../hooks/useWindowHeight";
 
 const HeroBanner = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -21,12 +20,8 @@ const HeroBanner = () => {
     },
     onRest: () => setIsToggle(!isToggle),
   });
-  var windowHeight = useWindowHeight() * 0.01;
-  useEffect(() => {
-    document.documentElement.style.setProperty("--vh", `${windowHeight}px`);
-  });
   return (
-    <div className="h-[calc(var(--vh)*100)]">
+    <div>
       <div
         className={
           isLoaded
