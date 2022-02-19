@@ -12,9 +12,6 @@ module.exports = {
       maxWidth: {
         "800": "800px",
       },
-      height: {
-        "mobile-screen": "calc(var(--vh, 1vh) * 100)",
-      }
     },
     fontFamily: {
       sans: ["Open Sans", "sans-serif"],
