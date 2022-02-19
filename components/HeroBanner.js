@@ -16,7 +16,9 @@ const HeroBanner = ({ setIsLoaded }) => {
       duration: 3000,
     },
     onRest: () => {
-      setIsToggle(!isToggle);
+      (preState) => {
+        setIsToggle(preState);
+      };
     },
   });
 
