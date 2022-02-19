@@ -37,6 +37,7 @@ const HeroBanner = ({ isLoaded, setIsLoaded }) => {
       {!isGoingToUnmount && (
         <Image
           src={background}
+          alt="background"
           layout="fill"
           objectFit="cover"
           quality={100}

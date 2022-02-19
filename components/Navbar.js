@@ -2,8 +2,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
+  const router = useRouter();
   const classNameByPath = (path) => {
-    const router = useRouter();
     if (path === "/" && router.asPath !== "/") {
       return "transition duration-200 hover:text-white text-gray-400";
     }

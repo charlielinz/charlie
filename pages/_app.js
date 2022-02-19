@@ -15,15 +15,6 @@ function MyApp({ Component, pageProps }) {
           name="og:description"
           content="It is all about life style."
         ></meta>
-        <link rel="icon" href="favicon.svg" type="image/x-icon" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Open+Sans"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       <main className="font-inter text-gray-700">
         <Component {...pageProps} />
