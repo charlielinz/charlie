@@ -16,7 +16,7 @@ const HeroBanner = () => {
     reverse: isToggle,
     config: {
       easing: easings.easeInOutQuad,
-      duration: 1500,
+      duration: 3000,
     },
     onRest: () => setIsToggle(!isToggle),
   });
