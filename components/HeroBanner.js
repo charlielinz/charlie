@@ -22,7 +22,7 @@ const HeroBanner = () => {
   });
 
   return (
-    <div className="absloute inset-0">
+    <div className="absolute inset-0">
       <div
         className={
           isLoaded
