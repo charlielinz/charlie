@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTransition, animated, easings } from "react-spring";
 import background from "../.materials/herobanner.jpg";
 
@@ -20,6 +20,17 @@ const HeroBanner = () => {
     },
     onRest: () => setIsToggle(!isToggle),
   });
+
+  useEffect(() => {
+    const resize = () => {
+      var vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    window.addEventListener("resize", resize);
+    window.addEventListener("load", resize);
+  });
+  
   return (
     <div>
       <div
