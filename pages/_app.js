@@ -1,15 +1,7 @@
 import "../styles/globals.css";
 import Head from "next/head";
-import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      var vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-      console.log(vh)
-    });
-  });
   return (
     <>
       <Head>
