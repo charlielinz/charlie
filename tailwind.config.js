@@ -8,11 +8,14 @@ module.exports = {
     extend: {
       transitionDuration: {
         "2000": "2000ms",
-      }
+      },
+      maxWidth: {
+        "800": "800px",
+      },
     },
     fontFamily: {
       sans: ["Open Sans", "sans-serif"],
-      inter: ["inter"]
+      inter: ["inter"],
     },
   },
   plugins: [],

@@ -19,7 +19,11 @@ function MyApp({ Component, pageProps }) {
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Open+Sans"
-        ></link>
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <main className="font-inter text-gray-700">
         <Component {...pageProps} />
