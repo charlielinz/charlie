@@ -21,18 +21,8 @@ const HeroBanner = () => {
     onRest: () => setIsToggle(!isToggle),
   });
 
-  useEffect(() => {
-    const resize = () => {
-      var vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    };
-
-    window.addEventListener("resize", resize);
-    window.addEventListener("load", resize);
-  });
-
   return (
-    <div className="h-[calc(var(--vh)*100)]">
+    <div className="h-full">
       <div
         className={
           isLoaded
