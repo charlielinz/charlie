@@ -30,9 +30,9 @@ const HeroBanner = () => {
     window.addEventListener("resize", resize);
     window.addEventListener("load", resize);
   });
-  
+
   return (
-    <div>
+    <div className="h-[calc(var(--vh)*100)]">
       <div
         className={
           isLoaded
