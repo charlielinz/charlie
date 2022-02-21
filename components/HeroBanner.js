@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useTransition, animated, easings } from "react-spring";
-import background from "../.materials/herobanner.jpg";
+import heroBanner from "../public/img/herobanner.jpg";
 
 const HeroBanner = ({ isLoaded, setIsLoaded }) => {
   // isGoingToUnmount is to solve the problem of React-spring re-rendering the component 
@@ -36,7 +36,7 @@ const HeroBanner = ({ isLoaded, setIsLoaded }) => {
     <>
       {!isGoingToUnmount && (
         <Image
-          src={background}
+          src={heroBanner}
           alt="background"
           layout="fill"
           objectFit="cover"

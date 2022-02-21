@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   return (
-    <>
+    <header>
       <div
         className={
           isLoaded
@@ -16,6 +16,6 @@ export default function Home() {
         <HeroBanner isLoaded={isLoaded} setIsLoaded={setIsLoaded} />
         <Navbar />
       </div>
-    </>
+    </header>
   );
 }
