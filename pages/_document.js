@@ -13,6 +13,7 @@ export default function Document() {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
         />
+        <script src="https://kit.fontawesome.com/1b3fa5cc6e.js" crossorigin="anonymous"></script>
       </Head>
       <body className="bg-gray-50">
         <Main />

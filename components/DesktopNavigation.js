@@ -26,38 +26,49 @@ const DesktopNavigation = () => {
           <Link href="/recitals">Recitals</Link>
         </li>
       </ul>
-      <div className="flex ml-auto">
-        <a
-          href="https://www.facebook.com/profile.php?id=100000764741703"
-          target="_blank"
-          rel="noreferrer"
-          className="fa-brands fa-facebook-square text-3xl h-10 w-10"
-        ></a>
-        <a
-          href="https://line.me/ti/p/uReKXCIUDz"
-          target="_blank"
-          rel="noreferrer"
-          className="fa-brands fa-line text-3xl h-10 w-10"
-        ></a>
-        <a
-          href="https://www.instagram.com/eilrahc.c_/"
-          target="_blank"
-          rel="noreferrer"
-          className="fa-brands fa-instagram-square text-3xl h-10 w-10"
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/charlie-lin-0a424b117/"
-          target="_blank"
-          rel="noreferrer"
-          className="fa-brands fa-linkedin text-3xl h-10 w-10"
-        ></a>
-        <a
-          href="https://github.com/charlielinz"
-          target="_blank"
-          rel="noreferrer"
-          className="fa-brands fa-github-square text-3xl h-10 w-10"
-        ></a>
-      </div>
+      <ul className="fa-ul flex ml-auto">
+        <li className="fa-li">
+          <a
+            href="https://www.facebook.com/profile.php?id=100000764741703"
+            target="_blank"
+            rel="noreferrer"
+            className="fa-brands fa-facebook-square text-3xl h-10 w-10"
+          ></a>
+        </li>
+        <li className="fa-li">
+          <a
+            href="https://line.me/ti/p/uReKXCIUDz"
+            target="_blank"
+            rel="noreferrer"
+            className="fa-brands fa-line text-3xl h-10 w-10"
+          ></a>
+        </li>
+        <li className="fa-li">
+          <a
+            href="https://www.instagram.com/eilrahc.c_/"
+            target="_blank"
+            rel="noreferrer"
+            className="fa-brands fa-instagram-square text-3xl h-10 w-10"
+          ></a>
+        </li>
+        <li className="fa-li">
+          <a
+            href="https://www.linkedin.com/in/charlie-lin-0a424b117/"
+            target="_blank"
+            rel="noreferrer"
+            className="fa-brands fa-linkedin text-3xl h-10 w-10"
+          ></a>
+        </li>
+        <li className="fa-li">
+          {" "}
+          <a
+            href="https://github.com/charlielinz"
+            target="_blank"
+            rel="noreferrer"
+            className="fa-brands fa-github-square text-3xl h-10 w-10"
+          ></a>
+        </li>
+      </ul>
     </>
   );
 };

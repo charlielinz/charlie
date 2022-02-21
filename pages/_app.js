@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import Head from "next/head";
-import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -16,10 +15,6 @@ function MyApp({ Component, pageProps }) {
           name="og:description"
           content="It is all about life style."
         ></meta>
-        <Script
-          src="https://kit.fontawesome.com/1b3fa5cc6e.js"
-          crossOrigin="anonymous"
-        />
       </Head>
       <main className="font-inter text-gray-700 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-auto ">
         <Component {...pageProps} />
