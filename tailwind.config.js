@@ -6,14 +6,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screen: {
+        "xs": "480px",
+      },
       backgroundImage: {
-        "herobanner": "url('../public/img/herobanner.jpg')",
+        herobanner: "url('../public/img/herobanner.jpg')",
       },
       transitionDuration: {
-        "2000": "2000ms",
+        2000: "2000ms",
       },
       maxWidth: {
-        "800": "800px",
+        "screen-xs": "480px",
+        "screen-2xs": "375px",
       },
     },
     fontFamily: {

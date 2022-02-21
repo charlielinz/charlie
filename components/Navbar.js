@@ -1,9 +1,12 @@
 import Link from "next/link";
+import { useState } from "react";
 import useWindowWidth from "../hooks/useWindowWidth";
 import DesktopNavigation from "./DesktopNavigation";
+import MobileNavigation from "./MobileNavigation";
 
 const Navbar = () => {
   const windowWidth = useWindowWidth();
+  const [isOpened, setIsOpened] = useState(false);
 
   return (
     <>
@@ -11,7 +14,13 @@ const Navbar = () => {
         <div className="text-gray-800 text-2xl font-bold">
           <Link href="/">Charlie Lin</Link>
         </div>
-        <DesktopNavigation />
+        {windowWidth > 768 ? (
+          <DesktopNavigation />
+        ) : (
+          <div className="ml-auto">
+            <MobileNavigation isOpened={isOpened} setIsOpened={setIsOpened} />
+          </div>
+        )}
       </div>
     </>
   );

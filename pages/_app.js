@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
           content="It is all about life style."
         ></meta>
       </Head>
-      <main className="font-inter text-gray-700 md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-auto ">
+      <main className="font-inter text-gray-700 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto">
         <Component {...pageProps} />
       </main>
     </>
