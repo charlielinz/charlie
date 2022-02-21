@@ -43,7 +43,7 @@ const MobileNavigation = ({ isOpened, setIsOpened }) => {
                   href="https://www.facebook.com/profile.php?id=100000764741703"
                   target="_blank"
                   rel="noreferrer"
-                  className="fa-brands fa-facebook-square text-3xl"
+                  className="fa-brands fa-facebook-square text-3xl opacity-70"
                 ></a>
               </li>
               <li className="fa-li">
@@ -51,7 +51,7 @@ const MobileNavigation = ({ isOpened, setIsOpened }) => {
                   href="https://line.me/ti/p/uReKXCIUDz"
                   target="_blank"
                   rel="noreferrer"
-                  className="fa-brands fa-line text-3xl"
+                  className="fa-brands fa-line text-3xl opacity-70"
                 ></a>
               </li>
               <li className="fa-li">
@@ -59,7 +59,7 @@ const MobileNavigation = ({ isOpened, setIsOpened }) => {
                   href="https://www.instagram.com/eilrahc.c_/"
                   target="_blank"
                   rel="noreferrer"
-                  className="fa-brands fa-instagram-square text-3xl"
+                  className="fa-brands fa-instagram-square text-3xl opacity-70"
                 ></a>
               </li>
               <li className="fa-li">
@@ -67,7 +67,7 @@ const MobileNavigation = ({ isOpened, setIsOpened }) => {
                   href="https://www.linkedin.com/in/charlie-lin-0a424b117/"
                   target="_blank"
                   rel="noreferrer"
-                  className="fa-brands fa-linkedin text-3xl"
+                  className="fa-brands fa-linkedin text-3xl opacity-70"
                 ></a>
               </li>
               <li className="fa-li">
@@ -75,7 +75,7 @@ const MobileNavigation = ({ isOpened, setIsOpened }) => {
                   href="https://github.com/charlielinz"
                   target="_blank"
                   rel="noreferrer"
-                  className="fa-brands fa-github-square text-3xl"
+                  className="fa-brands fa-github-square text-3xl opacity-70"
                 ></a>
               </li>
             </ul>
