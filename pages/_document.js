@@ -11,7 +11,7 @@ export default function Document() {
         />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
         />
       </Head>
       <body className="bg-black">
