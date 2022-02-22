@@ -18,7 +18,7 @@ export default function Home() {
       <div className="py-16 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto">
         <div className="flex md:flex-col-reverse justify-center md:items-end gap-4">
           <div className="flex md:flex-col items-center gap-1 text-lg md:pr-5">
-            <p>It's my life style.</p>
+            <p>It is my life style.</p>
             <p className="underline">
               About
               <span>
