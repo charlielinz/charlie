@@ -7,7 +7,7 @@ const MobileNavigation = ({ isOpened, setIsOpened }) => {
         aria-hidden
         className={
           isOpened
-            ? "relative fas fa-stream text-2xl z-20 px-4 py-4 -mr-2 rounded-md transition duration-500"
+            ? "relative fas fa-stream text-2xl z-40 px-4 py-4 -mr-2 rounded-md transition duration-500"
             : "relative fas fa-stream text-2xl px-4 py-4 -mr-2 transition duration-500"
         }
         onClick={() => {
@@ -17,7 +17,7 @@ const MobileNavigation = ({ isOpened, setIsOpened }) => {
       <div
         className={
           isOpened
-            ? "fixed z-10 py-6 pl-4 right-4 -translate-y-16 w-72 bg-gray-50 rounded-md transition duration-500"
+            ? "fixed z-30 py-6 pl-6 right-4 -translate-y-16 w-72 bg-gray-50 rounded-md transition duration-500"
             : "invisible w-0 h-0 right-4 -translate-y-16 bg-gray-50 rounded-md transition duration-500"
         }
       >
@@ -87,7 +87,7 @@ const MobileNavigation = ({ isOpened, setIsOpened }) => {
       <div
         className={
           isOpened
-            ? "fixed w-full h-full z-0 top-0 bottom-0 left-0 right-0 bg-black opacity-60 transition duration-300"
+            ? "fixed w-full h-full z-20 top-0 bottom-0 left-0 right-0 bg-black opacity-60 transition duration-300"
             : "invisible transition duration-300"
         }
         onClick={() => {

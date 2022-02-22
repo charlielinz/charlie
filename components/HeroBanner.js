@@ -21,7 +21,7 @@ const HeroBanner = () => {
 
   return (
     <>
-      <div className="text-gray-100 flex flex-col justify-end items-center md:items-start gap-6">
+      <div className="text-gray-800 flex flex-col justify-end items-center md:items-start gap-4 ">
         <div className="text-2xl lg:text-3xl">This is</div>
         <div className="md:translate-x-0 text-7xl sm:text-8xl lg:text-9xl">
           {transitions(({ opacity }, item) =>
