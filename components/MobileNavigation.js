@@ -3,7 +3,7 @@ import { useState } from "react";
 import NavMenuIcon from "./NavMenuIcon";
 import NavMenu from "./NavMenu";
 
-const MenuToggle = () => {
+const MobileNavigation = () => {
   const [isOpened, setIsOpened] = useState(false);
   return (
     <motion.nav
@@ -16,4 +16,4 @@ const MenuToggle = () => {
   );
 };
 
-export default MenuToggle;
+export default MobileNavigation;

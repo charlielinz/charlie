@@ -5,7 +5,7 @@ const NavMenu = ({ setIsOpened }) => {
   return (
     <motion.div
       className="fixed bg-gray-50 top-4 right-4"
-      onClick={setIsOpened((prevState) => !prevState)}
+      onClick={() => setIsOpened((prevState) => !prevState)}
       variants={{
         closed: {
           width: 0,
