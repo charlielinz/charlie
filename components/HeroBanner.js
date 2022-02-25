@@ -1,57 +1,61 @@
-import { useState } from "react";
-import { useTransition, animated, easings } from "react-spring";
+import { motion } from "framer-motion";
 
 const HeroBanner = () => {
-  const [isToggle, setIsToggle] = useState(true);
-  const transitions = useTransition(isToggle, {
-    from: {
-      opacity: 0,
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 3,
+      },
     },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
-    config: {
-      easing: easings.easeInOutQuad,
-      duration: 3000,
+  };
+  const nameFadeIn = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        repeat: Infinity,
+        repeatType: "reverse",
+        duration: 3,
+      },
     },
-    reverse: isToggle,
-    onRest: () => {
-      setIsToggle(!isToggle);
+  };
+  const nameReverseFadeIn = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        repeat: Infinity,
+        repeatType: "reverse",
+        delay: 3,
+        duration: 3,
+      },
     },
-  });
-
+  };
   return (
     <>
       <div className="text-zinc-700 flex flex-col justify-end items-center md:items-start gap-4 ">
-        <div className="text-2xl lg:text-3xl">This is</div>
+        <motion.div
+          className="text-2xl lg:text-3xl"
+          variants={fadeIn}
+          initial="hidden"
+          animate="show"
+        >
+          This is
+        </motion.div>
         <div className="md:translate-x-0 text-7xl sm:text-8xl lg:text-9xl">
-          {transitions(({ opacity }, item) =>
-            item ? (
-              <animated.div
-                style={{
-                  margin: "0",
-                  opacity: opacity.to({
-                    range: [0, 1],
-                    output: [0, 1],
-                  }),
-                }}
-              >
-                CHARLIE
-              </animated.div>
-            ) : (
-              <animated.div
-                style={{
-                  margin: "0",
-                  transform: "translateY(-100%)",
-                  opacity: opacity.to({
-                    range: [0, 1],
-                    output: [0, 1],
-                  }),
-                }}
-              >
-                EILRAHC
-              </animated.div>
-            )
-          )}
+          <motion.div variants={nameFadeIn} initial="hidden" animate="show">
+            CHARLIE
+          </motion.div>
+          <motion.div
+            className="-translate-y-full"
+            variants={nameReverseFadeIn}
+            initial="hidden"
+            animate="show"
+          >
+            EILRAHC
+          </motion.div>
         </div>
       </div>
     </>
