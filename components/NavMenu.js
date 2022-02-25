@@ -2,46 +2,48 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const NavMenu = ({ setIsOpened }) => {
+  const navBackground = {
+    closed: {
+      width: 0,
+      height: 0,
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+      },
+    },
+    opened: {
+      top: 0,
+      right: 0,
+      width: "100%",
+      height: "100%",
+      transition: {
+        type: "spring",
+        stiffness: 200,
+        damping: 30,
+      },
+    },
+  };
+  const navItems = {
+    closed: {
+      display: "none",
+    },
+    opened: {
+      display: "inline-block",
+      transition: {
+        delay: 0.2,
+      },
+    },
+  }
   return (
     <motion.div
       className="fixed bg-gray-50 top-4 right-4"
       onClick={() => setIsOpened((prevState) => !prevState)}
-      variants={{
-        closed: {
-          width: 0,
-          height: 0,
-          transition: {
-            type: "spring",
-            stiffness: 400,
-            damping: 40,
-          },
-        },
-        opened: {
-          top: 0,
-          right: 0,
-          width: "100%",
-          height: "100%",
-          transition: {
-            type: "spring",
-            stiffness: 200,
-            damping: 30,
-          },
-        },
-      }}
+      variants={navBackground}
     >
       <motion.div
         className="pl-10 pt-20"
-        variants={{
-          closed: {
-            display: "none",
-          },
-          opened: {
-            display: "inline-block",
-            transition: {
-              delay: 0.2,
-            },
-          },
-        }}
+        variants={navItems}
       >
         <ul className="flex flex-col gap-4">
           <li className="text-xl">
