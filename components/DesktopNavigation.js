@@ -26,7 +26,7 @@ const DesktopNavigation = () => {
           <Link href="/recitals">Recitals</Link>
         </li>
       </ul>
-      <ul className="fa-ul flex ml-auto">
+      <ul className="fa-ul flex ml-auto translate-x-8">
         <li className="fa-li">
           <a
             href="https://www.facebook.com/profile.php?id=100000764741703"
