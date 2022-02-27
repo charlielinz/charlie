@@ -3,6 +3,7 @@ import Link from "next/link";
 import useWindowWidth from "../hooks/useWindowWidth";
 import HeroBanner from "../components/HeroBanner";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import me from "../public/img/me.jpg";
 
 export default function Home() {
@@ -39,6 +40,7 @@ export default function Home() {
           )}
         </div>
       </div>
+      <Footer />
     </header>
   );
 }
