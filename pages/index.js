@@ -45,17 +45,17 @@ export default function Home() {
           </p>
           <div className="flex flex-col gap-1">
             <div>
-              <i class="fa-solid fa-address-card text-xl w-6" />
+              <i className="fa-solid fa-address-card text-xl w-6" />
               <span className="text-xl pl-4">Engineer / Pianist</span>
             </div>
             <div className="flex">
-              <i class="fa-solid fa-tags text-xl w-6" />
+              <i className="fa-solid fa-tags text-xl w-6" />
               <span className="text-xl pl-4">
                 Travel / Foodie / Bar / Coding / Music
               </span>
             </div>
             <div className="flex">
-              <i class="fa-solid fa-map-pin text-xl w-6" />
+              <i className="fa-solid fa-map-pin text-xl w-6" />
               <div className="flex gap-2 text-2xl pl-4">
                 <p>🇺🇸</p>
                 <p>🇨🇦</p>
