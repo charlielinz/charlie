@@ -5,6 +5,13 @@ import HeroBanner from "../components/HeroBanner";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import me from "../public/img/me.jpg";
+import canada from "../public/img/canada.png";
+import guam from "../public/img/guam.png";
+import japan from "../public/img/japan.png";
+import palau from "../public/img/palau.png";
+import philippines from "../public/img/philippines.png";
+import southKorea from "../public/img/south-korea.png";
+import usa from "../public/img/united-states-of-america.png";
 
 export default function Home() {
   const windowWidth = useWindowWidth();
@@ -40,8 +47,8 @@ export default function Home() {
           )}
         </div>
         <div className="flex flex-col justify-between">
-          <p className="justify-self-center md:justify-self-start mx-auto text-3xl md:text-4xl lg:text-5xl xl:text-6xl pb-8 font-bold">
-            Sharing some travel & food guides!
+          <p className="justify-self-center md:justify-self-start mx-auto text-4xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight xl:text-7xl xl:leading-tight pb-8 font-bold">
+            Sharing travel & food guides!
           </p>
           <div className="flex flex-col gap-1">
             <div>
@@ -57,13 +64,13 @@ export default function Home() {
             <div className="flex">
               <i className="fa-solid fa-map-pin text-xl w-6" />
               <div className="flex gap-2 text-2xl pl-4">
-                <p>🇺🇸</p>
-                <p>🇨🇦</p>
-                <p>🇵🇼</p>
-                <p>🇬🇺</p>
-                <p>🇯🇵</p>
-                <p>🇰🇷</p>
-                <p>🇵🇭</p>
+                <Image src={canada} width="32px" height="28px" />
+                <Image src={guam} width="32px" height="28px" />
+                <Image src={japan} width="32px" height="28px" />
+                <Image src={palau} width="32px" height="28px" />
+                <Image src={philippines} width="32px" height="28px" />
+                <Image src={southKorea} width="32px" height="28px" />
+                <Image src={usa} width="32px" height="28px" />
               </div>
             </div>
           </div>
