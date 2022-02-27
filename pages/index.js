@@ -18,8 +18,8 @@ export default function Home() {
       </div>
       <div className="flex flex-col-reverse md:flex-row justify-between py-16 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto gap-14">
         <div className="flex md:flex-col-reverse justify-center md:items-end gap-4">
-          <div className="flex md:flex-col items-center gap-1 text-lg md:pr-5">
-            <p className="md:text-base lg:text-xl pt-6 md:pt-0">It is my life style.</p>
+          <div className="flex md:flex-col items-center gap-1 text-lg md:pr-5 pt-6 md:pt-0">
+            <p className="md:text-base lg:text-xl ">It is my life style.</p>
             <p className="underline md:text-base lg:text-xl">
               <Link href="/about">About Charlie Lin</Link>
             </p>
