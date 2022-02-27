@@ -56,7 +56,7 @@ const NavMenu = ({ setIsOpened }) => {
             <Link href="/food/posts">Food</Link>
           </li>
           <li className="text-xl">
-            <Link href="/recitals">Recitals</Link>
+            <Link href="/recital">Recital</Link>
           </li>
           <ul className="fa-ul flex gap-2 mt-2 -translate-x-3">
             <li className="fa-li">

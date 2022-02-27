@@ -22,8 +22,8 @@ const DesktopNavigation = () => {
         <li className={classNameByPath("/food")}>
           <Link href="/food/posts">Food</Link>
         </li>
-        <li className={classNameByPath("/recitals")}>
-          <Link href="/recitals">Recitals</Link>
+        <li className={classNameByPath("/recital")}>
+          <Link href="/recital">Recital</Link>
         </li>
       </ul>
       <ul className="fa-ul flex ml-auto translate-x-8">
