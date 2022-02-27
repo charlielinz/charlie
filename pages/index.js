@@ -16,16 +16,16 @@ export default function Home() {
           <HeroBanner />
         </div>
       </div>
-      <div className="py-16 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto">
+      <div className="flex flex-col-reverse md:flex-row justify-between py-16 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto gap-14">
         <div className="flex md:flex-col-reverse justify-center md:items-end gap-4">
           <div className="flex md:flex-col items-center gap-1 text-lg md:pr-5">
-            <p>It is my life style.</p>
-            <p className="underline">
+            <p className="md:text-base lg:text-xl">It is my life style.</p>
+            <p className="underline md:text-base lg:text-xl">
               <Link href="/about">About Charlie Lin</Link>
             </p>
           </div>
           {windowWidth > 768 ? (
-            <div className="relative w-48 h-48">
+            <div className="relative md:w-40 lg:w-48 md:h-40 lg:h-48">
               <Image
                 src={me}
                 alt="me"
@@ -38,6 +38,35 @@ export default function Home() {
           ) : (
             ""
           )}
+        </div>
+        <div className="flex flex-col justify-between">
+          <p className="justify-self-center md:justify-self-start mx-auto text-3xl md:text-4xl lg:text-5xl xl:text-6xl pb-8 font-bold">
+            Sharing some travel & food guides!
+          </p>
+          <div className="flex flex-col gap-1">
+            <div>
+              <i class="fa-solid fa-address-card text-xl w-6" />
+              <span className="text-xl pl-4">Engineer / Pianist</span>
+            </div>
+            <div className="flex">
+              <i class="fa-solid fa-tags text-xl w-6" />
+              <span className="text-xl pl-4">
+                Travel / Foodie / Bar / Coding / Music
+              </span>
+            </div>
+            <div className="flex">
+              <i class="fa-solid fa-map-pin text-xl w-6" />
+              <div className="flex gap-2 text-2xl pl-4">
+                <p>🇺🇸</p>
+                <p>🇨🇦</p>
+                <p>🇵🇼</p>
+                <p>🇬🇺</p>
+                <p>🇯🇵</p>
+                <p>🇰🇷</p>
+                <p>🇵🇭</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />
