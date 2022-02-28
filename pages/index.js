@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import useWindowWidth from "../hooks/useWindowWidth";
 import HeroBanner from "../components/HeroBanner";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -13,6 +14,7 @@ import southKorea from "../public/img/south-korea.png";
 import usa from "../public/img/united-states-of-america.png";
 
 export default function Home() {
+  const windowWidth = useWindowWidth();
   return (
     <header>
       <Navbar />
@@ -22,8 +24,8 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-between py-16 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto gap-14">
-        <div className="flex md:flex-col justify-center md:items-end gap-4">
-          <div className="relative w-40 lg:w-48 h-40 lg:h-48">
+        <div className="flex md:flex-col justify-center gap-4">
+          <div className="relative w-60 md:w-40 lg:w-48 xl:w-56 h-60 md:h-40 lg:h-48 xl:h-56">
             <Image
               src={me}
               alt="me"
@@ -33,15 +35,19 @@ export default function Home() {
               className="rounded-full"
             />
           </div>
-          <div className="flex flex-col items-center justify-center gap-1 text-lg md:pr-5">
-            <p className="md:text-base lg:text-xl ">It is my life style.</p>
-            <p className="underline md:text-base lg:text-xl">
-              <Link href="/about">About Charlie Lin</Link>
-            </p>
-          </div>
+          {windowWidth > 768 ? (
+            <div className="flex flex-col items-center justify-center gap-1 text-lg md:pt-3 lg:pt-1">
+              <p className="md:text-base lg:text-xl ">It is my life style.</p>
+              <p className="underline md:text-base lg:text-xl">
+                <Link href="/about">About Charlie Lin</Link>
+              </p>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
         <div className="flex flex-col">
-          <p className="justify-self-center md:justify-self-start mx-auto text-4xl md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight xl:text-7xl xl:leading-tight pb-8 font-bold">
+          <p className="justify-self-center md:justify-self-start mx-auto text-5xl leading-tight lg:text-6xl lg:leading-tight xl:text-7xl xl:leading-tight pb-8 font-bold">
             Sharing travel & food guides!
           </p>
           <div className="flex flex-col gap-1">
