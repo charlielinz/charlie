@@ -1,4 +1,5 @@
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 import PostCard from "../../components/PostCard";
 import { travelPosts } from "../../posts";
 
@@ -12,6 +13,7 @@ const posts = ({ postInfos }) => {
           <PostCard postData={postData} key={index} />
         ))}
       </div>
+      <Footer />
     </>
   );
 };

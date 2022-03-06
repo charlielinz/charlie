@@ -17,7 +17,7 @@ import usa from "../public/img/united-states-of-america.png";
 export default function Home() {
   const windowWidth = useWindowWidth();
   return (
-    <header>
+    <>
       <Navbar />
       <div className="w-full h-96 bg-gray-300">
         <div className="pt-32 lg:pt-24 z-10 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto">
@@ -83,6 +83,6 @@ export default function Home() {
         <p className="text-gray-500">Close to the local and discover those places you may miss. Find and establish your own travel style.</p>
       </div>
       <Footer />
-    </header>
+    </>
   );
 }
