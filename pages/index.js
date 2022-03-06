@@ -24,9 +24,9 @@ export default function Home() {
           <HeroBanner />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-between py-16 md:py-24 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto gap-14">
+      <div className="flex flex-col md:flex-row py-16 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto gap-14">
         <div className="flex md:flex-col justify-center gap-4">
-          <div className="relative w-60 md:w-40 lg:w-48 xl:w-56 h-60 md:h-40 lg:h-48 xl:h-56">
+          <div className="relative w-60 md:w-40 md:h-40">
             <Image
               src={me}
               alt="me"
@@ -38,8 +38,8 @@ export default function Home() {
           </div>
           {windowWidth > 768 ? (
             <div className="flex flex-col items-center justify-center gap-1 text-lg md:pt-3 lg:pt-1">
-              <p className="md:text-base lg:text-xl ">It is my life style.</p>
-              <p className="underline md:text-base lg:text-xl">
+              <p className="">It is my life style.</p>
+              <p className="underline">
                 <Link href="/about">About Charlie Lin</Link>
               </p>
             </div>
@@ -48,9 +48,10 @@ export default function Home() {
           )}
         </div>
         <div className="flex flex-col">
-          <p className="justify-self-center md:justify-self-start mx-auto text-5xl leading-tight lg:text-5xl lg:leading-tight xl:text-5xl xl:leading-tight pb-8 font-bold">
+          <p className="justify-self-center md:justify-self-start mx-auto text-5xl leading-tight pb-2 font-bold">
             Sharing travel & food guides!
           </p>
+          <p className="pb-12 text-gray-500">A place you can find informations for travel and enjoy food porn.</p>
           <div className="flex flex-col gap-1">
             <div>
               <i className="fa-solid fa-address-card text-xl w-6" />
@@ -77,8 +78,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto py-16 md:py-24 font-bold">
-        <p className="text-5xl leading-tight lg:text-6xl lg:leading-tight xl:text-5xl xl:leading-tight">In-depth Travel & Private Tour Guide</p>
+      <div className="max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto py-16 font-bold">
+        <p className="text-5xl leading-tight pb-2">In-depth Travel & Private Tour Guide</p>
+        <p className="text-gray-500">Close to the local and discover those places you may miss. Find and establish your own travel style.</p>
       </div>
       <Footer />
     </header>
