@@ -66,13 +66,13 @@ export default function Home() {
             <div className="flex">
               <i className="fa-solid fa-map-pin text-xl w-6" />
               <div className="flex gap-2 text-2xl pl-4">
-                <Image src={canada} width="32px" height="28px" />
-                <Image src={guam} width="32px" height="28px" />
-                <Image src={japan} width="32px" height="28px" />
-                <Image src={palau} width="32px" height="28px" />
-                <Image src={philippines} width="32px" height="28px" />
-                <Image src={southKorea} width="32px" height="28px" />
-                <Image src={usa} width="32px" height="28px" />
+                <Image src={canada} alt="canada" width="32px" height="28px" />
+                <Image src={guam} alt="guam" width="32px" height="28px" />
+                <Image src={japan} alt="japan" width="32px" height="28px" />
+                <Image src={palau} alt="palau" width="32px" height="28px" />
+                <Image src={philippines} alt="philippines" width="32px" height="28px" />
+                <Image src={southKorea} alt="southKorea" width="32px" height="28px" />
+                <Image src={usa} alt="usa" width="32px" height="28px" />
               </div>
             </div>
           </div>
