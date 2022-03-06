@@ -1,17 +1,17 @@
 import Navbar from "../../components/Navbar";
-import { travelPosts } from "../../postdata";
+import PostCard from "../../components/PostCard";
+import { travelPosts } from "../../posts";
 
 const posts = ({ postInfos }) => {
   const postDatas = Object.values(postInfos);
   return (
     <>
       <Navbar />
-      {postDatas.map((postData, index) => (
-        <div className="text-5xl h-32" key={index}>
-          <div>{postData.title}</div>
-          <div>{postData.travel_date}</div>
-        </div>
-      ))}
+      <div className="flex flex-col gap-10 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto">
+        {postDatas.map((postData, index) => (
+          <PostCard postData={postData} key={index} />
+        ))}
+      </div>
     </>
   );
 };
