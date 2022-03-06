@@ -48,7 +48,7 @@ export default function Home() {
           )}
         </div>
         <div className="flex flex-col">
-          <p className="justify-self-center md:justify-self-start mx-auto text-5xl leading-tight pb-2 font-bold">
+          <p className="justify-self-center md:justify-self-start mx-auto text-4xl md:text-5xl leading-tight pb-2 font-bold">
             Sharing travel & food guides!
           </p>
           <p className="pb-12 text-gray-500">A place you can find informations for travel and enjoy food porn.</p>
@@ -79,7 +79,7 @@ export default function Home() {
         </div>
       </div>
       <div className="max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto py-16 font-bold">
-        <p className="text-5xl leading-tight pb-2">In-depth Travel & Private Tour Guide</p>
+        <p className="text-4xl md:text-5xl leading-tight pb-2">In-depth Travel & Private Tour Guide</p>
         <p className="text-gray-500">Close to the local and discover those places you may miss. Find and establish your own travel style.</p>
       </div>
       <Footer />
