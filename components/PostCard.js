@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import useWindowWidth from "../hooks/useWindowWidth";
 
@@ -30,7 +31,11 @@ const PostCard = ({ postData }) => {
       <div className="flex flex-col gap-2 w-full">
         <div className="text-2xl">{postData.title}</div>
         <div className="text-gray-400">{postData.travel_date}</div>
-        <div className="mt-auto ml-auto mb-1.5 py-1 w-28 bg-gray-200 hover:bg-gray-300 duration-200 rounded-sm text-center text-sm">Read more...</div>
+        <div className="mt-auto ml-auto mb-1.5 py-1 w-28 bg-gray-200 hover:bg-gray-300 duration-200 rounded-sm text-center text-sm">
+          <Link href={`/travel/posts/${postData.slug}`} passHref>
+            <a>Read more...</a>
+          </Link>
+        </div>
       </div>
     </div>
   );

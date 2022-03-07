@@ -8,7 +8,7 @@ const posts = ({ postInfos }) => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col gap-10 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto">
+      <div className="flex flex-col gap-10 py-32 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto">
         {postDatas.map((postData, index) => (
           <PostCard postData={postData} key={index} />
         ))}

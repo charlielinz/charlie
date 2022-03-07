@@ -3,11 +3,12 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./public/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./posts/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       screen: {
-        "xs": "480px",
+        xs: "480px",
       },
       backgroundImage: {
         herobanner: "url('../public/img/herobanner.jpg')",
