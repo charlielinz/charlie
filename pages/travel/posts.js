@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import PostCard from "../../components/PostCard";
-import { travelPosts } from "../../posts";
+import { travelPosts } from "../../posts/posts";
 
 const posts = ({ postInfos }) => {
   const postDatas = Object.values(postInfos);
