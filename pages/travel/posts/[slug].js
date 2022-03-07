@@ -5,12 +5,12 @@ import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import { components } from "../../../posts/posts-handler";
 
-const Post = ({ content }) => {
+const Post = ({ postContent }) => {
   return (
     <>
       <Navbar />
       <div className="prose max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto">
-        <ReactMarkdown children={content} components={components} />
+        <ReactMarkdown children={postContent} components={components} />
       </div>
       <Footer />
     </>
@@ -30,9 +30,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
   const postFilePath = "posts/travel/" + slug + ".md";
-  const content = fs.readFileSync(postFilePath, "utf8");
+  const postContent = fs.readFileSync(postFilePath, "utf8");
   return {
-    props: { content },
+    props: { postContent },
   };
 };
 export default Post;
