@@ -10,7 +10,7 @@ const Post = ({ postContent }) => {
     <>
       <Navbar />
       <div className="prose max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto">
-        <ReactMarkdown children={postContent} components={components} />
+        <ReactMarkdown components={components}>{postContent}</ReactMarkdown>
       </div>
       <Footer />
     </>
