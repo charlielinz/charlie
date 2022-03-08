@@ -12,7 +12,7 @@ const DesktopNavigation = () => {
   };
   return (
     <>
-      <ul className="text-gray-400 font-semibold flex items-end gap-6 lg:gap-10">
+      <ul className="text-gray-400 font-semibold flex items-end gap-10">
         <li className={classNameByPath("/about")}>
           <Link href="/about">About</Link>
         </li>

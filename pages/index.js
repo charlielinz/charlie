@@ -20,11 +20,11 @@ export default function Home() {
     <>
       <Navbar />
       <div className="w-full h-96 bg-gray-300">
-        <div className="pt-32 lg:pt-24 z-10 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto">
+        <div className="pt-32 lg:pt-24 z-10 max-w-screen-lg mx-6 md:mx-auto md:px-6">
           <HeroBanner />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row md:py-16 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto gap-14">
+      <div className="flex flex-col md:flex-row md:py-16 max-w-screen-lg mx-6 md:mx-auto gap-14 md:px-6">
         <div className="flex md:flex-col justify-center gap-4">
           <div className="relative w-60 md:w-40 md:h-40">
             <Image
@@ -51,7 +51,7 @@ export default function Home() {
           <p className="justify-self-center md:justify-self-start mx-auto text-4xl md:text-5xl leading-tight pb-2 font-bold">
             Sharing travel & food guides!
           </p>
-          <p className="pb-8 xl:pb-16 text-gray-500">A place you can find informations for travel and enjoy food porn.</p>
+          <p className="pb-16 text-gray-500">A place you can find informations for travel and enjoy food porn.</p>
           <div className="flex flex-col gap-1">
             <div>
               <i className="fa-solid fa-address-card text-xl w-6" />
@@ -78,7 +78,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto py-16 font-bold">
+      <div className="max-w-screen-lg mx-6 md:mx-auto py-16 md:px-6 font-bold">
         <p className="text-4xl md:text-5xl leading-tight pb-2">In-depth Travel & Private Tour Guide</p>
         <p className="text-gray-500">Close to the local and discover those places you may miss. Find and establish your own travel style.</p>
       </div>

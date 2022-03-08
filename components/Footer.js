@@ -5,7 +5,7 @@ const Footer = () => {
   const windowWidth = useWindowWidth();
   return (
     <div className="bg-gray-100 py-8">
-      <div className="flex justify-between max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto">
+      <div className="flex justify-between max-w-screen-lg mx-6 md:mx-auto md:px-6">
         <div className="flex flex-col w-full md:w-auto items-center md:items-start">
           <p className="text-2xl text-gray-700 py-4">Charlie Lin</p>
           <p className="text-sm text-gray-700">Thanks for reading!</p>

@@ -35,7 +35,7 @@ const HeroBanner = () => {
   };
   return (
     <>
-      <div className="text-zinc-700 flex flex-col justify-end items-center md:items-start gap-4 ">
+      <div className="text-zinc-700 flex flex-col justify-end items-center md:items-start gap-4">
         <motion.div
           className="text-2xl lg:text-3xl"
           variants={fadeIn}

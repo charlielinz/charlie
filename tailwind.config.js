@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -7,9 +9,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screen: {
-        xs: "480px",
-      },
       backgroundImage: {
         herobanner: "url('../public/img/herobanner.jpg')",
       },
@@ -24,6 +23,10 @@ module.exports = {
     fontFamily: {
       sans: ["Open Sans", "sans-serif"],
       inter: ["inter"],
+    },
+    screens: {
+      xs: "480px",
+      ...defaultTheme.screens,
     },
   },
   plugins: [],
