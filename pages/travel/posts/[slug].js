@@ -10,7 +10,7 @@ const Post = ({ postContent, postData }) => {
   return (
     <>
       <Navbar />
-      <div className="prose py-6 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto">
+      <div className="prose py-6 md:px-6 max-w-screen-lg mx-6 md:mx-auto">
         <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
           <div className="flex flex-col md:flex-row justify-between pt-4 pb-8 gap-2">
             <p className="text-2xl">{postData.title}</p>

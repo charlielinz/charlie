@@ -20,7 +20,7 @@ const Img = ({ src, title }) => {
   return (
     <>
       {title && <span className="text-sm list-item list-inside pl-1 text-gray-700">{title}</span>}
-      <img src={src} className="inline w-auto p-1 lg:h-72" />
+      <img src={src} className="inline w-auto p-1 sm:h-72" />
     </>
   );
 };
