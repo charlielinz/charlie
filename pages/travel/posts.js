@@ -3,8 +3,7 @@ import Footer from "../../components/Footer";
 import PostCard from "../../components/PostCard";
 import { travelPosts } from "../../posts/posts";
 
-const posts = ({ postInfos }) => {
-  const postDatas = Object.values(postInfos);
+const posts = ({ postDatas }) => {
   return (
     <>
       <Navbar />
@@ -20,8 +19,9 @@ const posts = ({ postInfos }) => {
 
 export const getStaticProps = async () => {
   const postInfos = travelPosts;
+  const postDatas = Object.values(postInfos);
   return {
-    props: { postInfos },
+    props: { postDatas },
   };
 };
 

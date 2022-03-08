@@ -1,7 +1,7 @@
 const BlockQuote = ({ children }) => {
   return (
     <>
-      <blockquote className="italic my-2 border-l-8 pl-4 text-gray-600">
+      <blockquote className="italic my-2 border-l-8 pl-4 text-gray-600 text-lg">
         {children}
       </blockquote>
     </>
@@ -13,13 +13,13 @@ const P = ({ children }) => {
 };
 
 const A = ({ children, href }) => {
-  return <a className="text-indigo-700 transform duration-300 hover:text-opacity-70" href={href} target="_blank">{children}</a>
+  return <a className=" font-extrabold transform duration-300 hover:text-opacity-70" href={href} target="_blank">{children}</a>
 }
 
 const Img = ({ src, title }) => {
   return (
     <>
-      {title && <span className="text-sm list-item list-inside py-2 pl-1 text-gray-700">{title}</span>}
+      {title && <span className="text-sm list-item list-inside pl-1 text-gray-700">{title}</span>}
       <img src={src} className="inline w-auto p-1 lg:h-72" />
     </>
   );
