@@ -24,9 +24,9 @@ export default function Home() {
           <HeroBanner />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row md:py-16 max-w-screen-lg mx-6 md:mx-auto gap-14 md:px-6">
+      <div className="flex flex-col md:flex-row py-16 max-w-screen-lg mx-6 md:mx-auto gap-14 md:px-6">
         <div className="flex md:flex-col justify-center gap-4">
-          <div className="relative w-60 md:w-40 md:h-40">
+          <div className="relative w-60 md:w-40 h-60 md:h-40">
             <Image
               src={me}
               alt="me"
@@ -36,7 +36,7 @@ export default function Home() {
               className="rounded-full"
             />
           </div>
-          {windowWidth > 768 ? (
+          {windowWidth >= 768 ? (
             <div className="flex flex-col items-center justify-center gap-1 text-lg md:pt-3 lg:pt-1">
               <p className="">It is my life style.</p>
               <p className="underline">
@@ -51,7 +51,7 @@ export default function Home() {
           <p className="justify-self-center md:justify-self-start mx-auto text-4xl md:text-5xl leading-tight pb-2 font-bold">
             Sharing travel & food guides!
           </p>
-          <p className="pb-16 text-gray-500">A place you can find informations for travel and enjoy food porn.</p>
+          <p className="pb-4 xs:pb-16 text-gray-500">A place you can find informations for travel and enjoy food porn.</p>
           <div className="flex flex-col gap-1">
             <div>
               <i className="fa-solid fa-address-card text-xl w-6" />
