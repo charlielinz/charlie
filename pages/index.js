@@ -24,7 +24,7 @@ export default function Home() {
           <HeroBanner />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row py-16 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto gap-14">
+      <div className="flex flex-col md:flex-row md:py-16 max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg mx-6 md:mx-auto gap-14">
         <div className="flex md:flex-col justify-center gap-4">
           <div className="relative w-60 md:w-40 md:h-40">
             <Image
@@ -51,7 +51,7 @@ export default function Home() {
           <p className="justify-self-center md:justify-self-start mx-auto text-4xl md:text-5xl leading-tight pb-2 font-bold">
             Sharing travel & food guides!
           </p>
-          <p className="pb-12 text-gray-500">A place you can find informations for travel and enjoy food porn.</p>
+          <p className="pb-8 xl:pb-16 text-gray-500">A place you can find informations for travel and enjoy food porn.</p>
           <div className="flex flex-col gap-1">
             <div>
               <i className="fa-solid fa-address-card text-xl w-6" />
