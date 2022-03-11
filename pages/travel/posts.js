@@ -7,7 +7,7 @@ const posts = ({ postDatas }) => {
   return (
     <>
       <Navbar />
-      <div className="grid lg:grid-cols-2 gap-10 py-32 max-w-screen-lg mx-6 md:mx-auto md:px-6">
+      <div className="grid lg:grid-cols-2 gap-10 py-16 max-w-screen-xl mx-6 md:mx-auto md:px-6">
         {postDatas.map((postData, index) => (
           <div className="" key={index}>
             <PostCard postData={postData} />

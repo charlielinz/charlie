@@ -14,7 +14,7 @@ const Post = ({ postContent, postData }) => {
         <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
           <div className="flex flex-col md:flex-row justify-between pt-4 pb-8 gap-2">
             <p className="text-2xl">{postData.title}</p>
-            <p className="md:self-end">{postData.travel_date}</p>
+            <p className="md:self-end text-gray-400">{postData.travel_date}</p>
           </div>
           <ReactMarkdown components={components}>{postContent}</ReactMarkdown>
         </div>
