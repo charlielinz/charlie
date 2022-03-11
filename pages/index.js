@@ -125,12 +125,14 @@ const Home = () => {
               Close to the local and discover those places you may miss. Find
               and establish your own travel style.
             </p>
+            <button className="bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full py-2 px-4 md:px-6">
               <Link href="/travel/posts">
-                <a className="flex items-center gap-2 text-lg md:text-xl bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full py-2 px-4 md:px-6">
+                <a className="flex items-center gap-2 text-lg md:text-xl">
                   <span>Watch more</span>
                   <i className="fa-solid fa-angle-right" />
                 </a>
               </Link>
+            </button>
           </div>
         </div>
       </div>
