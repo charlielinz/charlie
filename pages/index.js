@@ -117,14 +117,20 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="max-w-screen-xl mx-6 md:mx-auto py-4 md:px-6">
+          <div className="max-w-screen-xl mx-6 md:mx-auto py-4 md:px-6 min-w-[40%]">
             <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
               In-depth Travel & Private Tour Guide.
             </p>
-            <p className="text-gray-500 pb-4">
+            <p className="text-gray-500 pb-4 md:pb-12">
               Close to the local and discover those places you may miss. Find
               and establish your own travel style.
             </p>
+            <Link href="/travel/posts">
+              <a className="flex items-center gap-2 text-lg">
+                <span>Watch more</span>
+                <i className="fa-solid fa-angle-right" />
+              </a>
+            </Link>
           </div>
         </div>
       </div>
