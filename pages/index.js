@@ -97,17 +97,8 @@ const Home = () => {
         </div>
       </div>
       <div className="py-16">
-        <div className="max-w-screen-xl mx-6 md:mx-auto py-4 md:px-6">
-          <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
-            In-depth Travel & Private Tour Guide.
-          </p>
-          <p className="text-gray-500 pb-4">
-            Close to the local and discover those places you may miss. Find and
-            establish your own travel style.
-          </p>
-        </div>
-        <div className="w-full bg-gradient-to-b from-sky-50 to-gray-50 pt-8 pb-24">
-          <div className="max-w-screen-md mx-6">
+        <div className="flex flex-col-reverse md:flex-row gap-12 w-full bg-gradient-to-b from-sky-50 to-gray-50 pt-8 pb-24">
+          <div className="max-w-screen-sm mx-6">
             <div className="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4 md:gap-8">
               <div class="transform duration-200 md:scale-90 md:hover:scale-100 md:-rotate-6">
                 <Image className="rounded-md" src={travel1} alt="travel-1" />
@@ -126,8 +117,14 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div>
-            <p></p>
+          <div className="max-w-screen-xl mx-6 md:mx-auto py-4 md:px-6">
+            <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
+              In-depth Travel & Private Tour Guide.
+            </p>
+            <p className="text-gray-500 pb-4">
+              Close to the local and discover those places you may miss. Find
+              and establish your own travel style.
+            </p>
           </div>
         </div>
       </div>
