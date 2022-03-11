@@ -96,37 +96,39 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-screen-xl mx-6 md:mx-auto py-16 md:px-6">
-        <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
-          In-depth Travel & Private Tour Guide.
-        </p>
-        <p className="text-gray-500 pb-4">
-          Close to the local and discover those places you may miss. Find and
-          establish your own travel style.
-        </p>
-      </div>
-      <div className="w-full bg-gradient-to-b from-sky-50 to-gray-50 pb-24">
-        <div className="max-w-screen-md mx-6">
-          <div className="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4 md:gap-8">
-            <div class="transform duration-200 md:scale-90 md:hover:scale-100 md:-rotate-6">
-              <Image className="rounded-md" src={travel1} alt="travel-1" />
-            </div>
-            <div class="col-start-3 transform duration-200 md:scale-90 md:hover:scale-100 md:rotate-6 md:translate-x-2 md:translate-y-15">
-              <Image className="rounded-md" src={travel2} alt="travel-2" />
-            </div>
-            <div class="transform duration-200 md:hover:scale-110 md:translate-y-11">
-              <Image className="rounded-md" src={travel3} alt="travel-3" />
-            </div>
-            <div class="transform duration-200 md:hover:scale-110 md:translate-y-20">
-              <Image className="rounded-md" src={travel4} alt="travel-4" />
-            </div>
-            <div class="row-start-1 col-start-2 col-span-2 transform duration-200 md:hover:scale-110 md:translate-x-16 md:translate-y-4">
-              <Image className="rounded-md" src={travel5} alt="travel-5" />
+      <div className="py-16">
+        <div className="max-w-screen-xl mx-6 md:mx-auto py-4 md:px-6">
+          <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
+            In-depth Travel & Private Tour Guide.
+          </p>
+          <p className="text-gray-500 pb-4">
+            Close to the local and discover those places you may miss. Find and
+            establish your own travel style.
+          </p>
+        </div>
+        <div className="w-full bg-gradient-to-b from-sky-50 to-gray-50 pt-8 pb-24">
+          <div className="max-w-screen-md mx-6">
+            <div className="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4 md:gap-8">
+              <div class="transform duration-200 md:scale-90 md:hover:scale-100 md:-rotate-6">
+                <Image className="rounded-md" src={travel1} alt="travel-1" />
+              </div>
+              <div class="col-start-3 transform duration-200 md:scale-90 md:hover:scale-100 md:rotate-6 md:translate-x-2 md:translate-y-15">
+                <Image className="rounded-md" src={travel2} alt="travel-2" />
+              </div>
+              <div class="transform duration-200 md:hover:scale-110 md:translate-y-11">
+                <Image className="rounded-md" src={travel3} alt="travel-3" />
+              </div>
+              <div class="transform duration-200 md:hover:scale-110 md:translate-y-20">
+                <Image className="rounded-md" src={travel4} alt="travel-4" />
+              </div>
+              <div class="row-start-1 col-start-2 col-span-2 transform duration-200 md:hover:scale-110 md:translate-x-16 md:translate-y-4">
+                <Image className="rounded-md" src={travel5} alt="travel-5" />
+              </div>
             </div>
           </div>
-        </div>
-        <div>
-          <p></p>
+          <div>
+            <p></p>
+          </div>
         </div>
       </div>
       <Footer />
