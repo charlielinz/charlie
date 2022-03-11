@@ -97,23 +97,23 @@ const Home = () => {
         </div>
       </div>
       <div className="py-16">
-        <div className="flex flex-col-reverse md:flex-row gap-12 w-full bg-gradient-to-b from-sky-50 to-gray-50 pt-8 pb-24">
-          <div className="max-w-screen-sm mx-6">
+        <div className="flex flex-col-reverse md:flex-row gap-16 w-full bg-gradient-to-b from-sky-50 to-gray-50 pt-8 pb-24">
+          <div className="max-w-screen-md mx-6">
             <div className="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4 md:gap-8">
-              <div className="transform duration-200 md:scale-90 md:hover:scale-100 md:-rotate-6">
-                <Image className="rounded-md" src={travel1} alt="travel-1" />
+              <div className="transform duration-200 md:scale-90 md:hover:scale-100 md:-rotate-6 overflow-visible">
+                <Image className="rounded-xl" src={travel1} alt="travel-1" />
               </div>
               <div className="col-start-3 transform duration-200 md:scale-90 md:hover:scale-100 md:rotate-6 md:translate-x-2 md:translate-y-15">
-                <Image className="rounded-md" src={travel2} alt="travel-2" />
+                <Image className="rounded-xl" src={travel2} alt="travel-2" />
               </div>
               <div className="transform duration-200 md:hover:scale-110 md:translate-y-11">
-                <Image className="rounded-md" src={travel3} alt="travel-3" />
+                <Image className="rounded-xl" src={travel3} alt="travel-3" />
               </div>
               <div className="transform duration-200 md:hover:scale-110 md:translate-y-20">
-                <Image className="rounded-md" src={travel4} alt="travel-4" />
+                <Image className="rounded-xl" src={travel4} alt="travel-4" />
               </div>
-              <div className="row-start-1 col-start-2 col-span-2 transform duration-200 md:hover:scale-110 md:translate-x-16 md:translate-y-4">
-                <Image className="rounded-md" src={travel5} alt="travel-5" />
+              <div className="row-start-1 col-start-2 col-span-2 transform duration-200 md:hover:scale-110 md:translate-x-14 md:translate-y-4">
+                <Image className="rounded-xl" src={travel5} alt="travel-5" />
               </div>
             </div>
           </div>
@@ -121,16 +121,18 @@ const Home = () => {
             <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
               In-depth Travel & Private Tour Guide.
             </p>
-            <p className="text-gray-500 pb-4 md:pb-12">
+            <p className="text-gray-500 pb-4 md:pb-24">
               Close to the local and discover those places you may miss. Find
               and establish your own travel style.
             </p>
-            <Link href="/travel/posts">
-              <a className="flex items-center gap-2 text-lg">
-                <span>Watch more</span>
-                <i className="fa-solid fa-angle-right" />
-              </a>
-            </Link>
+            <button className="bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full py-2 px-4 md:px-6">
+              <Link href="/travel/posts">
+                <a className="flex items-center gap-2 text-lg md:text-xl">
+                  <span>Watch more</span>
+                  <i className="fa-solid fa-angle-right" />
+                </a>
+              </Link>
+            </button>
           </div>
         </div>
       </div>
