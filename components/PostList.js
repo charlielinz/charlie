@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-import useWindowWidth from "../../hooks/useWindowWidth";
+import useWindowWidth from "../hooks/useWindowWidth";
 
-const PostList = () => {
+const PostList = ({ postDatas }) => {
   const [sortedDatas, setSortedDatas] = useState(postDatas);
   const [sortFilter, setSortFilter] = useState("date");
   useEffect(() => {
