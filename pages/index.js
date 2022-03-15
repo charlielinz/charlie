@@ -135,7 +135,7 @@ const Home = () => {
         </div>
       </div>
       <div className="flex flex-col md:flex-row gap-8 w-full py-6 md:py-28">
-        <div className="max-w-screen-md ml-6 md:px-6 min-w-[40%]">
+        <div className="max-w-screen-md ml-auto md:px-6 min-w-[40%]">
           <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
             No more struggle with your meals.
           </p>
