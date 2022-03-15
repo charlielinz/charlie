@@ -138,7 +138,7 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row gap-8 md:gap-16 w-full py-6 md:py-24">
+      {/* <div className="flex flex-col md:flex-row gap-8 md:gap-16 w-full py-6 md:py-24">
         <div className="max-w-screen-xl mx-6 md:mx-auto md:px-6 min-w-[40%]">
           <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
             No more struggle with your meals.
@@ -150,7 +150,7 @@ const Home = () => {
         <div className="max-w-screen-md mx-6">
           <div className=""></div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </>
   );
