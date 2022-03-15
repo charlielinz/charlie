@@ -151,23 +151,38 @@ const Home = () => {
             </Link>
           </button>
         </div>
-        <div className="mx-6">
+        <div className="max-w-screen-xl min-w-[40%] mx-12">
           <div className="bg-slate-100 rounded-xl shadow-lg">
             <div className="p-4 space-y-2">
-              <div className="p-4 border-t-2 border-t-gray-200">
-                <p className="">Omakase</p>
-                <p>2022-02-22</p>
-                <p>Romantic Dinner</p>
+              <div className="flex justify-between p-4 border-t-2 border-t-gray-200">
+                <div className="space-y-1">
+                  <p className="text-2xl font-bold">Omakase</p>
+                  <p className="text-sm text-gray-500">2022-02-22</p>
+                </div>
+                <p className="space-x-0.5">
+                  <i className="fa-solid fa-star text-lg text-amber-400" />
+                  <span>8.4</span>
+                </p>
               </div>
-              <div className="p-4 border-t-2 border-t-gray-200">
-                <p className="">Yakiniku</p>
-                <p>2022-01-12</p>
-                <p>Romantic Dinner</p>
+              <div className="flex justify-between p-4 border-t-2 border-t-gray-200">
+                <div className="space-y-1">
+                  <p className="text-2xl font-bold">Yakiniku</p>
+                  <p className="text-sm text-gray-500">2022-01-12</p>
+                </div>
+                <p className="space-x-0.5">
+                  <i className="fa-solid fa-star text-lg text-amber-400" />
+                  <span>7.5</span>
+                </p>
               </div>
-              <div className="p-4 border-t-2 border-t-gray-200">
-                <p className="">Pasta</p>
-                <p>2021-12-30</p>
-                <p>Romantic Dinner</p>
+              <div className="flex justify-between p-4 border-t-2 border-t-gray-200">
+                <div className="space-y-1">
+                  <p className="text-2xl font-bold">Pasta</p>
+                  <p className="text-sm text-gray-500">2021-12-30</p>
+                </div>
+                <p className="space-x-0.5">
+                  <i className="fa-solid fa-star text-lg text-amber-400" />
+                  <span>8.0</span>
+                </p>
               </div>
             </div>
           </div>
