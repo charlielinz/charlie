@@ -30,9 +30,9 @@ const Home = () => {
           <HeroBanner />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row py-16 max-w-screen-xl mx-6 md:mx-auto gap-14 md:px-6">
+      <div className="flex flex-col md:flex-row py-24 max-w-screen-xl mx-6 md:mx-auto gap-14 md:px-6">
         <div className="flex md:flex-col justify-center gap-4">
-          <div className="relative w-60 md:w-40 h-60 md:h-40">
+          <div className="relative w-60 md:w-48 h-60 md:h-48">
             <Image
               src={me}
               alt="me"
@@ -53,7 +53,7 @@ const Home = () => {
             ""
           )}
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col justify-around">
           <p className="justify-self-center md:justify-self-start mx-auto text-4xl md:text-6xl leading-tight pb-2 font-bold">
             Sharing travel & food guides!
           </p>
@@ -96,44 +96,59 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="py-16">
-        <div className="flex flex-col-reverse md:flex-row gap-16 w-full bg-gradient-to-b from-sky-50 to-gray-50 pt-8 pb-24">
-          <div className="max-w-screen-md mx-6">
-            <div className="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4 md:gap-8">
-              <div className="transform duration-200 md:scale-90 md:hover:scale-100 md:-rotate-6 overflow-visible">
-                <Image className="rounded-xl" src={travel1} alt="travel-1" />
-              </div>
-              <div className="col-start-3 transform duration-200 md:scale-90 md:hover:scale-100 md:rotate-6 md:translate-x-2 md:translate-y-15">
-                <Image className="rounded-xl" src={travel2} alt="travel-2" />
-              </div>
-              <div className="transform duration-200 md:hover:scale-110 md:translate-y-11">
-                <Image className="rounded-xl" src={travel3} alt="travel-3" />
-              </div>
-              <div className="transform duration-200 md:hover:scale-110 md:translate-y-20">
-                <Image className="rounded-xl" src={travel4} alt="travel-4" />
-              </div>
-              <div className="row-start-1 col-start-2 col-span-2 transform duration-200 md:hover:scale-110 md:translate-x-14 md:translate-y-4">
-                <Image className="rounded-xl" src={travel5} alt="travel-5" />
-              </div>
+      <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-16 w-full py-6 md:py-16">
+        <div className="max-w-screen-md mx-6">
+          <div className="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4 md:gap-8">
+            <div className="transform duration-200 md:scale-90 md:hover:scale-100 md:-rotate-6 overflow-visible">
+              <Image
+                className="rounded-xl shadow-xl"
+                src={travel1}
+                alt="travel-1"
+              />
+            </div>
+            <div className="col-start-3 transform duration-200 md:scale-90 md:hover:scale-100 md:rotate-6 md:translate-x-2 md:translate-y-15">
+              <Image className="rounded-xl" src={travel2} alt="travel-2" />
+            </div>
+            <div className="transform duration-200 md:hover:scale-110 md:translate-y-11">
+              <Image className="rounded-xl" src={travel3} alt="travel-3" />
+            </div>
+            <div className="transform duration-200 md:hover:scale-110 md:translate-y-20">
+              <Image className="rounded-xl" src={travel4} alt="travel-4" />
+            </div>
+            <div className="row-start-1 col-start-2 col-span-2 transform duration-200 md:hover:scale-110 md:translate-x-14 md:translate-y-4">
+              <Image className="rounded-xl" src={travel5} alt="travel-5" />
             </div>
           </div>
-          <div className="max-w-screen-xl mx-6 md:mx-auto py-4 md:px-6 min-w-[40%]">
-            <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
-              In-depth Travel & Private Tour Guide.
-            </p>
-            <p className="text-gray-500 pb-4 md:pb-24">
-              Close to the local and discover those places you may miss. Find
-              and establish your own travel style.
-            </p>
-            <button className="bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full py-2 px-4 md:px-6">
-              <Link href="/travel/posts">
-                <a className="flex items-center gap-2 text-lg md:text-xl">
-                  <span>Watch more</span>
-                  <i className="fa-solid fa-angle-right" />
-                </a>
-              </Link>
-            </button>
-          </div>
+        </div>
+        <div className="max-w-screen-xl mx-6 md:mx-auto py-4 md:px-6 min-w-[40%]">
+          <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
+            In-depth travel & private tour guide.
+          </p>
+          <p className="text-gray-500 pb-4 md:pb-24">
+            Close to the local and discover those places you may miss. Find and
+            establish your own travel style.
+          </p>
+          <button className="bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full py-2 px-4 md:px-6">
+            <Link href="/travel/posts">
+              <a className="flex items-center gap-2 text-lg md:text-xl">
+                <span>Watch more</span>
+                <i className="fa-solid fa-angle-right" />
+              </a>
+            </Link>
+          </button>
+        </div>
+      </div>
+      <div className="flex flex-col md:flex-row gap-8 md:gap-16 w-full py-6 md:py-24">
+        <div className="max-w-screen-xl mx-6 md:mx-auto md:px-6 min-w-[40%]">
+          <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
+            No more struggle with your meals.
+          </p>
+          <p className="text-gray-500 pb-4 md:pb-12">
+            Tons of food official review by Charlie Lin, the next Michelin.
+          </p>
+        </div>
+        <div className="max-w-screen-md mx-6">
+          <div className=""></div>
         </div>
       </div>
       <Footer />

@@ -1,4 +1,26 @@
-export const foodPosts = {};
+export const foodPosts = {
+  "ji-an-sushi": {
+    slug: "ji-an-sushi",
+    cover_image: "/img/food/ji-an-sushi/cover-image.jpg",
+    title: "濟安鮨 日本料理",
+    date: "2022-03-01",
+    rate: "8.5",
+  },
+  "kabin": {
+    slug: "kabin",
+    cover_image: "/img/food/kabin/cover-image.jpg",
+    title: "Kabin",
+    date: "2022-03-13",
+    rate: "8.1",
+  },
+  "jen-yuan": {
+    slug: "jen-yuan",
+    cover_image: "/img/food/jen-yuan/cover-image.jpg",
+    title: "珍園燒臘便當",
+    date: "2022-03-08",
+    rate: "8.2",
+  }
+};
 
 export const travelPosts = {
   "kansai-1": {
