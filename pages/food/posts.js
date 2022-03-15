@@ -4,13 +4,12 @@ import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { foodPosts } from "../../posts/posts";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
 const posts = ({ postDatas }) => {
   const [sortedDatas, setSortedDatas] = useState(postDatas);
   const [sortFilter, setSortFilter] = useState("date");
-
   postDatas.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
-
   useEffect(() => {
     setSortedDatas(postDatas);
   }, [postDatas]);
@@ -25,6 +24,17 @@ const posts = ({ postDatas }) => {
       ...postDatas.sort((a, b) => Date.parse(b.date) - Date.parse(a.date)),
     ]);
   };
+
+  const windowWidth = useWindowWidth();
+  const [imageSize, setImageSize] = useState({ width: "120", height: "160" });
+  useEffect(() => {
+    if (windowWidth >= 768) {
+      setImageSize({ width: "120", height: "160" });
+    } else if (windowWidth < 768) {
+      setImageSize({ width: "90", height: "120" });
+    }
+  }, [windowWidth]);
+
   return (
     <>
       <Navbar />
@@ -62,17 +72,23 @@ const posts = ({ postDatas }) => {
             className="max-w-screen-md border-t-2 border-t-slate-200"
             key={index}
           >
-            <div className="flex gap-4 py-4 px-4">
-              <Image
-                src={postData.cover_image}
-                alt="cover-image"
-                width={120}
-                height={160}
-                className="rounded-lg"
-              />
+            <div className="flex gap-4 py-4 md:px-4">
+              <div className="shrink-0">
+                <Image
+                  src={postData.cover_image}
+                  alt="cover-image"
+                  width={imageSize.width}
+                  height={imageSize.height}
+                  className="rounded-lg"
+                />
+              </div>
               <div className="space-y-2">
-                <div className="text-2xl font-semibold">{postData.title}</div>
-                <div className="text-gray-500">{postData.date}</div>
+                <div className="text-xl md:text-2xl font-semibold">
+                  {postData.title}
+                </div>
+                <div className="text-sm md:text-base text-gray-500">
+                  {postData.date}
+                </div>
               </div>
               <div className="flex flex-col ml-auto justify-between">
                 <div className="flex gap-1 self-end">
