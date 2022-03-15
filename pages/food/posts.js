@@ -7,7 +7,7 @@ import SortButton from "../../components/SortButton";
 import PostList from "../../components/PostList";
 import { foodPosts } from "../../posts/posts";
 
-const posts = ({ postDatas }) => {
+const Posts = ({ postDatas }) => {
   const windowWidth = useWindowWidth();
   const [sortedPostDatas, setSortedPostDatas] = useState(postDatas);
   const [sortFilter, setSortFilter] = useState("date");
@@ -58,4 +58,4 @@ export const getStaticProps = async () => {
   };
 };
 
-export default posts;
+export default Posts;

@@ -3,7 +3,7 @@ import Footer from "../../components/Footer";
 import PostCard from "../../components/PostCard";
 import { travelPosts } from "../../posts/posts";
 
-const posts = ({ postDatas }) => {
+const Posts = ({ postDatas }) => {
   return (
     <>
       <Navbar />
@@ -25,4 +25,4 @@ export const getStaticProps = async () => {
   };
 };
 
-export default posts;
+export default Posts;

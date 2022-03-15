@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 
-const recitals = () => {
+const Recitals = () => {
   return (
     <>
       <Navbar />
@@ -8,4 +8,4 @@ const recitals = () => {
   );
 };
 
-export default recitals;
+export default Recitals;
