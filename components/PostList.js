@@ -1,68 +1,9 @@
-import { useState, useEffect } from "react";
 import Image from "next/image";
 
-import useWindowWidth from "../hooks/useWindowWidth";
-
-const PostList = ({postDatas}) => {
-  const [sortedDatas, setSortedDatas] = useState(postDatas);
-  const [sortFilter, setSortFilter] = useState("date");
-  useEffect(() => {
-    postDatas.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
-    setSortedDatas(postDatas);
-  }, [postDatas]);
-
-  const sortByRate = () => {
-    setSortedDatas((postDatas) => [
-      ...postDatas.sort((a, b) => b.rate - a.rate),
-    ]);
-  };
-  const sortByDate = () => {
-    setSortedDatas((postDatas) => [
-      ...postDatas.sort((a, b) => Date.parse(b.date) - Date.parse(a.date)),
-    ]);
-  };
-
-  const windowWidth = useWindowWidth();
-  const [imageSize, setImageSize] = useState({ width: "120", height: "160" });
-  useEffect(() => {
-    if (windowWidth >= 768) {
-      setImageSize({ width: "120", height: "160" });
-    } else if (windowWidth < 768) {
-      setImageSize({ width: "90", height: "120" });
-    }
-  }, [windowWidth]);
-
+const PostList = ({ sortedPostDatas, imageSize }) => {
   return (
-    <div className="py-12 max-w-screen-xl mx-6 md:mx-auto md:px-6">
-      <div className="flex gap-8 pb-8">
-        <button
-          onClick={() => {
-            sortByDate(postDatas);
-            setSortFilter("date");
-          }}
-          className={
-            sortFilter == "date"
-              ? "py-1 px-5 bg-slate-500 text-gray-100 rounded-lg text-lg"
-              : "py-1 px-5 bg-slate-200 rounded-lg text-lg"
-          }
-        >
-          New Posts
-        </button>
-        <button
-          onClick={() => {
-            sortByRate(postDatas);
-            setSortFilter("rate");
-          }}
-          className={
-            sortFilter == "rate"
-              ? "py-1 px-5 bg-slate-500 text-gray-100 rounded-lg text-lg"
-              : "py-1 px-5 bg-slate-200 rounded-lg text-lg"
-          }
-        >
-          Top Rated
-        </button>
-      </div>
-      {sortedDatas.map((postData, index) => (
+    <>
+      {sortedPostDatas.map((postData, index) => (
         <div
           className="max-w-screen-md border-t-2 border-t-slate-200"
           key={index}
@@ -97,7 +38,7 @@ const PostList = ({postDatas}) => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

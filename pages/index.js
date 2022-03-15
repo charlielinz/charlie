@@ -100,11 +100,7 @@ const Home = () => {
         <div className="max-w-screen-md mx-6">
           <div className="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4 md:gap-8">
             <div className="transform duration-200 md:scale-90 md:hover:scale-100 md:-rotate-6 overflow-visible">
-              <Image
-                className="rounded-xl shadow-xl"
-                src={travel1}
-                alt="travel-1"
-              />
+              <Image className="rounded-xl" src={travel1} alt="travel-1" />
             </div>
             <div className="col-start-3 transform duration-200 md:scale-90 md:hover:scale-100 md:rotate-6 md:translate-x-2 md:translate-y-15">
               <Image className="rounded-xl" src={travel2} alt="travel-2" />
@@ -138,17 +134,43 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row gap-8 md:gap-16 w-full py-6 md:py-24">
-        <div className="max-w-screen-xl mx-6 md:mx-auto md:px-6 min-w-[40%]">
+      <div className="flex flex-col md:flex-row gap-8 w-full py-6 md:py-24">
+        <div className="max-w-screen-md mx-6 md:px-6 min-w-[40%]">
           <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
             No more struggle with your meals.
           </p>
-          <p className="text-gray-500 pb-4 md:pb-12">
+          <p className="text-gray-500 pb-4 md:pb-24">
             Tons of food official review by Charlie Lin, the next Michelin.
           </p>
+          <button className="bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full py-2 px-4 md:px-6">
+            <Link href="/food/posts">
+              <a className="flex items-center gap-2 text-lg md:text-xl">
+                <span>Watch more</span>
+                <i className="fa-solid fa-angle-right" />
+              </a>
+            </Link>
+          </button>
         </div>
-        <div className="max-w-screen-md mx-6">
-          <div className=""></div>
+        <div className="mx-6">
+          <div className="bg-slate-100 rounded-xl shadow-lg">
+            <div className="p-4 space-y-2">
+              <div className="p-4 border-t-2 border-t-gray-200">
+                <p className="">Omakase</p>
+                <p>2022-02-22</p>
+                <p>Romantic Dinner</p>
+              </div>
+              <div className="p-4 border-t-2 border-t-gray-200">
+                <p className="">Yakiniku</p>
+                <p>2022-01-12</p>
+                <p>Romantic Dinner</p>
+              </div>
+              <div className="p-4 border-t-2 border-t-gray-200">
+                <p className="">Pasta</p>
+                <p>2021-12-30</p>
+                <p>Romantic Dinner</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />
