@@ -3,13 +3,13 @@ import Image from "next/image";
 
 import useWindowWidth from "../hooks/useWindowWidth";
 
-const PostList = ({ postDatas }) => {
+const PostList = ({postDatas}) => {
   const [sortedDatas, setSortedDatas] = useState(postDatas);
   const [sortFilter, setSortFilter] = useState("date");
   useEffect(() => {
     postDatas.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
     setSortedDatas(postDatas);
-  }, []);
+  }, [postDatas]);
 
   const sortByRate = () => {
     setSortedDatas((postDatas) => [
