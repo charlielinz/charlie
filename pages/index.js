@@ -153,7 +153,7 @@ const Home = () => {
             </Link>
           </button>
         </div>
-        <div className="min-w-[45%] mx-12">
+        <div className="min-w-[45%] mx-12 py-8 md:py-0">
           <div className="bg-slate-100 rounded-xl shadow-lg">
             <div className="p-4 space-y-2">
               <div className="flex gap-8 py-2">
@@ -200,65 +200,67 @@ const Home = () => {
                   Top Rated
                 </motion.button>
               </div>
-              <div className="p-4 border-t-2 border-t-gray-200">
-                <div className="flex justify-between">
-                  <div className="space-y-1">
-                    <p className="text-2xl font-bold">Omakase</p>
-                    <p className="text-sm text-gray-500">2022-02-22</p>
+              <div className="py-2">
+                <div className="p-4 border-t-2 border-t-gray-200">
+                  <div className="flex justify-between">
+                    <div className="space-y-1">
+                      <p className="text-2xl font-bold">Omakase</p>
+                      <p className="text-sm text-gray-500">2022-02-22</p>
+                    </div>
+                    <p className="space-x-0.5 pt-1">
+                      <i className="fa-solid fa-star text-lg text-amber-400" />
+                      <span>8.4</span>
+                    </p>
                   </div>
-                  <p className="space-x-0.5 pt-1">
-                    <i className="fa-solid fa-star text-lg text-amber-400" />
-                    <span>8.4</span>
-                  </p>
                 </div>
-              </div>
-              <div className="p-4 border-t-2 border-t-gray-200">
-                <motion.div
-                  className="flex justify-between"
-                  initial={{ translateY: 0 }}
-                  animate={{ translateY: 98 }}
-                  transition={{
-                    delay: 1,
-                    duration: "0.5",
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    repeatDelay: "1.5",
-                    ease: "easeInOut",
-                  }}
-                >
-                  <div className="space-y-1 pt-1">
-                    <p className="text-2xl font-bold">Yakiniku</p>
-                    <p className="text-sm text-gray-500">2022-01-12</p>
-                  </div>
-                  <p className="space-x-0.5">
-                    <i className="fa-solid fa-star text-lg text-amber-400" />
-                    <span>7.5</span>
-                  </p>
-                </motion.div>
-              </div>
-              <div className="p-4 border-t-2 border-t-gray-200">
-                <motion.div
-                  className="flex justify-between"
-                  initial={{ translateY: 0 }}
-                  animate={{ translateY: -98 }}
-                  transition={{
-                    delay: 1,
-                    duration: "0.5",
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    repeatDelay: "1.5",
-                    ease: "easeInOut",
-                  }}
-                >
-                  <div className="space-y-1">
-                    <p className="text-2xl font-bold">Pasta</p>
-                    <p className="text-sm text-gray-500">2021-12-30</p>
-                  </div>
-                  <p className="space-x-0.5 pt-1">
-                    <i className="fa-solid fa-star text-lg text-amber-400" />
-                    <span>8.0</span>
-                  </p>
-                </motion.div>
+                <div className="p-4 border-t-2 border-t-gray-200">
+                  <motion.div
+                    className="flex justify-between"
+                    initial={{ translateY: 0 }}
+                    animate={{ translateY: 90 }}
+                    transition={{
+                      delay: 1,
+                      duration: "0.5",
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      repeatDelay: "1.5",
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <div className="space-y-1">
+                      <p className="text-2xl font-bold">Yakiniku</p>
+                      <p className="text-sm text-gray-500">2022-01-12</p>
+                    </div>
+                    <p className="space-x-0.5 pt-1">
+                      <i className="fa-solid fa-star text-lg text-amber-400" />
+                      <span>7.5</span>
+                    </p>
+                  </motion.div>
+                </div>
+                <div className="p-4 border-t-2 border-t-gray-200">
+                  <motion.div
+                    className="flex justify-between"
+                    initial={{ translateY: 0 }}
+                    animate={{ translateY: -90 }}
+                    transition={{
+                      delay: 1,
+                      duration: "0.5",
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      repeatDelay: "1.5",
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <div className="space-y-1">
+                      <p className="text-2xl font-bold">Pasta</p>
+                      <p className="text-sm text-gray-500">2021-12-30</p>
+                    </div>
+                    <p className="space-x-0.5 pt-1">
+                      <i className="fa-solid fa-star text-lg text-amber-400" />
+                      <span>8.0</span>
+                    </p>
+                  </motion.div>
+                </div>
               </div>
             </div>
           </div>
