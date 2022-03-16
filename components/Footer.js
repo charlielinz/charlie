@@ -39,12 +39,17 @@ const Footer = () => {
                   <a
                     href="https://www.facebook.com/profile.php?id=100000764741703"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     Facebook
                   </a>
                 </li>
                 <li>
-                  <a href="https://line.me/ti/p/uReKXCIUDz" target="_blank">
+                  <a
+                    href="https://line.me/ti/p/uReKXCIUDz"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Line
                   </a>
                 </li>
@@ -52,6 +57,7 @@ const Footer = () => {
                   <a
                     href="https://www.instagram.com/eilrahc.c_/"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     Instagram
                   </a>
@@ -60,12 +66,17 @@ const Footer = () => {
                   <a
                     href="https://www.linkedin.com/in/charlie-lin-0a424b117/"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     Linkedin
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/charlielinz" target="_blank">
+                  <a
+                    href="https://github.com/charlielinz"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Github
                   </a>
                 </li>
