@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import useWindowWidth from "../hooks/useWindowWidth";
 import HeroBanner from "../components/HeroBanner";
 import Navbar from "../components/Navbar";
@@ -19,6 +20,7 @@ import travel2 from "../public/img/index/travel-2.jpg";
 import travel3 from "../public/img/index/travel-3.jpg";
 import travel4 from "../public/img/index/travel-4.jpg";
 import travel5 from "../public/img/index/travel-5.jpg";
+import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const windowWidth = useWindowWidth();
@@ -96,8 +98,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-16 w-full py-6 md:py-16">
-        <div className="max-w-screen-md mx-6">
+      <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-16 w-full py-6 md:py-16 max-w-screen-xl mx-auto">
+        <div className="mx-6">
           <div className="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4 md:gap-8">
             <div className="transform duration-200 md:scale-90 md:hover:scale-100 md:-rotate-6 overflow-visible">
               <Image className="rounded-xl" src={travel1} alt="travel-1" />
@@ -116,7 +118,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-screen-xl mx-6 md:mx-auto py-4 md:px-6 min-w-[40%]">
+        <div className="mx-6 md:mx-auto py-4 md:px-6 min-w-[40%]">
           <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
             In-depth travel & private tour guide.
           </p>
@@ -134,8 +136,8 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row gap-8 w-full py-6 md:py-28">
-        <div className="max-w-screen-md ml-auto md:px-6 min-w-[40%]">
+      <div className="flex flex-col md:flex-row w-full py-6 md:py-28 max-w-screen-xl mx-auto">
+        <div className="mx-6 md:ml-auto md:px-6 min-w-[40%]">
           <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
             No more struggle with your meals.
           </p>
@@ -151,46 +153,112 @@ const Home = () => {
             </Link>
           </button>
         </div>
-        <div className="max-w-screen-xl min-w-[45%] mx-12">
+        <div className="min-w-[45%] mx-12">
           <div className="bg-slate-100 rounded-xl shadow-lg">
             <div className="p-4 space-y-2">
               <div className="flex gap-8 py-2">
-                <button className="py-1 px-5 bg-slate-500 text-gray-100 rounded-lg text-lg">
+                <motion.button
+                  className="py-1 px-5 rounded-lg text-lg shadow-md"
+                  initial={{
+                    backgroundColor: "rgb(100 116 139)",
+                    color: "rgb(243 244 246)",
+                  }}
+                  animate={{
+                    backgroundColor: "rgb(226 232 240)",
+                    color: "rgb(55 65 81)",
+                  }}
+                  transition={{
+                    delay: 1,
+                    duration: "0.5",
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    repeatDelay: "1.5",
+                    ease: "easeInOut",
+                  }}
+                >
                   New Post
-                </button>
-                <button className="py-1 px-5 bg-slate-200 rounded-lg text-lg">
+                </motion.button>
+                <motion.button
+                  className="py-1 px-5 rounded-lg text-lg shadow-md"
+                  initial={{
+                    backgroundColor: "rgb(226 232 240)",
+                    color: "rgb(55 65 81)",
+                  }}
+                  animate={{
+                    backgroundColor: "rgb(100 116 139)",
+                    color: "rgb(243 244 246)",
+                  }}
+                  transition={{
+                    delay: 1,
+                    duration: "0.5",
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    repeatDelay: "1.5",
+                    ease: "easeInOut",
+                  }}
+                >
                   Top Rated
-                </button>
+                </motion.button>
               </div>
-              <div className="flex justify-between p-4 border-t-2 border-t-gray-200">
-                <div className="space-y-1">
-                  <p className="text-2xl font-bold">Omakase</p>
-                  <p className="text-sm text-gray-500">2022-02-22</p>
+              <div className="p-4 border-t-2 border-t-gray-200">
+                <div className="flex justify-between">
+                  <div className="space-y-1">
+                    <p className="text-2xl font-bold">Omakase</p>
+                    <p className="text-sm text-gray-500">2022-02-22</p>
+                  </div>
+                  <p className="space-x-0.5">
+                    <i className="fa-solid fa-star text-lg text-amber-400" />
+                    <span>8.4</span>
+                  </p>
                 </div>
-                <p className="space-x-0.5">
-                  <i className="fa-solid fa-star text-lg text-amber-400" />
-                  <span>8.4</span>
-                </p>
               </div>
-              <div className="flex justify-between p-4 border-t-2 border-t-gray-200">
-                <div className="space-y-1">
-                  <p className="text-2xl font-bold">Yakiniku</p>
-                  <p className="text-sm text-gray-500">2022-01-12</p>
-                </div>
-                <p className="space-x-0.5">
-                  <i className="fa-solid fa-star text-lg text-amber-400" />
-                  <span>7.5</span>
-                </p>
+              <div className="p-4 border-t-2 border-t-gray-200">
+                <motion.div
+                  className="flex justify-between"
+                  initial={{ translateY: 0 }}
+                  animate={{ translateY: 98 }}
+                  transition={{
+                    delay: 1,
+                    duration: "0.5",
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    repeatDelay: "1.5",
+                    ease: "easeInOut",
+                  }}
+                >
+                  <div className="space-y-1">
+                    <p className="text-2xl font-bold">Yakiniku</p>
+                    <p className="text-sm text-gray-500">2022-01-12</p>
+                  </div>
+                  <p className="space-x-0.5">
+                    <i className="fa-solid fa-star text-lg text-amber-400" />
+                    <span>7.5</span>
+                  </p>
+                </motion.div>
               </div>
-              <div className="flex justify-between p-4 border-t-2 border-t-gray-200">
-                <div className="space-y-1">
-                  <p className="text-2xl font-bold">Pasta</p>
-                  <p className="text-sm text-gray-500">2021-12-30</p>
-                </div>
-                <p className="space-x-0.5">
-                  <i className="fa-solid fa-star text-lg text-amber-400" />
-                  <span>8.0</span>
-                </p>
+              <div className="p-4 border-t-2 border-t-gray-200">
+                <motion.div
+                  className="flex justify-between"
+                  initial={{ translateY: 0 }}
+                  animate={{ translateY: -98 }}
+                  transition={{
+                    delay: 1,
+                    duration: "0.5",
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    repeatDelay: "1.5",
+                    ease: "easeInOut",
+                  }}
+                >
+                  <div className="space-y-1">
+                    <p className="text-2xl font-bold">Pasta</p>
+                    <p className="text-sm text-gray-500">2021-12-30</p>
+                  </div>
+                  <p className="space-x-0.5">
+                    <i className="fa-solid fa-star text-lg text-amber-400" />
+                    <span>8.0</span>
+                  </p>
+                </motion.div>
               </div>
             </div>
           </div>
