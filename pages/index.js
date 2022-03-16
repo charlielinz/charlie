@@ -20,7 +20,8 @@ import travel2 from "../public/img/index/travel-2.jpg";
 import travel3 from "../public/img/index/travel-3.jpg";
 import travel4 from "../public/img/index/travel-4.jpg";
 import travel5 from "../public/img/index/travel-5.jpg";
-import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+
+import recitalPoster from "../public/img/index/recital-poster.jpg";
 
 const Home = () => {
   const windowWidth = useWindowWidth();
@@ -57,10 +58,10 @@ const Home = () => {
         </div>
         <div className="flex flex-col justify-around">
           <p className="justify-self-center md:justify-self-start mx-auto text-4xl md:text-6xl leading-tight pb-2 font-bold">
-            Sharing travel & food guides!
+            Get youself ready for adventures!
           </p>
           <p className="pb-4 xs:pb-16 text-gray-500">
-            A place you can find informations for travel and enjoy food porn.
+            A place to discover, taste and chill.
           </p>
           <div className="flex flex-col gap-1">
             <div>
@@ -263,6 +264,45 @@ const Home = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col-reverse md:flex-row justify-between max-w-screen-xl mx-auto py-6">
+        <span className="mx-12">
+          <Image
+            src={recitalPoster}
+            alt="recital-poster"
+            width={350}
+            height={500}
+          />
+        </span>
+        <div className="max-w-screen-md mx-6">
+          <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
+            Approaching to classical music is way too easy.
+          </p>
+          <p className="text-gray-500 pb-4 md:pb-12">
+            Get into the classical music scene with this guide, enjoy several
+            recitals here.
+          </p>
+          <div className="hidden md:block">
+            <p className="text-2xl font-semibold py-4">
+              One solo & Two chambers
+            </p>
+            <ul className="text-gray-500 pb-12">
+              <li className="list-disc list-inside">Piano solo recital</li>
+              <li className="list-disc list-inside">Piano trio chamber - piano, oboe, bassoon</li>
+              <li className="list-disc list-inside">Piano trio chamber - piano, flute, clarinet</li>
+            </ul>
+          </div>
+          <div className="pb-4">
+            <button className="bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full py-2 px-4 md:px-6">
+              <Link href="/recital">
+                <a className="flex items-center gap-2 text-lg md:text-xl">
+                  <span>Watch more</span>
+                  <i className="fa-solid fa-angle-right" />
+                </a>
+              </Link>
+            </button>
           </div>
         </div>
       </div>
