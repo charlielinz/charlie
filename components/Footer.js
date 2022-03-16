@@ -36,25 +36,38 @@ const Footer = () => {
               <p className="text-gray-500 pt-4 pb-6">Contact me</p>
               <ul className="grid grid-rows-4 grid-flow-col gap-2 text-sm">
                 <li className="md:w-24 lg:w-28">
-                  <Link href="https://www.facebook.com/profile.php?id=100000764741703">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100000764741703"
+                    target="_blank"
+                  >
                     Facebook
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="https://line.me/ti/p/uReKXCIUDz">Line</Link>
+                  <a href="https://line.me/ti/p/uReKXCIUDz" target="_blank">
+                    Line
+                  </a>
                 </li>
                 <li>
-                  <Link href="https://www.instagram.com/eilrahc.c_/">
+                  <a
+                    href="https://www.instagram.com/eilrahc.c_/"
+                    target="_blank"
+                  >
                     Instagram
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="https://www.linkedin.com/in/charlie-lin-0a424b117/">
+                  <a
+                    href="https://www.linkedin.com/in/charlie-lin-0a424b117/"
+                    target="_blank"
+                  >
                     Linkedin
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="https://github.com/charlielinz">Github</Link>
+                  <a href="https://github.com/charlielinz" target="_blank">
+                    Github
+                  </a>
                 </li>
               </ul>
             </div>
