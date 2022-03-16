@@ -14,8 +14,8 @@ const SortButton = ({
         }}
         className={
           sortFilter == "date"
-            ? "py-1 px-5 bg-slate-500 rounded-lg text-lg text-gray-100"
-            : "py-1 px-5 bg-slate-200 rounded-lg text-lg"
+            ? "py-1 px-5 bg-slate-500 rounded-lg text-lg shadow-lg text-gray-100"
+            : "py-1 px-5 bg-slate-200 rounded-lg text-lg shadow-lg"
         }
       >
         New Posts
@@ -27,8 +27,8 @@ const SortButton = ({
         }}
         className={
           sortFilter == "rate"
-            ? "py-1 px-5 bg-slate-500 rounded-lg text-lg text-gray-100"
-            : "py-1 px-5 bg-slate-200 rounded-lg text-lg"
+            ? "py-1 px-5 bg-slate-500 rounded-lg text-lg shadow-lg text-gray-100"
+            : "py-1 px-5 bg-slate-200 rounded-lg text-lg shadow-lg"
         }
       >
         Top Rated

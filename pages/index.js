@@ -206,7 +206,7 @@ const Home = () => {
                     <p className="text-2xl font-bold">Omakase</p>
                     <p className="text-sm text-gray-500">2022-02-22</p>
                   </div>
-                  <p className="space-x-0.5">
+                  <p className="space-x-0.5 pt-1">
                     <i className="fa-solid fa-star text-lg text-amber-400" />
                     <span>8.4</span>
                   </p>
@@ -226,7 +226,7 @@ const Home = () => {
                     ease: "easeInOut",
                   }}
                 >
-                  <div className="space-y-1">
+                  <div className="space-y-1 pt-1">
                     <p className="text-2xl font-bold">Yakiniku</p>
                     <p className="text-sm text-gray-500">2022-01-12</p>
                   </div>
@@ -254,7 +254,7 @@ const Home = () => {
                     <p className="text-2xl font-bold">Pasta</p>
                     <p className="text-sm text-gray-500">2021-12-30</p>
                   </div>
-                  <p className="space-x-0.5">
+                  <p className="space-x-0.5 pt-1">
                     <i className="fa-solid fa-star text-lg text-amber-400" />
                     <span>8.0</span>
                   </p>
