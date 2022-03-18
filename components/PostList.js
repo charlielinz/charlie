@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const PostList = ({ sortedPostDatas, imageSize }) => {
   return (
@@ -32,7 +33,9 @@ const PostList = ({ sortedPostDatas, imageSize }) => {
                 <div className="text-lg">{postData.rate}</div>
               </div>
               <div className="bg-gray-200 hover:bg-gray-300 duration-200 rounded-md text-center px-4 py-1">
-                <a>details</a>
+                <Link href={`/food/posts/${postData.slug}`}>
+                  <a>details</a>
+                </Link>
               </div>
             </div>
           </div>
