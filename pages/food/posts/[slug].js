@@ -1,34 +1,32 @@
 import fs from "fs";
 import path from "path";
-import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import Carousel from "../../../components/Carousel";
+import { components } from "../../../posts/foodposts-handler";
 import { foodPosts } from "../../../posts/posts";
 
 const Post = ({ postContent, postData, postImgPaths }) => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col md:flex-row md:justify-between py-6 md:px-6 max-w-screen-xl mx-6 md:mx-auto">
+      <div className="md:flex gap-4 py-6 md:px-6 max-w-screen-xl mx-6 md:mx-auto">
         <Carousel postImgPaths={postImgPaths} />
-        <div className="flex flex-col max-w-screen-md min-w-[40%]">
-          <div className="flex pb-4">
-            <div>
-              <p className="text-xl md:text-2xl font-semibold">
-                {postData.title}
-              </p>
-              <p className="text-sm md:text-base text-gray-500">
-                {postData.date}
-              </p>
-            </div>
-            <div className="flex gap-1 ml-auto">
-              <i className="fa-solid fa-star text-lg text-amber-400"></i>
-              <p className="text-lg">{postData.rate}</p>
-            </div>
+        <div className="flex py-6 md:py-0 w-full">
+          <div>
+            <p className="text-xl md:text-2xl font-semibold">
+              {postData.title}
+            </p>
+            <p className="text-sm md:text-base text-gray-500 pb-6">
+              {postData.date}
+            </p>
+            <ReactMarkdown components={components}>{postContent}</ReactMarkdown>
           </div>
-          <ReactMarkdown>{postContent}</ReactMarkdown>
+          <div className="flex gap-1 ml-auto">
+            <i className="fa-solid fa-star text-lg text-amber-400"></i>
+            <p className="text-lg">{postData.rate}</p>
+          </div>
         </div>
       </div>
       <Footer />

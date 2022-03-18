@@ -22,27 +22,16 @@ const Carousel = ({ postImgPaths }) => {
       }
     });
   };
+  const getDistance = (a, b) => {
+    return Math.abs(a - b);
+  };
   const getImgClassName = (index) => {
-    if (currentIndex === 0) {
-      if (index === currentIndex) {
-        return "";
-      } else if (index === currentIndex + 1 || index === currentIndex + 2) {
-        return "opacity-50";
-      } else {
-        return "hidden";
-      }
-    } else if (currentIndex === length - 1) {
-      if (index === currentIndex) {
-        return "";
-      } else if (index === currentIndex - 1 || index === currentIndex - 2) {
-        return "opacity-50";
-      } else {
-        return "hidden";
-      }
-    }
-    if (index === currentIndex) {
+    const isEdge = currentIndex === 0 || currentIndex === length - 1;
+    const neighborDistance = isEdge ? 2 : 1;
+    const distance = getDistance(index, currentIndex);
+    if (distance === 0) {
       return "";
-    } else if (index === currentIndex - 1 || index === currentIndex + 1) {
+    } else if (distance <= neighborDistance) {
       return "opacity-50";
     } else {
       return "hidden";
@@ -58,7 +47,10 @@ const Carousel = ({ postImgPaths }) => {
           height={360}
         />
       </span>
-      <button onClick={previousImg} className="col-start-1 col-end-2 row-start-2 row-end-3">
+      <button
+        onClick={previousImg}
+        className="col-start-1 col-end-2 row-start-2 row-end-3"
+      >
         <i className="fa-solid fa-angle-left"></i>
       </button>
       <div className="col-start-2 col-end-3 flex justify-between mx-1 md:mx-0">
@@ -74,7 +66,10 @@ const Carousel = ({ postImgPaths }) => {
           </span>
         ))}
       </div>
-      <button onClick={nextImg} className="col-start-3 col-end-4 row-start-2 row-end-3">
+      <button
+        onClick={nextImg}
+        className="col-start-3 col-end-4 row-start-2 row-end-3"
+      >
         <i className="fa-solid fa-angle-right"></i>
       </button>
     </div>
