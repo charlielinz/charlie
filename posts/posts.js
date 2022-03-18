@@ -5,13 +5,15 @@ export const foodPosts = {
     title: "濟安鮨 日本料理",
     date: "2022-03-01",
     rate: "8.5",
+    price: "> $2000",
   },
-  "kabin": {
+  kabin: {
     slug: "kabin",
     cover_image: "/img/food/kabin/cover-image.jpg",
     title: "Kabin",
     date: "2022-03-13",
     rate: "8.1",
+    price: "$500 - $1000"
   },
   "jen-yuan": {
     slug: "jen-yuan",
@@ -19,7 +21,8 @@ export const foodPosts = {
     title: "珍園燒臘便當",
     date: "2022-03-08",
     rate: "8.2",
-  }
+    price: "< $200"
+  },
 };
 
 export const travelPosts = {

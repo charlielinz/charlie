@@ -19,12 +19,15 @@ const PostList = ({ sortedPostDatas, imageSize }) => {
                 className="rounded-lg"
               />
             </div>
-            <div className="space-y-2">
+            <div className="flex flex-col">
               <div className="text-xl md:text-2xl font-semibold">
                 {postData.title}
               </div>
               <div className="text-sm md:text-base text-gray-500">
                 {postData.date}
+              </div>
+              <div className="mt-auto mb-2">
+                {postData.price}
               </div>
             </div>
             <div className="flex flex-col ml-auto justify-between">
@@ -32,7 +35,7 @@ const PostList = ({ sortedPostDatas, imageSize }) => {
                 <i className="fa-solid fa-star text-lg text-amber-400" />
                 <div className="text-lg">{postData.rate}</div>
               </div>
-              <div className="bg-gray-200 hover:bg-gray-300 duration-200 rounded-md text-center px-4 py-1">
+              <div className="bg-gray-200 hover:bg-gray-300 duration-200 rounded-md text-center px-4 py-1 mb-2">
                 <Link href={`/food/posts/${postData.slug}`}>
                   <a>details</a>
                 </Link>
