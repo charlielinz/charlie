@@ -22,7 +22,7 @@ const Dropdown = ({
       >
         <span className="shrink-0 font-black text-black">{optionName}</span>
         <i
-          class={
+          className={
             isMenuOpened
               ? "fa-solid fa-chevron-down transition-all duration-200 -rotate-180"
               : "fa-solid fa-chevron-down transition-all duration-200"
