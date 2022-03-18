@@ -27,7 +27,7 @@ const PostList = ({ sortedPostDatas, imageSize }) => {
                 {postData.date}
               </div>
               <div className="mt-auto mb-2">
-                {postData.price}
+                {postData.price.average}
               </div>
             </div>
             <div className="flex flex-col ml-auto justify-between">

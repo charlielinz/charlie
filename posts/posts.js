@@ -5,7 +5,10 @@ export const foodPosts = {
     title: "濟安鮨 日本料理",
     date: "2022-03-01",
     rate: "8.5",
-    price: "> $2000",
+    price: {
+      average: "> $2000",
+      tier: 2000,
+    },
   },
   kabin: {
     slug: "kabin",
@@ -13,7 +16,10 @@ export const foodPosts = {
     title: "Kabin",
     date: "2022-03-13",
     rate: "8.1",
-    price: "$500 - $1000"
+    price: {
+      average: "$500 - $1000",
+      tier: 500,
+    },
   },
   "jen-yuan": {
     slug: "jen-yuan",
@@ -21,7 +27,10 @@ export const foodPosts = {
     title: "珍園燒臘便當",
     date: "2022-03-08",
     rate: "8.2",
-    price: "< $200"
+    price: {
+      average: "< $200",
+      tier: 0,
+    },
   },
 };
 
