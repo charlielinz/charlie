@@ -4,7 +4,6 @@ const Dropdown = ({
   optionName,
   setOptionName,
   options,
-  formula
 }) => {
   return (
     <div
@@ -37,7 +36,6 @@ const Dropdown = ({
             onClick={() => {
               setOptionName(option);
               setIsMenuOpened(false)
-              formula(option);
             }}
           >
             {option}
