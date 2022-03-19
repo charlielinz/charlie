@@ -8,7 +8,7 @@ import Dropdown from "../../components/Dropdown";
 import { foodPosts } from "../../posts/posts";
 
 const Posts = ({ postDatas }) => {
-  const [targetPostDatas, setTargetPostDatas] = useState(postDatas);
+  const [postsDatas, setPostsDatas] = useState(postDatas);
   const [isSortMenuOpened, setIsSortMenuOpened] = useState(false);
   const [sortBy, setSortBy] = useState("Sort by");
   const sortOptions = [
@@ -19,28 +19,28 @@ const Posts = ({ postDatas }) => {
     "Price: low to high",
   ];
   const sortByDate = () => {
-    setTargetPostDatas((postDatas) => [
-      ...postDatas.sort((a, b) => Date.parse(b.date) - Date.parse(a.date)),
+    setPostsDatas((postsDatas) => [
+      ...postsDatas.sort((a, b) => Date.parse(b.date) - Date.parse(a.date)),
     ]);
   };
   const sortByRateDesc = () => {
-    setTargetPostDatas((postDatas) => [
-      ...postDatas.sort((a, b) => b.rate - a.rate),
+    setPostsDatas((postsDatas) => [
+      ...postsDatas.sort((a, b) => b.rate - a.rate),
     ]);
   };
   const sortByRateAsc = () => {
-    setTargetPostDatas((postDatas) => [
-      ...postDatas.sort((a, b) => a.rate - b.rate),
+    setPostsDatas((postsDatas) => [
+      ...postsDatas.sort((a, b) => a.rate - b.rate),
     ]);
   };
   const sortByPriceDesc = () => {
-    setTargetPostDatas((postDatas) => [
-      ...postDatas.sort((a, b) => b.price.tier - a.price.tier),
+    setPostsDatas((postsDatas) => [
+      ...postsDatas.sort((a, b) => b.price.tier - a.price.tier),
     ]);
   };
   const sortByPriceAsc = () => {
-    setTargetPostDatas((postDatas) => [
-      ...postDatas.sort((a, b) => a.price.tier - b.price.tier),
+    setPostsDatas((postsDatas) => [
+      ...postsDatas.sort((a, b) => a.price.tier - b.price.tier),
     ]);
   };
   const sort = (sortBy) => {
@@ -60,35 +60,38 @@ const Posts = ({ postDatas }) => {
   const [filterBy, setFilterBy] = useState("Filter");
   const filterOptions = ["Rate > 8.5", "Rate > 8.0", "Rate > 7.5", "Clear"];
   const filterByRate = (rate) => {
-    setTargetPostDatas((postDatas) =>
-      postDatas.filter((post) => post.rate >= rate)
+    setPostsDatas((postsDatas) =>
+      postsDatas.filter((postsdata) => postsdata.rate >= rate)
     );
   };
   const filter = (filterBy) => {
     if (filterBy == "Rate > 8.5") {
-      setTargetPostDatas(postDatas);
       filterByRate(8.5);
     } else if (filterBy == "Rate > 8.0") {
-      setTargetPostDatas(postDatas);
       filterByRate(8.0);
     } else if (filterBy == "Rate > 7.5") {
-      setTargetPostDatas(postDatas);
       filterByRate(7.5);
     } else if (filterBy == "Clear") {
-      setTargetPostDatas(postDatas);
       setFilterBy("Filter");
     }
+  };
+  const getPostDatas = () => {
+    setPostsDatas(postDatas);
+    sort(sortBy);
+    filter(filterBy);
   };
 
   const windowWidth = useWindowWidth();
   const [imageSize, setImageSize] = useState({ width: "120", height: "160" });
   useEffect(() => {
+    getPostDatas();
+
     if (windowWidth >= 768) {
       setImageSize({ width: "120", height: "160" });
     } else if (windowWidth < 768) {
       setImageSize({ width: "90", height: "120" });
     }
-  }, [windowWidth]);
+  }, [postsDatas, windowWidth]);
   return (
     <>
       <Navbar />
@@ -115,8 +118,8 @@ const Posts = ({ postDatas }) => {
             />
           </div>
         </div>
-        <div className="relative z-0 top-12 md:top-10 pb-20">
-          <PostList targetPostDatas={targetPostDatas} imageSize={imageSize} />
+        <div className="relative z-0 top-14 md:top-10 pb-20">
+          <PostList postsDatas={postsDatas} imageSize={imageSize} />
         </div>
       </div>
       <Footer />
