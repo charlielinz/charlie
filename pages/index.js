@@ -157,49 +157,71 @@ const Home = () => {
         <div className="min-w-[45%] mx-12 py-8 md:py-0">
           <div className="bg-slate-100 rounded-xl shadow-lg">
             <div className="p-4 space-y-2">
-              <div className="flex gap-8 py-2">
-                <motion.button
-                  className="py-1 px-5 rounded-lg text-lg shadow-md"
-                  initial={{
-                    backgroundColor: "rgb(100 116 139)",
-                    color: "rgb(243 244 246)",
-                  }}
-                  animate={{
-                    backgroundColor: "rgb(226 232 240)",
-                    color: "rgb(55 65 81)",
-                  }}
-                  transition={{
-                    delay: 1,
-                    duration: "0.5",
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    repeatDelay: "1.5",
-                    ease: "easeInOut",
-                  }}
-                >
-                  New Post
-                </motion.button>
-                <motion.button
-                  className="py-1 px-5 rounded-lg text-lg shadow-md"
-                  initial={{
-                    backgroundColor: "rgb(226 232 240)",
-                    color: "rgb(55 65 81)",
-                  }}
-                  animate={{
-                    backgroundColor: "rgb(100 116 139)",
-                    color: "rgb(243 244 246)",
-                  }}
-                  transition={{
-                    delay: 1,
-                    duration: "0.5",
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    repeatDelay: "1.5",
-                    ease: "easeInOut",
-                  }}
-                >
-                  Top Rated
-                </motion.button>
+              <div className="relative flex flex-col md:flex-row justify-between py-2">
+                <div className="flex">
+                  <motion.div
+                    animate={{ opacity: [1, 0, 0, 1, 1] }}
+                    transition={{
+                      times: [0, 0.25, 0.5, 0.75, 1],
+                      delay: 1,
+                      duration: "4.5",
+                      repeat: Infinity,
+                      repeatDelay: "1.5",
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <button className="py-1 px-5 text-lg">Sort by</button>
+                    <i className="fa-solid fa-chevron-down"></i>
+                  </motion.div>
+                  <motion.div
+                    className="absolute"
+                    animate={{ opacity: [0, 1, 1, 0, 0] }}
+                    transition={{
+                      times: [0, 0.25, 0.5, 0.75, 1],
+                      delay: 1,
+                      duration: "4.5",
+                      repeat: Infinity,
+                      repeatDelay: "1.5",
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <button className="py-1 px-5 text-lg">
+                      Rate: high to low
+                    </button>
+                    <i className="fa-solid fa-chevron-down"></i>
+                  </motion.div>
+                </div>
+                <div>
+                  <motion.div
+                    className="absolute"
+                    animate={{ opacity: [1, 1, 0, 0, 1] }}
+                    transition={{
+                      times: [0, 0.25, 0.5, 0.75, 1],
+                      delay: 1,
+                      duration: "4.8",
+                      repeat: Infinity,
+                      repeatDelay: "1.2",
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <button className="py-1 px-5 text-lg">Filter</button>
+                    <i className="fa-solid fa-chevron-down"></i>
+                  </motion.div>
+                  <motion.div
+                    animate={{ opacity: [0, 0, 1, 1, 0] }}
+                    transition={{
+                      times: [0, 0.25, 0.5, 0.75, 1],
+                      delay: 1,
+                      duration: "4.8",
+                      repeat: Infinity,
+                      repeatDelay: "1.2",
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <button className="py-1 px-5 text-lg">Rate ≥ 8.0</button>
+                    <i className="fa-solid fa-chevron-down"></i>
+                  </motion.div>
+                </div>
               </div>
               <div className="py-2">
                 <div className="p-4 border-t-2 border-t-gray-200">
@@ -207,6 +229,7 @@ const Home = () => {
                     <div className="space-y-1">
                       <p className="text-2xl font-bold">Omakase</p>
                       <p className="text-sm text-gray-500">2022-02-22</p>
+                      <p className="text-xl pt-2">&gt; $2000</p>
                     </div>
                     <p className="space-x-0.5 pt-1">
                       <i className="fa-solid fa-star text-lg text-amber-400" />
@@ -217,20 +240,23 @@ const Home = () => {
                 <div className="p-4 border-t-2 border-t-gray-200">
                   <motion.div
                     className="flex justify-between"
-                    initial={{ translateY: 0 }}
-                    animate={{ translateY: 90 }}
+                    animate={{
+                      translateY: [0, 130, 130, 130, 0],
+                      opacity: [1, 1, 0, 0, 1],
+                    }}
                     transition={{
+                      times: [0, 0.25, 0.5, 0.75, 1],
                       delay: 1,
-                      duration: "0.5",
+                      duration: "4.8",
                       repeat: Infinity,
-                      repeatType: "reverse",
-                      repeatDelay: "1.5",
+                      repeatDelay: "1.2",
                       ease: "easeInOut",
                     }}
                   >
                     <div className="space-y-1">
-                      <p className="text-2xl font-bold">Yakiniku</p>
+                      <p className="text-2xl font-bold">Pasta</p>
                       <p className="text-sm text-gray-500">2022-01-12</p>
+                      <p className="text-xl pt-2">$500 - $1000</p>
                     </div>
                     <p className="space-x-0.5 pt-1">
                       <i className="fa-solid fa-star text-lg text-amber-400" />
@@ -241,20 +267,23 @@ const Home = () => {
                 <div className="p-4 border-t-2 border-t-gray-200">
                   <motion.div
                     className="flex justify-between"
-                    initial={{ translateY: 0 }}
-                    animate={{ translateY: -90 }}
+                    animate={{
+                      translateY: [0, -130, -130, -130, 0],
+                      opacity: [1, 1, 1, 1, 1],
+                    }}
                     transition={{
+                      times: [0, 0.25, 0.5, 0.75, 1],
                       delay: 1,
-                      duration: "0.5",
+                      duration: "4.8",
                       repeat: Infinity,
-                      repeatType: "reverse",
-                      repeatDelay: "1.5",
+                      repeatDelay: "1.2",
                       ease: "easeInOut",
                     }}
                   >
                     <div className="space-y-1">
-                      <p className="text-2xl font-bold">Pasta</p>
+                      <p className="text-2xl font-bold">Yakiniku</p>
                       <p className="text-sm text-gray-500">2021-12-30</p>
+                      <p className="text-xl pt-2">$1000 - $2000</p>
                     </div>
                     <p className="space-x-0.5 pt-1">
                       <i className="fa-solid fa-star text-lg text-amber-400" />
@@ -290,8 +319,12 @@ const Home = () => {
             </p>
             <ul className="text-gray-500 pb-12">
               <li className="list-disc list-inside">Piano solo recital</li>
-              <li className="list-disc list-inside">Piano trio chamber - piano, oboe, bassoon</li>
-              <li className="list-disc list-inside">Piano trio chamber - piano, flute, clarinet</li>
+              <li className="list-disc list-inside">
+                Piano trio chamber - piano, oboe, bassoon
+              </li>
+              <li className="list-disc list-inside">
+                Piano trio chamber - piano, flute, clarinet
+              </li>
             </ul>
           </div>
           <div className="pb-4">

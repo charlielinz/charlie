@@ -19,7 +19,7 @@ const Posts = ({ postDatas }) => {
     "Price: high to low",
     "Price: low to high",
   ];
-  const filterOptions = ["Rate > 8.5", "Rate > 8.0", "Rate > 7.5", "Default"];
+  const filterOptions = ["Rate ≥ 8.5", "Rate ≥ 8.0", "Rate ≥ 7.5", "Default"];
   const getSortFunc = () => {
     switch (sortBy) {
       case "Rate: high to low":
@@ -36,12 +36,12 @@ const Posts = ({ postDatas }) => {
   };
   const getFilterFunc = () => {
     switch (filterBy) {
-      case "Rate > 8.5":
-        return (post) => post.rate > 8.5;
-      case "Rate > 8.0":
-        return (post) => post.rate > 8.0;
-      case "Rate > 7.5":
-        return (post) => post.rate > 7.5;
+      case "Rate ≥ 8.5":
+        return (post) => post.rate >= 8.5;
+      case "Rate ≥ 8.0":
+        return (post) => post.rate >= 8.0;
+      case "Rate ≥ 7.5":
+        return (post) => post.rate >= 7.5;
       default:
         return () => true;
     }
