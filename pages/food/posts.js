@@ -8,7 +8,7 @@ import Dropdown from "../../components/Dropdown";
 import { foodPosts } from "../../posts/posts";
 
 const Posts = ({ postDatas }) => {
-  const [sortedPostDatas, setSortedPostDatas] = useState(postDatas);
+  const [targetPostDatas, setTargetPostDatas] = useState(postDatas);
   const [isSortMenuOpened, setIsSortMenuOpened] = useState(false);
   const [sortBy, setSortBy] = useState("Sort by");
   const sortOptions = [
@@ -19,30 +19,30 @@ const Posts = ({ postDatas }) => {
     "Price: low to high",
   ];
   const sortByDate = () => {
-    setSortedPostDatas((postDatas) => [
+    setTargetPostDatas((postDatas) => [
       ...postDatas.sort((a, b) => Date.parse(b.date) - Date.parse(a.date)),
     ]);
   };
   const sortByRateDesc = () => {
-    setSortedPostDatas((postDatas) => [
+    setTargetPostDatas((postDatas) => [
       ...postDatas.sort((a, b) => b.rate - a.rate),
     ]);
   };
   const sortByRateAsc = () => {
-    setSortedPostDatas((postDatas) => [
+    setTargetPostDatas((postDatas) => [
       ...postDatas.sort((a, b) => a.rate - b.rate),
     ]);
   };
   const sortByPriceDesc = () => {
-    setSortedPostDatas((postDatas) => [
+    setTargetPostDatas((postDatas) => [
       ...postDatas.sort((a, b) => b.price.tier - a.price.tier),
     ]);
-  }
+  };
   const sortByPriceAsc = () => {
-    setSortedPostDatas((postDatas) => [
+    setTargetPostDatas((postDatas) => [
       ...postDatas.sort((a, b) => a.price.tier - b.price.tier),
     ]);
-  }
+  };
   const sort = (sortBy) => {
     if (sortBy == "Newest (default)") {
       sortByDate();
@@ -56,6 +56,30 @@ const Posts = ({ postDatas }) => {
       sortByPriceAsc();
     }
   };
+  const [isFilterMenuOpened, setIsFilterMenuOpened] = useState(false);
+  const [filterBy, setFilterBy] = useState("Filter");
+  const filterOptions = ["Rate > 8.5", "Rate > 8.0", "Rate > 7.5", "Clear"];
+  const filterByRate = (rate) => {
+    setTargetPostDatas((postDatas) =>
+      postDatas.filter((post) => post.rate >= rate)
+    );
+  };
+  const filter = (filterBy) => {
+    if (filterBy == "Rate > 8.5") {
+      setTargetPostDatas(postDatas);
+      filterByRate(8.5);
+    } else if (filterBy == "Rate > 8.0") {
+      setTargetPostDatas(postDatas);
+      filterByRate(8.0);
+    } else if (filterBy == "Rate > 7.5") {
+      setTargetPostDatas(postDatas);
+      filterByRate(7.5);
+    } else if (filterBy == "Clear") {
+      setTargetPostDatas(postDatas);
+      setFilterBy("Filter");
+    }
+  };
+
   const windowWidth = useWindowWidth();
   const [imageSize, setImageSize] = useState({ width: "120", height: "160" });
   useEffect(() => {
@@ -69,22 +93,30 @@ const Posts = ({ postDatas }) => {
     <>
       <Navbar />
       <div className="space-y-4 max-w-screen-xl mx-6 md:mx-auto md:py-12 md:px-6">
-        <div className="absolute z-10">
-          <Dropdown
-            isMenuOpened={isSortMenuOpened}
-            setIsMenuOpened={setIsSortMenuOpened}
-            options={sortOptions}
-            optionName={sortBy}
-            setOptionName={setSortBy}
-            formula={sort}
-          />
+        <div className="relative max-w-screen-md">
+          <div className="absolute z-10">
+            <Dropdown
+              isMenuOpened={isSortMenuOpened}
+              setIsMenuOpened={setIsSortMenuOpened}
+              options={sortOptions}
+              optionName={sortBy}
+              setOptionName={setSortBy}
+              formula={sort}
+            />
+          </div>
+          <div className="absolute z-10 right-0">
+            <Dropdown
+              isMenuOpened={isFilterMenuOpened}
+              setIsMenuOpened={setIsFilterMenuOpened}
+              options={filterOptions}
+              optionName={filterBy}
+              setOptionName={setFilterBy}
+              formula={filter}
+            />
+          </div>
         </div>
         <div className="relative z-0 top-12 md:top-10 pb-20">
-          <PostList
-            postDatas={postDatas}
-            sortedPostDatas={sortedPostDatas}
-            imageSize={imageSize}
-          />
+          <PostList targetPostDatas={targetPostDatas} imageSize={imageSize} />
         </div>
       </div>
       <Footer />

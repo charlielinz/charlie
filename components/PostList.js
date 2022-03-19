@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const PostList = ({ sortedPostDatas, imageSize }) => {
+const PostList = ({ targetPostDatas, imageSize }) => {
   return (
     <>
-      {sortedPostDatas.map((postData, index) => (
+      {targetPostDatas.map((postData, index) => (
         <div
           className="max-w-screen-md border-t-2 border-t-slate-200"
           key={index}
