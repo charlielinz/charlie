@@ -75,7 +75,7 @@ const Posts = ({ postDatas }) => {
       setFilterBy("Filter");
     }
   };
-  const getPostDatas = () => {
+  const getPostsDatas = () => {
     setPostsDatas(postDatas);
     sort(sortBy);
     filter(filterBy);
@@ -84,7 +84,7 @@ const Posts = ({ postDatas }) => {
   const windowWidth = useWindowWidth();
   const [imageSize, setImageSize] = useState({ width: "120", height: "160" });
   useEffect(() => {
-    getPostDatas();
+    getPostsDatas();
 
     if (windowWidth >= 768) {
       setImageSize({ width: "120", height: "160" });
