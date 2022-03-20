@@ -141,7 +141,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row w-full py-6 gap-8 md:gap-32 md:py-28">
+      <div className="flex flex-col md:flex-row w-full py-6 gap-8 md:gap-20 md:py-28">
         <div className="min-w-[40%] md:max-w-[40%] bg-slate-900 rounded-r-xl mr-6 md:mr-0">
           <div className="md:ml-auto py-16 px-6">
             <p className="text-gray-50 text-4xl md:text-6xl leading-tight pb-2 font-bold">
@@ -160,7 +160,7 @@ const Home = () => {
             </button>
           </div>
         </div>
-        <div className="min-w-[40%] md:my-6">
+        <div className="min-w-[45%] md:my-6">
           <div className="mx-12 py-8 md:py-0">
             <div className="rounded-xl shadow-lg">
               <div className="p-4 space-y-2">
