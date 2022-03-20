@@ -10,7 +10,7 @@ const PostList = ({ postDatas, imageSize }) => {
           key={index}
         >
           <div className="flex gap-4 py-4 md:px-4">
-            <div className="shrink-0">
+            <div className="flex shrink-0">
               <Image
                 src={postData.cover_image}
                 alt="cover-image"
@@ -26,14 +26,14 @@ const PostList = ({ postDatas, imageSize }) => {
               <div className="text-sm md:text-base text-gray-500">
                 {postData.date}
               </div>
-              <div className="mt-auto mb-2">{postData.price.average}</div>
+              <div className="mt-auto">{postData.price.average}</div>
             </div>
             <div className="flex flex-col ml-auto justify-between">
               <div className="flex gap-1 self-end">
                 <i className="fa-solid fa-star text-lg text-amber-400" />
                 <div className="text-lg">{postData.rate}</div>
               </div>
-              <div className="bg-gray-200 hover:bg-gray-300 duration-200 rounded-md text-center px-4 py-1 mb-2">
+              <div className="bg-gray-200 hover:bg-gray-300 duration-200 rounded-md text-center px-4 py-1">
                 <Link href={`/food/posts/${postData.slug}`}>
                   <a>details</a>
                 </Link>
