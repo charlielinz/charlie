@@ -5,14 +5,14 @@ const DesktopNavigation = () => {
   const router = useRouter();
   const classNameByPath = (path) => {
     if (router.asPath.startsWith(path)) {
-      return "transition duration-200 hover:text-gray-700 text-gray-700";
+      return "transition duration-200 hover:text-slate-700 text-slate-700";
     } else {
-      return "transition duration-200 hover:text-gray-700 text-gray-500";
+      return "transition duration-200 hover:text-slate-700 text-slate-500";
     }
   };
   return (
     <>
-      <ul className="text-gray-400 font-semibold flex items-end gap-10">
+      <ul className="text-slate-500 font-semibold flex items-end gap-10">
         <li className={classNameByPath("/about")}>
           <Link href="/about">About</Link>
         </li>

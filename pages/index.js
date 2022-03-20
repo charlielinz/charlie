@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="w-full h-96 bg-gray-300">
+      <div className="w-full h-96 bg-slate-900 text-gray-50">
         <div className="pt-32 lg:pt-24 z-10 max-w-screen-xl mx-6 md:mx-auto md:px-6">
           <HeroBanner />
         </div>
@@ -99,197 +99,205 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-16 w-full py-6 md:py-16 max-w-screen-xl mx-auto">
-        <div className="mx-6">
-          <div className="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4 md:gap-8">
-            <div className="transform duration-200 md:scale-90 md:hover:scale-100 md:-rotate-6 overflow-visible">
-              <Image className="rounded-xl" src={travel1} alt="travel-1" />
-            </div>
-            <div className="col-start-3 transform duration-200 md:scale-90 md:hover:scale-100 md:rotate-6 md:translate-x-2 md:translate-y-15">
-              <Image className="rounded-xl" src={travel2} alt="travel-2" />
-            </div>
-            <div className="transform duration-200 md:hover:scale-110 md:translate-y-11">
-              <Image className="rounded-xl" src={travel3} alt="travel-3" />
-            </div>
-            <div className="transform duration-200 md:hover:scale-110 md:translate-y-20">
-              <Image className="rounded-xl" src={travel4} alt="travel-4" />
-            </div>
-            <div className="row-start-1 col-start-2 col-span-2 transform duration-200 md:hover:scale-110 md:translate-x-14 md:translate-y-4">
-              <Image className="rounded-xl" src={travel5} alt="travel-5" />
+      <div className="flex flex-col-reverse md:flex-row justify-end gap-8 md:gap-32 w-full py-6 md:py-16 ml-auto">
+        <div className="md:max-w-[40%]">
+          <div className="mx-6">
+            <div className="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4 md:gap-8">
+              <div className="transform duration-200 md:scale-90 md:hover:scale-100 md:-rotate-6 overflow-visible">
+                <Image className="rounded-xl" src={travel1} alt="travel-1" />
+              </div>
+              <div className="col-start-3 transform duration-200 md:scale-90 md:hover:scale-100 md:rotate-6 md:translate-x-2 md:translate-y-15">
+                <Image className="rounded-xl" src={travel2} alt="travel-2" />
+              </div>
+              <div className="transform duration-200 md:hover:scale-110 md:translate-y-11">
+                <Image className="rounded-xl" src={travel3} alt="travel-3" />
+              </div>
+              <div className="transform duration-200 md:hover:scale-110 md:translate-y-20">
+                <Image className="rounded-xl" src={travel4} alt="travel-4" />
+              </div>
+              <div className="row-start-1 col-start-2 col-span-2 transform duration-200 md:hover:scale-110 md:translate-x-14 md:translate-y-4">
+                <Image className="rounded-xl" src={travel5} alt="travel-5" />
+              </div>
             </div>
           </div>
         </div>
-        <div className="mx-6 md:mx-auto py-4 md:px-6 min-w-[40%]">
-          <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
-            In-depth travel & private tour guide.
-          </p>
-          <p className="text-gray-500 pb-4 md:pb-24">
-            Close to the local and discover those places you may miss. Find and
-            establish your own travel style.
-          </p>
-          <button className="bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full py-2 px-4 md:px-6">
-            <Link href="/travel/posts">
-              <a className="flex items-center gap-2 text-lg md:text-xl">
-                <span>Watch more</span>
-                <i className="fa-solid fa-angle-right" />
-              </a>
-            </Link>
-          </button>
+        <div className="min-w-[40%] md:max-w-[40%] bg-slate-900 rounded-l-xl ml-6 md:ml-0">
+          <div className="md:mx-auto py-16 px-6 rounded-xl">
+            <p className="text-gray-50 text-4xl md:text-6xl leading-tight pb-2 font-bold">
+              In-depth travel & private tour guide.
+            </p>
+            <p className="text-gray-400 pb-4 md:pb-24">
+              Close to the local and discover those places you may miss. Find
+              and establish your own travel style.
+            </p>
+            <button className="bg-amber-500 hover:bg-amber-400 text-slate-900 rounded-full py-2 px-4 md:px-6">
+              <Link href="/travel/posts">
+                <a className="flex items-center gap-2 text-lg md:text-xl">
+                  <span>Watch more</span>
+                  <i className="fa-solid fa-angle-right" />
+                </a>
+              </Link>
+            </button>
+          </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row w-full py-6 md:py-28 max-w-screen-xl mx-auto">
-        <div className="mx-6 md:ml-auto md:px-6 min-w-[40%]">
-          <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
-            No more struggle with your meals.
-          </p>
-          <p className="text-gray-500 pb-4 md:pb-24">
-            Tons of food official review by Charlie Lin, the next Michelin.
-          </p>
-          <button className="bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full py-2 px-4 md:px-6">
-            <Link href="/food/posts">
-              <a className="flex items-center gap-2 text-lg md:text-xl">
-                <span>Watch more</span>
-                <i className="fa-solid fa-angle-right" />
-              </a>
-            </Link>
-          </button>
+      <div className="flex flex-col md:flex-row w-full py-6 gap-8 md:gap-32 md:py-28">
+        <div className="min-w-[40%] md:max-w-[40%] bg-slate-900 rounded-r-xl mr-6 md:mr-0">
+          <div className="md:ml-auto py-16 px-6">
+            <p className="text-gray-50 text-4xl md:text-6xl leading-tight pb-2 font-bold">
+              No more struggle with your meals.
+            </p>
+            <p className="text-gray-400 pb-4 md:pb-24">
+              Tons of food official review by Charlie Lin, the next Michelin.
+            </p>
+            <button className="bg-amber-500 hover:bg-amber-400 text-slate-900 rounded-full py-2 px-4 md:px-6">
+              <Link href="/food/posts">
+                <a className="flex items-center gap-2 text-lg md:text-xl">
+                  <span>Watch more</span>
+                  <i className="fa-solid fa-angle-right" />
+                </a>
+              </Link>
+            </button>
+          </div>
         </div>
-        <div className="min-w-[45%] mx-12 py-8 md:py-0">
-          <div className="bg-slate-100 rounded-xl shadow-lg">
-            <div className="p-4 space-y-2">
-              <div className="relative flex flex-col md:flex-row justify-between py-2">
-                <div className="flex">
-                  <motion.div
-                    animate={{ opacity: [1, 0, 0, 1, 1] }}
-                    transition={{
-                      times: [0, 0.25, 0.5, 0.75, 1],
-                      delay: 1,
-                      duration: "4.5",
-                      repeat: Infinity,
-                      repeatDelay: "1.5",
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <button className="py-1 px-5 text-lg">Sort by</button>
-                    <i className="fa-solid fa-chevron-down"></i>
-                  </motion.div>
-                  <motion.div
-                    className="absolute"
-                    animate={{ opacity: [0, 1, 1, 0, 0] }}
-                    transition={{
-                      times: [0, 0.25, 0.5, 0.75, 1],
-                      delay: 1,
-                      duration: "4.5",
-                      repeat: Infinity,
-                      repeatDelay: "1.5",
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <button className="py-1 px-5 text-lg">
-                      Rate: high to low
-                    </button>
-                    <i className="fa-solid fa-chevron-down"></i>
-                  </motion.div>
-                </div>
-                <div>
-                  <motion.div
-                    className="absolute"
-                    animate={{ opacity: [1, 1, 0, 0, 1] }}
-                    transition={{
-                      times: [0, 0.25, 0.5, 0.75, 1],
-                      delay: 1,
-                      duration: "4.8",
-                      repeat: Infinity,
-                      repeatDelay: "1.2",
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <button className="py-1 px-5 text-lg">Filter</button>
-                    <i className="fa-solid fa-chevron-down"></i>
-                  </motion.div>
-                  <motion.div
-                    animate={{ opacity: [0, 0, 1, 1, 0] }}
-                    transition={{
-                      times: [0, 0.25, 0.5, 0.75, 1],
-                      delay: 1,
-                      duration: "4.8",
-                      repeat: Infinity,
-                      repeatDelay: "1.2",
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <button className="py-1 px-5 text-lg">Rate ≥ 8.0</button>
-                    <i className="fa-solid fa-chevron-down"></i>
-                  </motion.div>
-                </div>
-              </div>
-              <div className="py-2">
-                <div className="p-4 border-t-2 border-t-gray-200">
-                  <div className="flex justify-between">
-                    <div className="space-y-1">
-                      <p className="text-2xl font-bold">Omakase</p>
-                      <p className="text-sm text-gray-500">2022-02-22</p>
-                      <p className="text-xl pt-2">&gt; $2000</p>
-                    </div>
-                    <p className="space-x-0.5 pt-1">
-                      <i className="fa-solid fa-star text-lg text-amber-400" />
-                      <span>8.4</span>
-                    </p>
+        <div className="min-w-[40%] md:my-6">
+          <div className="mx-12 py-8 md:py-0">
+            <div className="rounded-xl shadow-lg">
+              <div className="p-4 space-y-2">
+                <div className="relative flex flex-col md:flex-row justify-between py-2">
+                  <div className="flex">
+                    <motion.div
+                      animate={{ opacity: [1, 0, 0, 1, 1] }}
+                      transition={{
+                        times: [0, 0.25, 0.5, 0.75, 1],
+                        delay: 1,
+                        duration: "4.5",
+                        repeat: Infinity,
+                        repeatDelay: "1.5",
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <button className="py-1 px-5 text-lg">Sort by</button>
+                      <i className="fa-solid fa-chevron-down"></i>
+                    </motion.div>
+                    <motion.div
+                      className="absolute"
+                      animate={{ opacity: [0, 1, 1, 0, 0] }}
+                      transition={{
+                        times: [0, 0.25, 0.5, 0.75, 1],
+                        delay: 1,
+                        duration: "4.5",
+                        repeat: Infinity,
+                        repeatDelay: "1.5",
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <button className="py-1 px-5 text-lg">
+                        Rate: high to low
+                      </button>
+                      <i className="fa-solid fa-chevron-down"></i>
+                    </motion.div>
+                  </div>
+                  <div>
+                    <motion.div
+                      className="absolute"
+                      animate={{ opacity: [1, 1, 0, 0, 1] }}
+                      transition={{
+                        times: [0, 0.25, 0.5, 0.75, 1],
+                        delay: 1,
+                        duration: "4.8",
+                        repeat: Infinity,
+                        repeatDelay: "1.2",
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <button className="py-1 px-5 text-lg">Filter</button>
+                      <i className="fa-solid fa-chevron-down"></i>
+                    </motion.div>
+                    <motion.div
+                      animate={{ opacity: [0, 0, 1, 1, 0] }}
+                      transition={{
+                        times: [0, 0.25, 0.5, 0.75, 1],
+                        delay: 1,
+                        duration: "4.8",
+                        repeat: Infinity,
+                        repeatDelay: "1.2",
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <button className="py-1 px-5 text-lg">Rate ≥ 8.0</button>
+                      <i className="fa-solid fa-chevron-down"></i>
+                    </motion.div>
                   </div>
                 </div>
-                <div className="p-4 border-t-2 border-t-gray-200">
-                  <motion.div
-                    className="flex justify-between"
-                    animate={{
-                      translateY: [0, 130, 130, 130, 0],
-                      opacity: [1, 1, 0, 0, 1],
-                    }}
-                    transition={{
-                      times: [0, 0.25, 0.5, 0.75, 1],
-                      delay: 1,
-                      duration: "4.8",
-                      repeat: Infinity,
-                      repeatDelay: "1.2",
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <div className="space-y-1">
-                      <p className="text-2xl font-bold">Pasta</p>
-                      <p className="text-sm text-gray-500">2022-01-12</p>
-                      <p className="text-xl pt-2">$500 - $1000</p>
+                <div className="py-2">
+                  <div className="p-4 border-t-2 border-t-gray-200">
+                    <div className="flex justify-between">
+                      <div className="space-y-1">
+                        <p className="text-2xl font-bold">Omakase</p>
+                        <p className="text-sm text-gray-500">2022-02-22</p>
+                        <p className="text-xl pt-2">&gt; $2000</p>
+                      </div>
+                      <p className="space-x-0.5 pt-1">
+                        <i className="fa-solid fa-star text-lg text-amber-400" />
+                        <span>8.4</span>
+                      </p>
                     </div>
-                    <p className="space-x-0.5 pt-1">
-                      <i className="fa-solid fa-star text-lg text-amber-400" />
-                      <span>7.5</span>
-                    </p>
-                  </motion.div>
-                </div>
-                <div className="p-4 border-t-2 border-t-gray-200">
-                  <motion.div
-                    className="flex justify-between"
-                    animate={{
-                      translateY: [0, -130, -130, -130, 0],
-                      opacity: [1, 1, 1, 1, 1],
-                    }}
-                    transition={{
-                      times: [0, 0.25, 0.5, 0.75, 1],
-                      delay: 1,
-                      duration: "4.8",
-                      repeat: Infinity,
-                      repeatDelay: "1.2",
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <div className="space-y-1">
-                      <p className="text-2xl font-bold">Yakiniku</p>
-                      <p className="text-sm text-gray-500">2021-12-30</p>
-                      <p className="text-xl pt-2">$1000 - $2000</p>
-                    </div>
-                    <p className="space-x-0.5 pt-1">
-                      <i className="fa-solid fa-star text-lg text-amber-400" />
-                      <span>8.0</span>
-                    </p>
-                  </motion.div>
+                  </div>
+                  <div className="p-4 border-t-2 border-t-gray-200">
+                    <motion.div
+                      className="flex justify-between"
+                      animate={{
+                        translateY: [0, 130, 130, 130, 0],
+                        opacity: [1, 1, 0, 0, 1],
+                      }}
+                      transition={{
+                        times: [0, 0.25, 0.5, 0.75, 1],
+                        delay: 1,
+                        duration: "4.8",
+                        repeat: Infinity,
+                        repeatDelay: "1.2",
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <div className="space-y-1">
+                        <p className="text-2xl font-bold">Pasta</p>
+                        <p className="text-sm text-gray-500">2022-01-12</p>
+                        <p className="text-xl pt-2">$500 - $1000</p>
+                      </div>
+                      <p className="space-x-0.5 pt-1">
+                        <i className="fa-solid fa-star text-lg text-amber-400" />
+                        <span>7.5</span>
+                      </p>
+                    </motion.div>
+                  </div>
+                  <div className="p-4 border-t-2 border-t-gray-200">
+                    <motion.div
+                      className="flex justify-between"
+                      animate={{
+                        translateY: [0, -130, -130, -130, 0],
+                        opacity: [1, 1, 1, 1, 1],
+                      }}
+                      transition={{
+                        times: [0, 0.25, 0.5, 0.75, 1],
+                        delay: 1,
+                        duration: "4.8",
+                        repeat: Infinity,
+                        repeatDelay: "1.2",
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <div className="space-y-1">
+                        <p className="text-2xl font-bold">Yakiniku</p>
+                        <p className="text-sm text-gray-500">2021-12-30</p>
+                        <p className="text-xl pt-2">$1000 - $2000</p>
+                      </div>
+                      <p className="space-x-0.5 pt-1">
+                        <i className="fa-solid fa-star text-lg text-amber-400" />
+                        <span>8.0</span>
+                      </p>
+                    </motion.div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -297,7 +305,7 @@ const Home = () => {
         </div>
       </div>
       <div className="flex flex-col-reverse md:flex-row justify-between max-w-screen-xl mx-auto py-6">
-        <span className="mx-12">
+        <span className="mx-12 my-6">
           <Image
             src={recitalPoster}
             alt="recital-poster"
@@ -305,19 +313,19 @@ const Home = () => {
             height={500}
           />
         </span>
-        <div className="max-w-screen-md mx-6">
-          <p className="text-4xl md:text-6xl leading-tight pb-2 font-bold">
+        <div className="max-w-screen-md mx-6 py-16 px-6 min-w-[40%] bg-slate-900 rounded-xl">
+          <p className="text-gray-50 text-4xl md:text-6xl leading-tight pb-2 font-bold">
             Approaching to classical music is way too easy.
           </p>
-          <p className="text-gray-500 pb-4 md:pb-12">
+          <p className="text-gray-400 pb-4 md:pb-12">
             Get into the classical music scene with this guide, enjoy several
             recitals here.
           </p>
           <div className="hidden md:block">
-            <p className="text-2xl font-semibold py-4">
+            <p className="text-gray-50 text-2xl font-semibold py-4">
               One solo & Two chambers
             </p>
-            <ul className="text-gray-500 pb-12">
+            <ul className="text-gray-400 pb-12">
               <li className="list-disc list-inside">Piano solo recital</li>
               <li className="list-disc list-inside">
                 Piano trio chamber - piano, oboe, bassoon
@@ -328,7 +336,7 @@ const Home = () => {
             </ul>
           </div>
           <div className="pb-4">
-            <button className="bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-full py-2 px-4 md:px-6">
+            <button className="bg-amber-500 hover:bg-amber-400 text-slate-900 rounded-full py-2 px-4 md:px-6">
               <Link href="/recital">
                 <a className="flex items-center gap-2 text-lg md:text-xl">
                   <span>Watch more</span>
