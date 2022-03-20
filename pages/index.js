@@ -310,7 +310,7 @@ const Home = () => {
         </div>
       </div>
       <div className="bg-gradient-to-b from-gray-50 via-slate-100 to-gray-50">
-        <div className="flex flex-col-reverse md:flex-row justify-between max-w-screen-xl mx-auto py-6">
+        <div className="flex flex-col-reverse md:flex-row md:items-center justify-between max-w-screen-xl mx-auto py-6">
           <span className="mx-12 my-6">
             <Image
               src={recitalPoster}
