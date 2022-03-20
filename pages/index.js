@@ -121,7 +121,7 @@ const Home = () => {
             </div>
           </div>
           <div className="flex flex-col min-w-[45%] bg-slate-900 rounded-l-3xl py-16 px-6 ml-6 md:ml-0 md:mr-6">
-            <i className="fa-solid fa-plane pb-4 text-amber-500 text-lg"></i>
+            <i className="fa-solid fa-plane pb-4 text-amber-500 text-xl"></i>
             <p className="text-gray-50 text-4xl md:text-6xl leading-tight pb-2 font-bold">
               In-depth travel & private tour guide.
             </p>
@@ -143,7 +143,7 @@ const Home = () => {
       <div className="bg-gradient-to-b from-gray-50 via-slate-100 to-gray-50">
         <div className="flex flex-col md:flex-row w-full py-6 gap-8 md:py-28 max-w-screen-xl mx-auto">
           <div className="flex flex-col min-w-[45%] bg-slate-900 rounded-r-3xl py-16 px-6 mr-6 md:mr-0 md:ml-6">
-            <i className="fa-solid fa-utensils pb-4 text-amber-500 text-lg"></i>
+            <i className="fa-solid fa-utensils pb-4 text-amber-500 text-xl"></i>
             <p className="text-gray-50 text-4xl md:text-6xl leading-tight pb-2 font-bold">
               No more struggle with your meals.
             </p>
@@ -320,7 +320,7 @@ const Home = () => {
             />
           </span>
           <div className="max-w-screen-md mx-6 py-16 px-6 min-w-[40%] bg-slate-900 rounded-3xl">
-            <i className="fa-solid fa-music pb-4 text-amber-500 text-lg"></i>
+            <i className="fa-solid fa-music pb-4 text-amber-500 text-xl"></i>
             <p className="text-gray-50 text-4xl md:text-6xl leading-tight pb-2 font-bold">
               Approaching to classical music is way too easy.
             </p>
