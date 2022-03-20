@@ -120,16 +120,16 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="min-w-[45%] bg-slate-900 rounded-l-3xl py-16 px-6 ml-6 md:ml-0 md:mr-6">
+          <div className="flex flex-col min-w-[45%] bg-slate-900 rounded-l-3xl py-16 px-6 ml-6 md:ml-0 md:mr-6">
             <i className="fa-solid fa-plane pb-4 text-amber-500 text-lg"></i>
             <p className="text-gray-50 text-4xl md:text-6xl leading-tight pb-2 font-bold">
               In-depth travel & private tour guide.
             </p>
-            <p className="text-gray-400 pb-4 md:pb-24">
+            <p className="text-gray-400">
               Close to the local and discover those places you may miss. Find
               and establish your own travel style.
             </p>
-            <button className="bg-gradient-to-br from-amber-500 to-amber-300 text-slate-900 rounded-full py-2 px-4 md:px-6">
+            <button className="max-w-fit md:mt-auto mt-6 bg-gradient-to-br from-amber-500 to-amber-300 text-slate-900 rounded-full py-2 px-4 md:px-6">
               <Link href="/travel/posts">
                 <a className="flex items-center gap-2 text-lg md:text-xl">
                   <span>Watch more</span>
@@ -142,15 +142,24 @@ const Home = () => {
       </div>
       <div className="bg-gradient-to-b from-gray-50 via-slate-100 to-gray-50">
         <div className="flex flex-col md:flex-row w-full py-6 gap-8 md:py-28 max-w-screen-xl mx-auto">
-          <div className="min-w-[45%] bg-slate-900 rounded-r-3xl py-16 px-6 mr-6 md:mr-0 md:ml-6">
+          <div className="flex flex-col min-w-[45%] bg-slate-900 rounded-r-3xl py-16 px-6 mr-6 md:mr-0 md:ml-6">
             <i className="fa-solid fa-utensils pb-4 text-amber-500 text-lg"></i>
             <p className="text-gray-50 text-4xl md:text-6xl leading-tight pb-2 font-bold">
               No more struggle with your meals.
             </p>
-            <p className="text-gray-400 pb-4 md:pb-24">
+            <p className="text-gray-400">
               Tons of food official review by Charlie Lin, the next Michelin.
             </p>
-            <button className="bg-gradient-to-br from-amber-500 to-amber-300 text-slate-900 rounded-full py-2 px-4 md:px-6">
+            <ul className="text-gray-400 py-6">
+              <p className="text-gray-50 text-2xl font-semibold py-4">
+                Sort & Filter features
+              </p>
+              <li className="list-disc list-inside">
+                Sort by date, rate & price
+              </li>
+              <li className="list-disc list-inside">Filter by rate</li>
+            </ul>
+            <button className="max-w-fit md:mt-auto bg-gradient-to-br from-amber-500 to-amber-300 text-slate-900 rounded-full py-2 px-4 md:px-6">
               <Link href="/food/posts">
                 <a className="flex items-center gap-2 text-lg md:text-xl">
                   <span>Watch more</span>
