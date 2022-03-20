@@ -148,7 +148,7 @@ const Home = () => {
               No more struggle with your meals.
             </p>
             <p className="text-gray-400">
-              Tons of food official review by Charlie Lin, the next Michelin.
+              Tons of food officially review by Charlie Lin, the next Michelin.
             </p>
             <ul className="text-gray-400 py-6">
               <p className="text-gray-50 text-2xl font-semibold py-4">
