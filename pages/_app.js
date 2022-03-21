@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
           content="It is all about life style."
         ></meta>
       </Head>
-      <main className="font-inter text-gray-700">
+      <main className="font-inter text-gray-700 selection:bg-slate-900 selection:text-amber-500">
         <Component {...pageProps} />
       </main>
     </>

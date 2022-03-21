@@ -4,7 +4,7 @@ export const foodPosts = {
     cover_image: "/img/food/ji-an-sushi/cover-image.jpg",
     title: "濟安鮨 日本料理",
     date: "2022-03-01",
-    rate: "8.8",
+    rate: "8.9",
     price: {
       average: "> $2000",
       tier: 2000,
@@ -48,7 +48,7 @@ export const foodPosts = {
     cover_image: "/img/food/vege-teji-classic/cover-image.jpg",
     title: "熟 菜豚屋",
     date: "2022-03-16",
-    rate: "8.4",
+    rate: "8.5",
     price: {
       average: "$1000 - $2000",
       tier: 1000,

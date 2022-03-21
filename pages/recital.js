@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -5,6 +6,13 @@ const Recitals = () => {
   const recitalDatas = Object.values(recitalInfos);
   return (
     <>
+      <Head>
+        <title>Recital</title>
+        <meta name="title" content="This is Charlie Lin"></meta>
+        <meta name="author" content="Charlie Lin"></meta>
+        <meta name="og:title" content="This is Charlie Lin"></meta>
+        <meta name="og:author" content="Charlie Lin"></meta>
+      </Head>
       <Navbar />
       <div className="flex flex-col max-w-screen-xl mx-auto px-6 py-12">
         {recitalDatas.map((recitalData) => (

@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import Head from "next/head";
 import ReactMarkdown from "react-markdown";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
@@ -10,6 +11,13 @@ import { foodPosts } from "../../../posts/posts";
 const Post = ({ postContent, postData, postImgPaths }) => {
   return (
     <>
+      <Head>
+        <title>{postData.title}</title>
+        <meta name="title" content="This is Charlie Lin"></meta>
+        <meta name="author" content="Charlie Lin"></meta>
+        <meta name="og:title" content="This is Charlie Lin"></meta>
+        <meta name="og:author" content="Charlie Lin"></meta>
+      </Head>
       <Navbar />
       <div className="md:flex gap-4 py-6 md:px-6 max-w-screen-xl mx-6 md:mx-auto">
         <Carousel postImgPaths={postImgPaths} />

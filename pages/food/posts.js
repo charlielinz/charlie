@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Head from "next/head";
 
 import useWindowWidth from "../../hooks/useWindowWidth";
 import Navbar from "../../components/Navbar";
@@ -59,6 +60,13 @@ const Posts = ({ postDatas }) => {
   }, [windowWidth]);
   return (
     <>
+      <Head>
+        <title>Food Posts</title>
+        <meta name="title" content="This is Charlie Lin"></meta>
+        <meta name="author" content="Charlie Lin"></meta>
+        <meta name="og:title" content="This is Charlie Lin"></meta>
+        <meta name="og:author" content="Charlie Lin"></meta>
+      </Head>
       <Navbar />
       <div className="space-y-4 max-w-screen-xl mx-6 md:mx-auto md:py-12 md:px-6">
         <div className="relative max-w-screen-md">

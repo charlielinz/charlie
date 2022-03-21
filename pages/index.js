@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="w-full h-96 bg-slate-900 text-gray-50">
+      <div className="w-full h-96 bg-gray-200 text-gray-600">
         <div className="pt-32 lg:pt-24 z-10 max-w-screen-xl mx-6 md:mx-auto md:px-6">
           <HeroBanner />
         </div>
@@ -309,7 +309,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gradient-to-b from-gray-50 via-slate-100 to-gray-50">
+      <div className="bg-gradient-to-b from-gray-50 via-slate-100 to-gray-50 mb-12">
         <div className="flex flex-col-reverse md:flex-row md:items-center justify-between max-w-screen-xl mx-auto py-6">
           <span className="mx-12 my-6">
             <Image
