@@ -50,7 +50,6 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const postContent = fs.readFileSync(postFilePath, "utf8");
   const postInfos = Object.values(foodPosts);
   const postData = postInfos.filter((post) => post.slug === slug)[0];
-
   const postImgFolderPath = "public/img/food/" + slug;
   const postImgFolderFiles = fs.readdirSync(postImgFolderPath);
   const isPostImg = (file) => {

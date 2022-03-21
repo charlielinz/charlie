@@ -103,10 +103,10 @@ const Home = () => {
         <div className="flex flex-col-reverse md:flex-row justify-between gap-8 w-full py-6 md:py-16 max-w-screen-xl mx-auto">
           <div className="mx-6 md:mr-24 md:mt-4 md:mb-24">
             <div className="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4 md:gap-8">
-              <div className="transform duration-200 md:scale-90 md:hover:scale-100 md:-rotate-6 overflow-visible">
+              <div className="transform duration-200 md:hover:scale-110 md:-rotate-6 overflow-visible">
                 <Image className="rounded-xl" src={travel1} alt="travel-1" />
               </div>
-              <div className="col-start-3 transform duration-200 md:scale-90 md:hover:scale-100 md:rotate-6 md:translate-x-2 md:translate-y-15">
+              <div className="col-start-3 transform duration-200 md:hover:scale-110 md:rotate-6 md:translate-x-6 md:translate-y-18">
                 <Image className="rounded-xl" src={travel2} alt="travel-2" />
               </div>
               <div className="transform duration-200 md:hover:scale-110 md:translate-y-11">
