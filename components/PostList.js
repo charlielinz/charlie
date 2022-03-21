@@ -19,8 +19,8 @@ const PostList = ({ postDatas, imageSize }) => {
                 className="rounded-lg"
               />
             </div>
-            <div className="flex flex-col">
-              <div className="text-xl md:text-2xl font-semibold">
+            <div className="flex flex-col gap-1">
+              <div className="text-xl md:text-2xl">
                 {postData.title}
               </div>
               <div className="text-sm md:text-base text-gray-500">
