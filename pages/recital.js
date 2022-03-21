@@ -23,6 +23,7 @@ const Recitals = () => {
                   href={program.url}
                   className="hover:text-amber-900"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   {program.slug}
                 </a>
