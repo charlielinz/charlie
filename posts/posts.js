@@ -4,7 +4,7 @@ export const foodPosts = {
     cover_image: "/img/food/ji-an-sushi/cover-image.jpg",
     title: "濟安鮨 日本料理",
     date: "2022-03-01",
-    rate: "8.5",
+    rate: "8.8",
     price: {
       average: "> $2000",
       tier: 2000,
@@ -15,7 +15,7 @@ export const foodPosts = {
     cover_image: "/img/food/kabin/cover-image.jpg",
     title: "Kabin",
     date: "2022-03-13",
-    rate: "8.1",
+    rate: "8.2",
     price: {
       average: "$500 - $1000",
       tier: 500,
@@ -31,6 +31,28 @@ export const foodPosts = {
       average: "< $200",
       tier: 0,
     },
+  },
+  "da-wan": {
+    slug: "da-wan",
+    cover_image: "/img/food/da-wan/cover-image.jpg",
+    title: "大腕燒肉",
+    date: "2022-03-17",
+    rate: "7.2",
+    price: {
+      average: "> $2000",
+      tier: 2000,
+    },
+  },
+  "vege-teji-classic": {
+    slug: "vege-teji-classic",
+    cover_image: "/img/food/vege-teji-classic/cover-image.jpg",
+    title: "熟 菜豚屋",
+    date: "2022-03-16",
+    rate: "8.4",
+    price: {
+      average: "$1000 - $2000",
+      tier: 1000,
+    }
   },
 };
 

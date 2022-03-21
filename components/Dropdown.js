@@ -31,7 +31,7 @@ const Dropdown = ({
       <div className="flex flex-col gap-4 items-start font-extralight text-gray-600">
         {options.map((option, index) => (
           <button
-            className={isMenuOpened ? "pl-4" : "invisible pl-4"}
+            className={isMenuOpened ? "pl-4" : "hidden pl-4"}
             key={index}
             onClick={() => {
               setOptionName(option);

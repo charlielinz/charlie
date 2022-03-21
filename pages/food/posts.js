@@ -27,11 +27,11 @@ const Posts = ({ postDatas }) => {
       case "Rate: low to high":
         return (a, b) => a.rate - b.rate;
       case "Price: high to low":
-        return (a, b) => b.price - a.price;
+        return (a, b) => b.price.tier - a.price.tier;
       case "Price: low to high":
-        return (a, b) => a.price - b.price;
+        return (a, b) => a.price.tier - b.price.tier;
       default:
-        return (a, b) => b.date - a.date;
+        return (a, b) => Date.parse(b.date) - Date.parse(a.date);
     }
   };
   const getFilterFunc = () => {

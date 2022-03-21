@@ -1,7 +1,7 @@
 const BlockQuote = ({ children }) => {
   return (
     <>
-      <blockquote className="italic my-2 border-l-8 border-gray-300 pl-4 text-gray-600">
+      <blockquote className="my-2 border-l-8 border-gray-300 pl-4 text-gray-600">
         {children}
       </blockquote>
     </>
