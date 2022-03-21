@@ -18,12 +18,13 @@ const Recitals = () => {
             </p>
             <div className="flex flex-col gap-2 bg-slate-100 w-full md:w-3/4 border-t-2 border-r-2 border-b-2 border-slate-900 py-8 px-6">
               <p className="text-xl text-bold pb-4">Programs:</p>
-              {recitalData.program.map((program) => (
+              {recitalData.program.map((program, index) => (
                 <a
                   href={program.url}
                   className="hover:text-amber-900"
                   target="_blank"
                   rel="noreferrer"
+                  key={index}
                 >
                   {program.slug}
                 </a>
