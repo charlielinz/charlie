@@ -54,6 +54,17 @@ export const foodPosts = {
       tier: 1000,
     }
   },
+  "huh-pot": {
+    slug: "huh-pot",
+    cover_image: "/img/food/huh-pot/cover-image.jpg",
+    title: "蛤？！Huh Pot",
+    date: "2022-03-12",
+    rate: "7.6",
+    price: {
+      average: "$1000 - $2000",
+      tier: 1000,
+    }
+  }
 };
 
 export const travelPosts = {
