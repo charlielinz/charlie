@@ -15,8 +15,8 @@ const Recitals = () => {
       </Head>
       <Navbar />
       <div className="flex flex-col max-w-screen-xl mx-auto px-6 py-12">
-        {recitalDatas.map((recitalData) => (
-          <>
+        {recitalDatas.map((recitalData, index) => (
+          <div key={index}>
             <p className="max-w-fit bg-slate-900 text-gray-50 text-2xl md:space-x-4 px-6 py-2 flex flex-col md:block">
               <span className="space-x-2">
                 <i className="fa-solid fa-circle-play text-amber-500" />
@@ -38,7 +38,7 @@ const Recitals = () => {
                 </a>
               ))}
             </div>
-          </>
+          </div>
         ))}
       </div>
       <Footer />
