@@ -9,9 +9,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        herobanner: "url('../public/img/herobanner.jpg')",
-      },
       transitionDuration: {
         2000: "2000ms",
       },
