@@ -31,7 +31,7 @@ const Abouts = () => {
               <br />
               <br />
               Author, designer and founder of Charlielin.org, Charlie Lin is
-              still a newbie for blogging. He owns a engineering bachlor and
+              still a newbie for blogging. He owns an engineering bachlor and
               music performance master degree. He is a coder, a foodie, a
               traveler and a big fan of classical music.
               <br />
