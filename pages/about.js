@@ -22,7 +22,7 @@ const Abouts = () => {
         <div className="max-w-screen-lg mx-auto border-t-2 border-slate-400 my-12">
           <div className="flex flex-col gap-10 max-w-screen-md mx-auto py-6">
             <p className="text-2xl md:text-3xl font-black text-center">
-            &ldquo;Live is short. Do not regret, do not hesitate.&rdquo;
+            &ldquo;Life is short. Do not regret, do not hesitate.&rdquo;
               <br />
               -Charlie Lin
             </p>
