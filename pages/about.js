@@ -27,7 +27,7 @@ const Abouts = () => {
               -Charlie Lin
             </p>
             <p className="text-sm">
-              Hi, This is Charlie Lin.
+              Hi, this is Charlie Lin.
               <br />
               <br />
               Author, designer and founder of Charlielin.org, Charlie Lin is
