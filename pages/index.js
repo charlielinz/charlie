@@ -28,12 +28,12 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="w-full h-96 bg-gray-200 text-gray-600">
+      <section className="relative w-full h-96 bg-gray-200 text-gray-600">
         <div className="pt-32 lg:pt-24 z-10 max-w-screen-xl mx-6 md:mx-auto md:px-6">
           <HeroBanner />
         </div>
-      </div>
-      <div className="flex flex-col md:flex-row py-24 max-w-screen-xl mx-6 md:mx-auto gap-14 md:px-6">
+      </section>
+      <section className="flex flex-col md:flex-row py-24 max-w-screen-xl mx-6 md:mx-auto gap-14 md:px-6">
         <div className="flex md:flex-col justify-center gap-4">
           <div className="relative w-60 md:w-48 h-60 md:h-48">
             <Image
@@ -98,8 +98,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="bg-gradient-to-b from-gray-50 via-slate-100 to-gray-50">
+      </section>
+      <section className="bg-gradient-to-b from-gray-50 via-slate-100 to-gray-50">
         <div className="flex flex-col-reverse md:flex-row justify-between gap-8 w-full py-6 md:py-16 max-w-screen-xl mx-auto">
           <div className="mx-6 md:mr-24 md:mt-4 md:mb-24">
             <div className="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4 md:gap-8">
@@ -139,8 +139,8 @@ const Home = () => {
             </button>
           </div>
         </div>
-      </div>
-      <div className="bg-gradient-to-b from-gray-50 via-slate-100 to-gray-50">
+      </section>
+      <section className="bg-gradient-to-b from-gray-50 via-slate-100 to-gray-50">
         <div className="flex flex-col md:flex-row w-full py-6 gap-8 md:py-28 max-w-screen-xl mx-auto">
           <div className="flex flex-col min-w-[45%] bg-slate-900 rounded-r-3xl py-16 px-6 mr-6 md:mr-0 md:ml-6">
             <i className="fa-solid fa-utensils pb-4 text-amber-500 text-xl"></i>
@@ -308,8 +308,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="bg-gradient-to-b from-gray-50 via-slate-100 to-gray-50 mb-12">
+      </section>
+      <section className="bg-gradient-to-b from-gray-50 via-slate-100 to-gray-50 mb-12">
         <div className="flex flex-col-reverse md:flex-row md:items-center justify-between max-w-screen-xl mx-auto py-6">
           <span className="mx-12 my-6">
             <Image
@@ -354,7 +354,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <Footer />
     </>
   );

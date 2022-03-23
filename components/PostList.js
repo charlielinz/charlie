@@ -20,10 +20,10 @@ const PostList = ({ postDatas, imageSize }) => {
               />
             </div>
             <div className="flex flex-col gap-1">
-              <div className="text-xl md:text-2xl">
+              <div className="text-xl">
                 {postData.title}
               </div>
-              <div className="text-sm md:text-base text-gray-500">
+              <div className="text-sm text-gray-500">
                 {postData.date}
               </div>
               <div className="mt-auto">{postData.price.average}</div>
