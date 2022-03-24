@@ -27,7 +27,9 @@ const Home = () => {
   const windowWidth = useWindowWidth();
   return (
     <>
-      <Navbar />
+      <div className="sticky top-0 z-50 w-full bg-gray-50 md:opacity-95">
+        <Navbar />
+      </div>
       <section className="relative w-full h-96 bg-gray-200 text-gray-600">
         <div className="pt-32 lg:pt-24 z-10 max-w-screen-xl mx-6 md:mx-auto md:px-6">
           <HeroBanner />

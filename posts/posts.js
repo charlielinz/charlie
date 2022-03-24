@@ -59,7 +59,7 @@ export const foodPosts = {
     cover_image: "/img/food/huh-pot/cover-image.jpg",
     title: "蛤？！Huh Pot",
     date: "2022-03-12",
-    rate: "7.6",
+    rate: "7.7",
     price: {
       average: "$1000 - $2000",
       tier: 1000,
