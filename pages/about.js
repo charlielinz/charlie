@@ -14,7 +14,9 @@ const Abouts = () => {
         <meta name="og:title" content="This is Charlie Lin"></meta>
         <meta name="og:author" content="Charlie Lin"></meta>
       </Head>
-      <Navbar />
+      <div className="sticky top-0 z-50 w-full bg-gray-50 md:opacity-95">
+        <Navbar />
+      </div>
       <div className="max-w-screen-xl mx-auto px-6 py-12">
         <div className="max-w-screen-md mx-auto">
           <Image src={selfie} alt="selfie" layout="responsive" />
@@ -45,12 +47,6 @@ const Abouts = () => {
             <p className="text-sm"></p>
           </div>
         </div>
-        {/* <div className="flex">
-          <p className="w-20 h-20 bg-slate-900 rounded-full flex justify-center items-center shrink-0 ">
-            <i className="fa-solid fa-graduation-cap text-amber-500 text-2xl"></i>
-          </p>
-          <p className="w-96 h-2 bg-slate-900 my-auto -ml-2"></p>
-        </div> */}
       </div>
       <Footer />
     </>

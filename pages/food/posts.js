@@ -67,7 +67,9 @@ const Posts = ({ postDatas }) => {
         <meta name="og:title" content="This is Charlie Lin"></meta>
         <meta name="og:author" content="Charlie Lin"></meta>
       </Head>
-      <Navbar />
+      <div className="sticky top-0 z-50 w-full bg-gray-50 md:opacity-95">
+        <Navbar />
+      </div>
       <div className="space-y-4 max-w-screen-xl mx-6 md:mx-auto md:py-12 md:px-6">
         <div className="relative max-w-screen-md">
           <div className="absolute z-10">

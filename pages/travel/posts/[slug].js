@@ -17,7 +17,9 @@ const Post = ({ postContent, postData }) => {
         <meta name="og:title" content="This is Charlie Lin"></meta>
         <meta name="og:author" content="Charlie Lin"></meta>
       </Head>
-      <Navbar />
+      <div className="sticky top-0 z-50 w-full bg-gray-50 md:opacity-95">
+        <Navbar />
+      </div>
       <div className="py-6 md:px-6 max-w-screen-xl mx-6 md:mx-auto">
         <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
           <div className="flex flex-col md:flex-row justify-between pt-4 pb-8 gap-2">

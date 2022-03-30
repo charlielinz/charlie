@@ -1,33 +1,31 @@
-const BlockQuote = ({ children }) => {
+const H1 = ({ children }) => {
+  return <h1 className="text-2xl py-2">{children}</h1>;
+};
+const H2 = ({ children }) => {
   return (
-    <>
-      <blockquote className="my-2 border-l-8 border-gray-300 pl-4 text-gray-600">
-        {children}
-      </blockquote>
-    </>
+    <h2 className="my-2 py-1 border-l-4 border-amber-500 pl-4 text-gray-700 bg-slate-200 text-lg">
+      {children}
+    </h2>
   );
 };
-
 const P = ({ children }) => {
-  return <p className="py-2 text-lg">{children}</p>;
+  return <p className="py-2">{children}</p>;
 };
-
 const A = ({ children, href }) => {
-  return <a className="font-extrabold transform duration-300 hover:text-opacity-70" href={href} target="_blank">{children}</a>
-}
-
-const Img = ({ src, title }) => {
   return (
-    <>
-      {title && <span className="text-base list-item list-inside pl-1 text-gray-700">{title}</span>}
-      <img src={src} className="inline w-auto p-1 sm:h-72" />
-    </>
+    <a
+      className="font-extrabold transform duration-300 hover:text-opacity-70"
+      href={href}
+      target="_blank"
+    >
+      {children}
+    </a>
   );
 };
 
 export const components = {
-  blockquote: BlockQuote,
+  h1: H1,
+  h2: H2,
   p: P,
-  img: Img,
-  a: A
+  a: A,
 };

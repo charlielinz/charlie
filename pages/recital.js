@@ -13,7 +13,9 @@ const Recitals = () => {
         <meta name="og:title" content="This is Charlie Lin"></meta>
         <meta name="og:author" content="Charlie Lin"></meta>
       </Head>
-      <Navbar />
+      <div className="sticky top-0 z-50 w-full bg-gray-50 md:opacity-95">
+        <Navbar />
+      </div>
       <div className="flex flex-col max-w-screen-xl mx-auto px-6 py-12">
         {recitalDatas.map((recitalData, index) => (
           <div key={index}>

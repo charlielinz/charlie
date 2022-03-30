@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as ga from "../google-analytics";
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -39,6 +39,6 @@ function MyApp({ Component, pageProps }) {
       </main>
     </>
   );
-}
+};
 
 export default MyApp;
