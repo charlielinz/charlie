@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import Head from "next/head";
+import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
@@ -8,6 +9,9 @@ import { components } from "../../../posts/travelposts-handler";
 import { travelPosts } from "../../../posts/posts";
 
 const Post = ({ postContent, postData }) => {
+  useEffect(() => {
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
   return (
     <>
       <Head>
@@ -28,6 +32,14 @@ const Post = ({ postContent, postData }) => {
           </div>
           <ReactMarkdown components={components}>{postContent}</ReactMarkdown>
         </div>
+        <ins
+          className="adsbygoogle"
+          style="display:block; text-align:center;"
+          data-ad-layout="in-article"
+          data-ad-format="fluid"
+          data-ad-client="ca-pub-5418119328506173"
+          data-ad-slot="3519917345"
+        ></ins>
       </div>
       <Footer />
     </>

@@ -34,6 +34,11 @@ const Document = () => {
           `,
           }}
         />
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_ID}`}
+          crossOrigin="anonymous"
+        ></script>
       </Head>
       <body className="bg-gray-50">
         <Main />
