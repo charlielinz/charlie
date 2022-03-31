@@ -31,9 +31,16 @@ const Home = () => {
         <Navbar />
       </div>
       <section className="relative w-full h-96 bg-gray-200 text-gray-600">
-        <div className="pt-32 lg:pt-24 z-10 max-w-screen-xl mx-6 md:mx-auto md:px-6">
+        <div className="relative pt-32 lg:pt-24 z-10 max-w-screen-xl mx-6 md:mx-auto md:px-6">
           <HeroBanner />
         </div>
+        <svg className="absolute top-96 flex w-full" xmlns="http://www.w3.org/2000/svg">
+          <path
+            className="fill-gray-200"
+            d={`M0 0 Q${windowWidth/2} 100, ${windowWidth} 0`}
+            stroke="none"
+          />
+        </svg>
       </section>
       <section className="flex flex-col md:flex-row py-24 max-w-screen-xl mx-6 md:mx-auto gap-14 md:px-6">
         <div className="flex md:flex-col justify-center gap-4">
@@ -131,9 +138,9 @@ const Home = () => {
               Close to the local and discover those places you may miss. Find
               and establish your own travel style.
             </p>
-            <button className="max-w-fit md:mt-auto mt-6 bg-gradient-to-br from-amber-500 to-amber-300 text-slate-900 rounded-full py-2 px-4 md:px-6">
+            <button className="max-w-fit md:mt-auto mt-6 bg-gradient-to-br from-amber-500 to-amber-400 text-slate-900 rounded-full py-2 px-4 md:px-6 hover:to-amber-300 hover:text-slate-800">
               <Link href="/travel/posts">
-                <a className="flex items-center gap-2 text-lg md:text-xl">
+                <a className="flex items-center gap-2 text-lg md:text-xl font-black">
                   <span>Watch more</span>
                   <i className="fa-solid fa-angle-right" />
                 </a>
@@ -161,9 +168,9 @@ const Home = () => {
               </li>
               <li className="list-disc list-inside">Filter by rate</li>
             </ul>
-            <button className="max-w-fit md:mt-auto bg-gradient-to-br from-amber-500 to-amber-300 text-slate-900 rounded-full py-2 px-4 md:px-6">
+            <button className="max-w-fit md:mt-auto bg-gradient-to-br from-amber-500 to-amber-400 text-slate-900 rounded-full py-2 px-4 md:px-6 hover:to-amber-300 hover:text-slate-800">
               <Link href="/food/posts">
-                <a className="flex items-center gap-2 text-lg md:text-xl">
+                <a className="flex items-center gap-2 text-lg md:text-xl font-black">
                   <span>Watch more</span>
                   <i className="fa-solid fa-angle-right" />
                 </a>
@@ -345,9 +352,9 @@ const Home = () => {
               </ul>
             </div>
             <div className="pb-4">
-              <button className="bg-gradient-to-br from-amber-500 to-amber-300 text-slate-900 rounded-full py-2 px-4 md:px-6">
+              <button className="bg-gradient-to-br from-amber-500 to-amber-400 text-slate-900 rounded-full py-2 px-4 md:px-6 hover:to-amber-300 hover:text-slate-800">
                 <Link href="/recital">
-                  <a className="flex items-center gap-2 text-lg md:text-xl">
+                  <a className="flex items-center gap-2 text-lg md:text-xl font-black">
                     <span>Watch more</span>
                     <i className="fa-solid fa-angle-right" />
                   </a>

@@ -1,13 +1,8 @@
 import { motion } from "framer-motion";
 
-const NavMenuIcon = ({ setIsOpened }) => {
+const NavMenuIcon = () => {
   return (
-    <button
-      className="relative pt-4 z-10"
-      onClick={() => {
-        setIsOpened((prevState) => !prevState);
-      }}
-    >
+    <>
       <svg width="32" height="32" viewBox="0 0 32 32">
         <motion.path
           fill="transparent"
@@ -42,7 +37,7 @@ const NavMenuIcon = ({ setIsOpened }) => {
           }}
         />
       </svg>
-    </button>
+    </>
   );
 };
 
