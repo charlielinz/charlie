@@ -64,6 +64,17 @@ export const foodPosts = {
       average: "$1000 - $2000",
       tier: 1000,
     }
+  },
+  "le-plein": {
+    slug: "le-plein",
+    cover_image: "/img/food/le-plein/cover-image.jpg",
+    title: "滿堂Le Plein",
+    date: "2022-02-26",
+    rate: "8.5",
+    price: {
+      average: "> $2000",
+      tier: 2000,
+    }
   }
 };
 
