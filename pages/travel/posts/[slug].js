@@ -34,7 +34,7 @@ const Post = ({ postContent, postData }) => {
         </div>
         <ins
           className="adsbygoogle"
-          style={{ display: "block", "text-align": center }}
+          style={{ "display": "block", "text-align": "center" }}
           data-ad-layout="in-article"
           data-ad-format="fluid"
           data-ad-client="ca-pub-5418119328506173"
