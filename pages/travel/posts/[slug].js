@@ -9,9 +9,6 @@ import { components } from "../../../posts/travelposts-handler";
 import { travelPosts } from "../../../posts/posts";
 
 const Post = ({ postContent, postData }) => {
-  // useEffect(() => {
-  //   (adsbygoogle = window.adsbygoogle || []).push({});
-  // });
   return (
     <>
       <Head>
