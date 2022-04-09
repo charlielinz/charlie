@@ -9,6 +9,12 @@ import { components } from "../../../posts/travelposts-handler";
 import { travelPosts } from "../../../posts/posts";
 
 const Post = ({ postContent, postData }) => {
+<<<<<<< HEAD
+=======
+  useEffect(() => {
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
+>>>>>>> parent of aa6a188 (Update [slug].js)
   return (
     <>
       <Head>
