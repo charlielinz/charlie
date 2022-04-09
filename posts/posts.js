@@ -9,6 +9,8 @@ export const foodPosts = {
       average: "> $2000",
       tier: 2000,
     },
+    categories: ["日式料理", "板前壽司"],
+    menu: ["套餐"],
   },
   kabin: {
     slug: "kabin",
@@ -20,6 +22,8 @@ export const foodPosts = {
       average: "$500 - $1000",
       tier: 500,
     },
+    categories: ["日式料理", "西式料理", "餐酒館", "fusion"],
+    menu: ["單點"],
   },
   "jen-yuan": {
     slug: "jen-yuan",
@@ -31,6 +35,8 @@ export const foodPosts = {
       average: "< $200",
       tier: 0,
     },
+    categories: ["台式料理", "便當", "燒臘"],
+    menu: ["單點"],
   },
   "da-wan": {
     slug: "da-wan",
@@ -42,6 +48,8 @@ export const foodPosts = {
       average: "> $2000",
       tier: 2000,
     },
+    categories: ["日式料理", "燒肉"],
+    menu: ["套餐", "單點"],
   },
   "vege-teji-classic": {
     slug: "vege-teji-classic",
@@ -52,7 +60,9 @@ export const foodPosts = {
     price: {
       average: "$1000 - $2000",
       tier: 1000,
-    }
+    },
+    categories: ["日式料理", "韓式料理", "燒肉", "fusion"],
+    menu: ["套餐"],
   },
   "huh-pot": {
     slug: "huh-pot",
@@ -63,7 +73,8 @@ export const foodPosts = {
     price: {
       average: "$1000 - $2000",
       tier: 1000,
-    }
+    },
+    menu: ["單點"],
   },
   "le-plein": {
     slug: "le-plein",
@@ -74,8 +85,10 @@ export const foodPosts = {
     price: {
       average: "> $2000",
       tier: 2000,
-    }
-  }
+    },
+    categories: ["台式料理", "西式料理", "fusion"],
+    menu: ["套餐"],
+  },
 };
 
 export const travelPosts = {
