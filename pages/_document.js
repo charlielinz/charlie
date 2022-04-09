@@ -1,6 +1,4 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import Script from "next/script";
-import * as gtag from "../lib/gtag";
 
 const Document = () => {
   return (
@@ -15,29 +13,32 @@ const Document = () => {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
         />
-        <Script
+        <script
           async
           src="https://kit.fontawesome.com/1b3fa5cc6e.js"
           crossOrigin="anonymous"
         />
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
         />
-        <Script
-          id="gtag-init"
-          strategy="afterInteractive"
+        <script
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${gtag.GA_TRACKING_ID}', {
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
               page_path: window.location.pathname,
             });
           `,
           }}
         />
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_ID}`}
+          crossOrigin="anonymous"
+        ></script>
       </Head>
       <body className="bg-gray-50">
         <Main />

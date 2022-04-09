@@ -10,11 +10,17 @@ import { travelPosts } from "../../../posts/posts";
 
 const Post = ({ postContent, postData }) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   useEffect(() => {
     (adsbygoogle = window.adsbygoogle || []).push({});
   });
 >>>>>>> parent of aa6a188 (Update [slug].js)
+=======
+  // useEffect(() => {
+  //   (adsbygoogle = window.adsbygoogle || []).push({});
+  // });
+>>>>>>> parent of d999bee (Update: GA)
   return (
     <>
       <Head>
