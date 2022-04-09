@@ -9,18 +9,6 @@ import { components } from "../../../posts/travelposts-handler";
 import { travelPosts } from "../../../posts/posts";
 
 const Post = ({ postContent, postData }) => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  useEffect(() => {
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  });
->>>>>>> parent of aa6a188 (Update [slug].js)
-=======
-  // useEffect(() => {
-  //   (adsbygoogle = window.adsbygoogle || []).push({});
-  // });
->>>>>>> parent of d999bee (Update: GA)
   return (
     <>
       <Head>
@@ -43,7 +31,7 @@ const Post = ({ postContent, postData }) => {
         </div>
         <ins
           className="adsbygoogle"
-          style={{ "display": "block", "text-align": "center" }}
+          style={{ display: "block", "text-align": "center" }}
           data-ad-layout="in-article"
           data-ad-format="fluid"
           data-ad-client="ca-pub-5418119328506173"
