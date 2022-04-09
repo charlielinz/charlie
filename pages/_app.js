@@ -36,6 +36,22 @@ const MyApp = ({ Component, pageProps }) => {
           name="og:description"
           content="It is all about life style."
         ></meta>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `,
+          }}
+        />
       </Head>
       <main className="font-inter text-gray-700 selection:bg-slate-900 selection:text-amber-500">
         <Component {...pageProps} />
