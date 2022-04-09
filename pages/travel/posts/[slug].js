@@ -29,16 +29,8 @@ const Post = ({ postContent, postData }) => {
           </div>
           <ReactMarkdown components={components}>{postContent}</ReactMarkdown>
         </div>
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block", "text-align": "center" }}
-          data-ad-layout="in-article"
-          data-ad-format="fluid"
-          data-ad-client="ca-pub-5418119328506173"
-          data-ad-slot="3519917345"
-        ></ins>
+        <AdInPost />
       </div>
-      <AdInPost />
       <Footer />
     </>
   );
