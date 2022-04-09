@@ -39,15 +39,17 @@ const MyApp = ({ Component, pageProps }) => {
         ></meta>
       </Head>
       <Script
+        id="fa"
         strategy="lazyOnload"
         src={`https://kit.fontawesome.com/1b3fa5cc6e.js`}
         crossOrigin="anonymous"
       />
       <Script
+        id="GA4-install"
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
-      <Script strategy="lazyOnload">{`
+      <Script id="GA4-script" strategy="lazyOnload">{`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -56,6 +58,7 @@ const MyApp = ({ Component, pageProps }) => {
         });
       `}</Script>
       <Script
+        id="google-adsense"
         strategy="lazyOnload"
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
