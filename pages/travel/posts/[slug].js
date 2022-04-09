@@ -1,10 +1,10 @@
 import fs from "fs";
 import path from "path";
 import Head from "next/head";
-import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
+import AdInPost from "../../../components/AdInPost";
 import { components } from "../../../posts/travelposts-handler";
 import { travelPosts } from "../../../posts/posts";
 
@@ -38,6 +38,7 @@ const Post = ({ postContent, postData }) => {
           data-ad-slot="3519917345"
         ></ins>
       </div>
+      <AdInPost />
       <Footer />
     </>
   );

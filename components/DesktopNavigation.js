@@ -26,45 +26,45 @@ const DesktopNavigation = () => {
           <Link href="/recital">Recital</Link>
         </li>
       </ul>
-      <ul className="fa-ul flex ml-auto translate-x-8">
-        <li className="fa-li">
+      <ul className="flex gap-2 ml-auto">
+        <li>
           <a
             href="https://www.facebook.com/profile.php?id=100000764741703"
             target="_blank"
             rel="noreferrer"
-            className="fa-brands fa-facebook-square text-3xl opacity-70 h-10 w-10 hover:opacity-90"
+            className="fa-brands fa-facebook-square text-3xl opacity-70 hover:opacity-90"
           ></a>
         </li>
-        <li className="fa-li">
+        <li>
           <a
             href="https://line.me/ti/p/uReKXCIUDz"
             target="_blank"
             rel="noreferrer"
-            className="fa-brands fa-line text-3xl opacity-70 h-10 w-10 hover:opacity-90"
+            className="fa-brands fa-line text-3xl opacity-70 hover:opacity-90"
           ></a>
         </li>
-        <li className="fa-li">
+        <li>
           <a
             href="https://www.instagram.com/eilrahc.c_/"
             target="_blank"
             rel="noreferrer"
-            className="fa-brands fa-instagram-square text-3xl opacity-70 h-10 w-10 hover:opacity-90"
+            className="fa-brands fa-instagram-square text-3xl opacity-70 hover:opacity-90"
           ></a>
         </li>
-        <li className="fa-li">
+        <li>
           <a
             href="https://www.linkedin.com/in/charlie-lin-0a424b117/"
             target="_blank"
             rel="noreferrer"
-            className="fa-brands fa-linkedin text-3xl opacity-70 h-10 w-10 hover:opacity-90"
+            className="fa-brands fa-linkedin text-3xl opacity-70 hover:opacity-90"
           ></a>
         </li>
-        <li className="fa-li">
+        <li>
           <a
             href="https://github.com/charlielinz"
             target="_blank"
             rel="noreferrer"
-            className="fa-brands fa-github-square text-3xl opacity-70 h-10 w-10 hover:opacity-90"
+            className="fa-brands fa-github-square text-3xl opacity-70 hover:opacity-90"
           ></a>
         </li>
       </ul>

@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Head from "next/head";
+import Script from "next/script";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as ga from "../google-analytics";
@@ -37,6 +38,27 @@ const MyApp = ({ Component, pageProps }) => {
           content="It is all about life style."
         ></meta>
       </Head>
+      <Script
+        strategy="lazyOnload"
+        src={`https://kit.fontawesome.com/1b3fa5cc6e.js`}
+        crossOrigin="anonymous"
+      />
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      />
+      <Script strategy="lazyOnload">{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+          page_path: window.location.pathname,
+        });
+      `}</Script>
+      <Script
+        strategy="lazyOnload"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
       <main className="font-inter text-gray-700 selection:bg-slate-900 selection:text-amber-500">
         <Component {...pageProps} />
       </main>
