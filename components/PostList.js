@@ -6,7 +6,7 @@ const PostList = ({ postDatas, imageSize }) => {
     <>
       {postDatas.map((postData, index) => (
         <div
-          className="max-w-screen-md border-t-2 border-t-slate-200"
+          className="border-t-2 border-t-slate-200"
           key={index}
         >
           <div className="flex gap-4 py-4 md:px-4">
@@ -33,7 +33,7 @@ const PostList = ({ postDatas, imageSize }) => {
                 <i className="fa-solid fa-star text-lg text-amber-400" />
                 <div className="text-lg">{postData.rate}</div>
               </div>
-              <div className="bg-gray-200 hover:bg-gray-300 duration-200 rounded-md text-center px-4 py-1">
+              <div className="bg-slate-200 text-amber-700 hover:bg-slate-700 hover:text-amber-400 duration-200 rounded-md text-center px-4 py-1">
                 <Link href={`/food/posts/${postData.slug}`}>
                   <a>details</a>
                 </Link>

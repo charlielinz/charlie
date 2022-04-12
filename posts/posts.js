@@ -1,3 +1,17 @@
+export const foodPostCategories = [
+  "台式料理",
+  "日式料理",
+  "西式料理",
+  "韓式料理",
+  "義式料理",
+  "港式料理",
+  "板前壽司",
+  "燒肉",
+  "港式點心",
+  "餐酒館",
+  "fusion",
+  "便當",
+];
 export const foodPosts = {
   "ji-an-sushi": {
     slug: "ji-an-sushi",
@@ -35,7 +49,7 @@ export const foodPosts = {
       average: "< $200",
       tier: 0,
     },
-    categories: ["台式料理", "便當", "燒臘"],
+    categories: ["台式料理", "便當"],
     menu: ["單點"],
   },
   "da-wan": {
@@ -74,6 +88,7 @@ export const foodPosts = {
       average: "$1000 - $2000",
       tier: 1000,
     },
+    categories: ["港式料理", "港式點心"],
     menu: ["單點"],
   },
   "le-plein": {

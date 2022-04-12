@@ -4,9 +4,9 @@ import Head from "next/head";
 import useWindowWidth from "../../hooks/useWindowWidth";
 import PostList from "../../components/PostList";
 import Dropdown from "../../components/Dropdown";
-import { foodPosts } from "../../posts/posts";
+import { foodPosts, foodPostCategories } from "../../posts/posts";
 
-const Posts = ({ postDatas }) => {
+const Posts = ({ postDatas, categories }) => {
   const [isSortMenuOpened, setIsSortMenuOpened] = useState(false);
   const [isFilterMenuOpened, setIsFilterMenuOpened] = useState(false);
   const [sortBy, setSortBy] = useState("Sort by");
@@ -76,7 +76,7 @@ const Posts = ({ postDatas }) => {
               setOptionName={setSortBy}
             />
           </div>
-          <div className="absolute z-10 right-0">
+          {/* <div className="absolute z-10 right-0">
             <Dropdown
               isMenuOpened={isFilterMenuOpened}
               setIsMenuOpened={setIsFilterMenuOpened}
@@ -84,10 +84,17 @@ const Posts = ({ postDatas }) => {
               optionName={filterBy}
               setOptionName={setFilterBy}
             />
-          </div>
+          </div> */}
         </div>
-        <div className="relative z-0 top-14 md:top-10 pb-20">
-          <PostList postDatas={getPostDatas()} imageSize={imageSize} />
+        <div className="flex gap-4">
+          <div className="relative z-0 top-14 md:top-10 pb-20 max-w-screen-md w-2/3 shrink-0">
+            <PostList postDatas={getPostDatas()} imageSize={imageSize} />
+          </div>
+          {/* <div className="grid auto-rows-min gap-2 grid-cols-1 lg:grid-cols-2 w-full">
+            {categories.map((category, index) => (
+              <div key={index} className="cursor-pointer">{category}</div>
+            ))}
+          </div> */}
         </div>
       </div>
     </>
@@ -96,10 +103,11 @@ const Posts = ({ postDatas }) => {
 
 export const getStaticProps = async () => {
   const postInfos = foodPosts;
+  const categories = foodPostCategories;
   const postDatas = Object.values(postInfos);
   postDatas.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
   return {
-    props: { postDatas },
+    props: { postDatas, categories },
   };
 };
 
