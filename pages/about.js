@@ -14,9 +14,6 @@ const Abouts = () => {
         <meta name="og:title" content="This is Charlie Lin"></meta>
         <meta name="og:author" content="Charlie Lin"></meta>
       </Head>
-      <div className="sticky top-0 z-50 w-full bg-gray-50 md:opacity-95">
-        <Navbar />
-      </div>
       <div className="max-w-screen-xl mx-auto px-6 py-12">
         <div className="max-w-screen-md mx-auto">
           <Image src={selfie} alt="selfie" layout="responsive" />
@@ -24,7 +21,7 @@ const Abouts = () => {
         <div className="max-w-screen-lg mx-auto border-t-2 border-slate-400 my-12">
           <div className="flex flex-col gap-10 max-w-screen-md mx-auto py-6">
             <p className="text-2xl md:text-3xl font-black text-center">
-            &ldquo;Life is short. Do not regret, do not hesitate.&rdquo;
+              &ldquo;Life is short. Do not regret, do not hesitate.&rdquo;
               <br />
               -Charlie Lin
             </p>
@@ -48,7 +45,6 @@ const Abouts = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

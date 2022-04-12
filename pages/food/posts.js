@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 
 import useWindowWidth from "../../hooks/useWindowWidth";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import PostList from "../../components/PostList";
 import Dropdown from "../../components/Dropdown";
 import { foodPosts } from "../../posts/posts";
@@ -67,9 +65,6 @@ const Posts = ({ postDatas }) => {
         <meta name="og:title" content="This is Charlie Lin"></meta>
         <meta name="og:author" content="Charlie Lin"></meta>
       </Head>
-      <div className="sticky top-0 z-50 w-full bg-gray-50 md:opacity-95">
-        <Navbar />
-      </div>
       <div className="space-y-4 max-w-screen-xl mx-6 md:mx-auto md:py-12 md:px-6">
         <div className="relative max-w-screen-md">
           <div className="absolute z-10">
@@ -95,7 +90,6 @@ const Posts = ({ postDatas }) => {
           <PostList postDatas={getPostDatas()} imageSize={imageSize} />
         </div>
       </div>
-      <Footer />
     </>
   );
 };

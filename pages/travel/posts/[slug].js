@@ -2,8 +2,6 @@ import fs from "fs";
 import path from "path";
 import Head from "next/head";
 import ReactMarkdown from "react-markdown";
-import Navbar from "../../../components/Navbar";
-import Footer from "../../../components/Footer";
 import AdInPost from "../../../components/AdInPost";
 import { components } from "../../../posts/travelposts-handler";
 import { travelPosts } from "../../../posts/posts";
@@ -18,9 +16,6 @@ const Post = ({ postContent, postData }) => {
         <meta name="og:title" content="This is Charlie Lin"></meta>
         <meta name="og:author" content="Charlie Lin"></meta>
       </Head>
-      <div className="sticky top-0 z-50 w-full bg-gray-50 md:opacity-95">
-        <Navbar />
-      </div>
       <div className="py-6 md:px-6 max-w-screen-xl mx-6 md:mx-auto">
         <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
           <div className="flex flex-col md:flex-row justify-between pt-4 pb-8 gap-2">
@@ -31,7 +26,6 @@ const Post = ({ postContent, postData }) => {
         </div>
         <AdInPost />
       </div>
-      <Footer />
     </>
   );
 };

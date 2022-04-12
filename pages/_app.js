@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as ga from "../google-analytics";
 import me from "../public/img/index/me.jpg";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter();
@@ -63,7 +65,11 @@ const MyApp = ({ Component, pageProps }) => {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
       <main className="font-inter text-gray-700 selection:bg-slate-900 selection:text-amber-500">
+        <div className="sticky top-0 z-50 w-full bg-gray-50 md:opacity-95">
+          <Navbar />
+        </div>
         <Component {...pageProps} />
+        <Footer />
       </main>
     </>
   );

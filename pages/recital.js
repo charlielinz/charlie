@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const Recitals = () => {
   const recitalDatas = Object.values(recitalInfos);
@@ -13,10 +11,7 @@ const Recitals = () => {
         <meta name="og:title" content="This is Charlie Lin"></meta>
         <meta name="og:author" content="Charlie Lin"></meta>
       </Head>
-      <div className="sticky top-0 z-50 w-full bg-gray-50 md:opacity-95">
-        <Navbar />
-      </div>
-      <div className="flex flex-col max-w-screen-xl mx-auto px-6 py-12">
+      <div className="flex flex-col max-w-screen-xl mx-auto px-6 py-12 gap-6">
         {recitalDatas.map((recitalData, index) => (
           <div key={index}>
             <p className="max-w-fit bg-slate-900 text-gray-50 text-2xl md:space-x-4 px-6 py-2 flex flex-col md:block">
@@ -26,7 +21,7 @@ const Recitals = () => {
               </span>
               <span>{recitalData.title}</span>
             </p>
-            <div className="flex flex-col gap-2 bg-slate-100 w-full md:w-3/4 border-t-2 border-r-2 border-b-2 border-slate-900 py-8 px-6">
+            <div className="flex flex-col gap-2 bg-slate-100 w-full md:w-3/4 border-t-2 border-slate-900 py-8 px-6">
               <p className="text-xl text-bold pb-4">Programs:</p>
               {recitalData.program.map((program, index) => (
                 <a
@@ -43,7 +38,6 @@ const Recitals = () => {
           </div>
         ))}
       </div>
-      <Footer />
     </>
   );
 };

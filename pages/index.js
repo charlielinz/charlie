@@ -3,8 +3,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import useWindowWidth from "../hooks/useWindowWidth";
 import HeroBanner from "../components/HeroBanner";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 import me from "../public/img/index/me.jpg";
 import canada from "../public/img/index/canada.png";
@@ -27,17 +25,17 @@ const Home = () => {
   const windowWidth = useWindowWidth();
   return (
     <>
-      <div className="sticky top-0 z-50 w-full bg-gray-50 md:opacity-95">
-        <Navbar />
-      </div>
       <section className="relative w-full h-96 bg-gray-200 text-gray-600">
         <div className="relative pt-32 lg:pt-24 z-10 max-w-screen-xl mx-6 md:mx-auto md:px-6">
           <HeroBanner />
         </div>
-        <svg className="absolute top-96 flex w-full" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          className="absolute top-96 flex w-full"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             className="fill-gray-200"
-            d={`M0 0 Q${windowWidth/2} 100, ${windowWidth} 0`}
+            d={`M0 0 Q${windowWidth / 2} 100, ${windowWidth} 0`}
             stroke="none"
           />
         </svg>
@@ -77,15 +75,15 @@ const Home = () => {
               <i className="fa-solid fa-address-card text-xl w-6" />
               <span className="text-xl pl-4">Engineer / Pianist</span>
             </div>
-            <div className="flex">
+            <div>
               <i className="fa-solid fa-tags text-xl w-6" />
               <span className="text-xl pl-4">
                 Travel / Foodie / Bar / Coding / Music
               </span>
             </div>
             <div className="flex">
-              <i className="fa-solid fa-map-pin text-xl w-6" />
-              <div className="flex gap-2 text-2xl pl-4">
+              <i className="fa-solid fa-map-pin text-xl w-6 self-center" />
+              <span className="flex gap-2 text-2xl pl-4">
                 <Image src={canada} alt="canada" width="32px" height="28px" />
                 <Image src={guam} alt="guam" width="32px" height="28px" />
                 <Image src={japan} alt="japan" width="32px" height="28px" />
@@ -103,7 +101,7 @@ const Home = () => {
                   height="28px"
                 />
                 <Image src={usa} alt="usa" width="32px" height="28px" />
-              </div>
+              </span>
             </div>
           </div>
         </div>
@@ -364,7 +362,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

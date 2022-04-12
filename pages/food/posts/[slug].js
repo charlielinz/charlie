@@ -2,8 +2,6 @@ import fs from "fs";
 import path from "path";
 import Head from "next/head";
 import ReactMarkdown from "react-markdown";
-import Navbar from "../../../components/Navbar";
-import Footer from "../../../components/Footer";
 import Carousel from "../../../components/Carousel";
 import { components } from "../../../posts/foodposts-handler";
 import { foodPosts } from "../../../posts/posts";
@@ -18,16 +16,11 @@ const Post = ({ postContent, postData, postImgPaths }) => {
         <meta name="og:title" content="This is Charlie Lin"></meta>
         <meta name="og:author" content="Charlie Lin"></meta>
       </Head>
-      <div className="sticky top-0 z-50 w-full bg-gray-50 md:opacity-95">
-        <Navbar />
-      </div>
       <div className="md:flex gap-4 py-6 md:px-6 max-w-screen-xl mx-6 md:mx-auto">
         <Carousel postImgPaths={postImgPaths} />
         <div className="flex py-6 md:py-0 w-full">
           <div className="space-y-2">
-            <p className="text-xl md:text-3xl">
-              {postData.title}
-            </p>
+            <p className="text-xl md:text-3xl">{postData.title}</p>
             <p className="text-sm md:text-base text-gray-500 pb-6">
               {postData.date}
             </p>
@@ -39,7 +32,6 @@ const Post = ({ postContent, postData, postImgPaths }) => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
