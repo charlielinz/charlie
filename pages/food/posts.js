@@ -76,7 +76,7 @@ const Posts = ({ postDatas, categories }) => {
               setOptionName={setSortBy}
             />
           </div>
-          {/* <div className="absolute z-10 right-0">
+          <div className="absolute z-10 right-0">
             <Dropdown
               isMenuOpened={isFilterMenuOpened}
               setIsMenuOpened={setIsFilterMenuOpened}
@@ -84,17 +84,12 @@ const Posts = ({ postDatas, categories }) => {
               optionName={filterBy}
               setOptionName={setFilterBy}
             />
-          </div> */}
+          </div>
         </div>
         <div className="flex gap-4">
-          <div className="relative z-0 top-14 md:top-10 pb-20 max-w-screen-md w-2/3 shrink-0">
+          <div className="relative z-0 top-14 md:top-10 pb-20 w-full lg:w-2/3">
             <PostList postDatas={getPostDatas()} imageSize={imageSize} />
           </div>
-          {/* <div className="grid auto-rows-min gap-2 grid-cols-1 lg:grid-cols-2 w-full">
-            {categories.map((category, index) => (
-              <div key={index} className="cursor-pointer">{category}</div>
-            ))}
-          </div> */}
         </div>
       </div>
     </>
