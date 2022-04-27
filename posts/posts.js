@@ -90,6 +90,19 @@ export const foodPosts = {
     categories: ["台式料理", "法式料理", "Fusion"],
     menu: ["套餐"],
   },
+  "enowine-food-and-wine": {
+    slug: "enowine-food-and-wine",
+    cover_image: "/img/food/enowine-food-and-wine/cover-image.jpg",
+    title: "Enowine Food & Wine",
+    date: "2022-04-08",
+    rate: "8.5",
+    price: {
+      average: "> $2000",
+      tier: 2000,
+    },
+    categories: ["法式料理"],
+    menu: ["單點"],
+  },
 };
 
 export const travelPosts = {
