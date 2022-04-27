@@ -89,14 +89,14 @@ const Posts = ({ postDatas }) => {
       <div className="mx-6 max-w-screen-xl space-y-4 md:mx-auto md:py-12 md:px-6">
         <div className="mx-auto max-w-screen-lg">
           <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-            <Tab.List className="flex justify-around gap-1 rounded-xl bg-slate-200 py-2 px-1">
+            <Tab.List className="grid grid-flow-col grid-rows-2 md:grid-rows-1 justify-around rounded-xl bg-slate-200 py-2 px-1">
               {categories.map((category, index) => (
                 <Tab
                   key={index}
                   className={({ selected }) =>
                     selected
-                      ? "w-full rounded-lg bg-slate-50 px-2 py-1.5 text-amber-800"
-                      : "w-full rounded-lg px-2 py-1.5 hover:bg-slate-100"
+                      ? "w-full rounded-lg bg-slate-50 px-4 py-1.5 text-amber-800"
+                      : "w-full rounded-lg px-4 py-1.5 hover:bg-slate-100"
                   }
                 >
                   {category}
