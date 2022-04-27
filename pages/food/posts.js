@@ -65,7 +65,7 @@ const Posts = ({ postDatas, categories }) => {
         <meta name="og:title" content="This is Charlie Lin"></meta>
         <meta name="og:author" content="Charlie Lin"></meta>
       </Head>
-      <div className="space-y-4 max-w-screen-xl mx-6 md:mx-auto md:py-12 md:px-6">
+      <div className="mx-6 max-w-screen-xl space-y-4 md:mx-auto md:py-12 md:px-6">
         <div className="relative max-w-screen-md">
           <div className="absolute z-10">
             <Dropdown
@@ -76,7 +76,7 @@ const Posts = ({ postDatas, categories }) => {
               setOptionName={setSortBy}
             />
           </div>
-          <div className="absolute z-10 right-0">
+          <div className="absolute right-0 z-10">
             <Dropdown
               isMenuOpened={isFilterMenuOpened}
               setIsMenuOpened={setIsFilterMenuOpened}
@@ -87,7 +87,7 @@ const Posts = ({ postDatas, categories }) => {
           </div>
         </div>
         <div className="flex gap-4">
-          <div className="relative z-0 top-14 md:top-10 pb-20 w-full lg:w-2/3">
+          <div className="relative top-14 z-0 w-full pb-20 md:top-10 lg:w-2/3">
             <PostList postDatas={getPostDatas()} imageSize={imageSize} />
           </div>
         </div>

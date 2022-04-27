@@ -29,7 +29,7 @@ const PostList = ({ postDatas, imageSize }) => {
               <div className="mt-auto">{postData.price.average}</div>
             </div>
             <div className="flex flex-col ml-auto justify-between">
-              <div className="flex gap-1 self-end">
+              <div className="flex gap-1 self-end items-center">
                 <i className="fa-solid fa-star text-lg text-amber-400" />
                 <div className="text-lg">{postData.rate}</div>
               </div>
