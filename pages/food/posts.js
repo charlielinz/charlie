@@ -95,7 +95,7 @@ const Posts = ({ postDatas }) => {
                   key={index}
                   className={({ selected }) =>
                     selected
-                      ? "w-full rounded-lg bg-slate-50 text-amber-800 px-2 py-1.5"
+                      ? "w-full rounded-lg bg-slate-50 px-2 py-1.5 text-amber-800"
                       : "w-full rounded-lg px-2 py-1.5 hover:bg-slate-100"
                   }
                 >
