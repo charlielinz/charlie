@@ -4,7 +4,7 @@ export const foodPosts = {
     cover_image: "/img/food/ji-an-sushi/cover-image.jpg",
     title: "濟安鮨 日本料理",
     date: "2022-03-01",
-    rate: "8.9",
+    rate: "8.8",
     price: {
       average: "> $2000",
       tier: 2000,
@@ -17,7 +17,7 @@ export const foodPosts = {
     cover_image: "/img/food/kabin/cover-image.jpg",
     title: "Kabin",
     date: "2022-03-13",
-    rate: "8.2",
+    rate: "8.3",
     price: {
       average: "$500 - $1000",
       tier: 500,
@@ -30,7 +30,7 @@ export const foodPosts = {
     cover_image: "/img/food/jen-yuan/cover-image.jpg",
     title: "珍園燒臘便當",
     date: "2022-03-08",
-    rate: "8.2",
+    rate: "8.0",
     price: {
       average: "< $200",
       tier: 0,
@@ -43,7 +43,7 @@ export const foodPosts = {
     cover_image: "/img/food/da-wan/cover-image.jpg",
     title: "大腕燒肉",
     date: "2022-03-17",
-    rate: "7.2",
+    rate: "6.6",
     price: {
       average: "> $2000",
       tier: 2000,
@@ -56,7 +56,7 @@ export const foodPosts = {
     cover_image: "/img/food/vege-teji-classic/cover-image.jpg",
     title: "熟 菜豚屋",
     date: "2022-03-16",
-    rate: "8.5",
+    rate: "8.2",
     price: {
       average: "$1000 - $2000",
       tier: 1000,
@@ -69,7 +69,7 @@ export const foodPosts = {
     cover_image: "/img/food/huh-pot/cover-image.jpg",
     title: "蛤？！Huh Pot",
     date: "2022-03-12",
-    rate: "7.7",
+    rate: "7.4",
     price: {
       average: "$1000 - $2000",
       tier: 1000,
@@ -95,7 +95,7 @@ export const foodPosts = {
     cover_image: "/img/food/enowine-food-and-wine/cover-image.jpg",
     title: "Enowine Food & Wine",
     date: "2022-04-08",
-    rate: "8.5",
+    rate: "8.6",
     price: {
       average: "> $2000",
       tier: 2000,
