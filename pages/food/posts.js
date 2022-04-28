@@ -74,9 +74,10 @@ const Posts = ({ postDatas }) => {
   });
   const windowWidth = useWindowWidth();
   const [imageSize, setImageSize] = useState({ width: "120", height: "160" });
+  const [mapSize, setMapSize] = useState({ width: "100", height: "100" });
   useEffect(() => {
     if (windowWidth >= 768) {
-      setImageSize({ width: "120", height: "160" });
+      setImageSize({ width: "240", height: "320" });
     } else if (windowWidth < 768) {
       setImageSize({ width: "90", height: "120" });
     }
@@ -93,7 +94,7 @@ const Posts = ({ postDatas }) => {
       <div className="mx-6 max-w-screen-xl space-y-4 md:mx-auto md:py-12 md:px-6">
         <div className="relative mx-auto max-w-screen-lg">
           <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-            <Tab.List className="grid grid-flow-col grid-rows-2 justify-around rounded-xl bg-slate-200 py-2 px-1 mb-6 md:grid-rows-1">
+            <Tab.List className="mb-6 grid grid-flow-col grid-rows-2 justify-around rounded-xl bg-slate-200 py-2 px-1 md:grid-rows-1">
               {categories.map((category, index) => (
                 <Tab
                   key={index}
@@ -107,7 +108,7 @@ const Posts = ({ postDatas }) => {
                 </Tab>
               ))}
             </Tab.List>
-            <div className="absolute z-10 -right-6 md:right-0">
+            <div className="absolute -right-6 z-10 md:right-0">
               <Dropdown
                 isMenuOpened={isSortMenuOpened}
                 setIsMenuOpened={setIsSortMenuOpened}
@@ -117,7 +118,9 @@ const Posts = ({ postDatas }) => {
               />
             </div>
             <Tab.Panels className="relative">
-              <p className="md:px-4 py-4 text-lg">總共有 {postNumbers} 篇文章</p>
+              <p className="py-4 text-lg md:px-4">
+                總共有 {postNumbers} 篇文章
+              </p>
               {categories.map((index) => (
                 <Tab.Panel key={index}>
                   <div className=" w-full self-end pb-20 md:top-10">

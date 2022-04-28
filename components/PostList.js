@@ -19,14 +19,21 @@ const PostList = ({ postDatas, imageSize }) => {
                 className="rounded-lg"
               />
             </div>
-            <div className="flex flex-col gap-1">
-              <div className="text-xl">
+            <div className="flex flex-col gap-1 w-1/2">
+              <div className="text-xl md:text-2xl">
                 {postData.title}
               </div>
               <div className="text-sm text-gray-500">
                 {postData.date}
               </div>
               <div className="mt-auto">{postData.price.average}</div>
+              <iframe
+                className="mt-4 hidden md:block w-full h-3/5"
+                frameborder="0"
+                referrerpolicy="no-referrer-when-downgrade"
+                src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAbFmwpMXyGVjJCkgEHk1J_8hqJ9cvO-Z8&q=${postData.title}`}
+                allowfullscreen
+              ></iframe>
             </div>
             <div className="flex flex-col ml-auto justify-between">
               <div className="flex gap-1 self-end items-center">

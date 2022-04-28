@@ -93,7 +93,7 @@ export const foodPosts = {
   "enowine-food-and-wine": {
     slug: "enowine-food-and-wine",
     cover_image: "/img/food/enowine-food-and-wine/cover-image.jpg",
-    title: "Enowine Food & Wine",
+    title: "Enowine Food and Wine",
     date: "2022-04-08",
     rate: "8.6",
     price: {
