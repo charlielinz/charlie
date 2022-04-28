@@ -33,10 +33,10 @@ const Post = ({ postContent, postData, postImgPaths }) => {
         </div>
         <iframe
           className="block h-36 w-full md:hidden"
-          frameborder="0"
-          referrerpolicy="no-referrer-when-downgrade"
+          frameBorder="0"
+          referrerPolicy="no-referrer-when-downgrade"
           src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAbFmwpMXyGVjJCkgEHk1J_8hqJ9cvO-Z8&q=${postData.title}`}
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
     </>

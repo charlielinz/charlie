@@ -29,10 +29,10 @@ const PostList = ({ postDatas, imageSize }) => {
               <div className="mt-auto">{postData.price.average}</div>
               <iframe
                 className="mt-4 hidden md:block w-full h-3/5"
-                frameborder="0"
-                referrerpolicy="no-referrer-when-downgrade"
+                frameBorder="0"
+                referrerPolicy="no-referrer-when-downgrade"
                 src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAbFmwpMXyGVjJCkgEHk1J_8hqJ9cvO-Z8&q=${postData.title}`}
-                allowfullscreen
+                allowFullScreen
               ></iframe>
             </div>
             <div className="flex flex-col ml-auto justify-between">

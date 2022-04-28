@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Head from "next/head";
 import { Tab } from "@headlessui/react";
 
@@ -9,7 +9,6 @@ import { foodPosts } from "../../posts/posts";
 
 const Posts = ({ postDatas }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [postNumbers, setPostNumbers] = useState(0);
   const [isSortMenuOpened, setIsSortMenuOpened] = useState(false);
   const [sortBy, setSortBy] = useState("Sort by");
   const sortOptions = [
@@ -69,12 +68,8 @@ const Posts = ({ postDatas }) => {
     [...postDatas.sort(getSortFunc(sortBy))].filter(
       getFilterFunc(selectedIndex)
     );
-  useEffect(() => {
-    setPostNumbers(getPostDatas().length);
-  });
   const windowWidth = useWindowWidth();
   const [imageSize, setImageSize] = useState({ width: "120", height: "160" });
-  const [mapSize, setMapSize] = useState({ width: "100", height: "100" });
   useEffect(() => {
     if (windowWidth >= 768) {
       setImageSize({ width: "240", height: "320" });
@@ -98,6 +93,7 @@ const Posts = ({ postDatas }) => {
               {categories.map((category, index) => (
                 <Tab
                   key={index}
+                  onClick={() => console.log(1)}
                   className={({ selected }) =>
                     selected
                       ? "w-full rounded-lg bg-slate-50 px-4 py-1.5 text-amber-800"
@@ -119,7 +115,7 @@ const Posts = ({ postDatas }) => {
             </div>
             <Tab.Panels className="relative">
               <p className="py-4 text-lg md:px-4">
-                總共有 {postNumbers} 篇文章
+                總共有 {getPostDatas().length} 篇文章
               </p>
               {categories.map((index) => (
                 <Tab.Panel key={index}>
