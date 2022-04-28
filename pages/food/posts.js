@@ -9,6 +9,7 @@ import { foodPosts } from "../../posts/posts";
 
 const Posts = ({ postDatas }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [postNumbers, setPostNumbers] = useState(0);
   const [isSortMenuOpened, setIsSortMenuOpened] = useState(false);
   const [sortBy, setSortBy] = useState("Sort by");
   const sortOptions = [
@@ -68,6 +69,9 @@ const Posts = ({ postDatas }) => {
     [...postDatas.sort(getSortFunc(sortBy))].filter(
       getFilterFunc(selectedIndex)
     );
+  useEffect(() => {
+    setPostNumbers(getPostDatas().length);
+  });
   const windowWidth = useWindowWidth();
   const [imageSize, setImageSize] = useState({ width: "120", height: "160" });
   useEffect(() => {
@@ -87,9 +91,9 @@ const Posts = ({ postDatas }) => {
         <meta name="og:author" content="Charlie Lin"></meta>
       </Head>
       <div className="mx-6 max-w-screen-xl space-y-4 md:mx-auto md:py-12 md:px-6">
-        <div className="mx-auto max-w-screen-lg">
+        <div className="relative mx-auto max-w-screen-lg">
           <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-            <Tab.List className="grid grid-flow-col grid-rows-2 md:grid-rows-1 justify-around rounded-xl bg-slate-200 py-2 px-1">
+            <Tab.List className="grid grid-flow-col grid-rows-2 justify-around rounded-xl bg-slate-200 py-2 px-1 mb-6 md:grid-rows-1">
               {categories.map((category, index) => (
                 <Tab
                   key={index}
@@ -103,7 +107,7 @@ const Posts = ({ postDatas }) => {
                 </Tab>
               ))}
             </Tab.List>
-            <div className="absolute z-10">
+            <div className="absolute z-10 right-0">
               <Dropdown
                 isMenuOpened={isSortMenuOpened}
                 setIsMenuOpened={setIsSortMenuOpened}
@@ -112,7 +116,8 @@ const Posts = ({ postDatas }) => {
                 setOptionName={setSortBy}
               />
             </div>
-            <Tab.Panels className="relative top-14">
+            <Tab.Panels className="relative">
+              <p className="p-4 text-lg">總共有 {postNumbers} 篇文章</p>
               {categories.map((index) => (
                 <Tab.Panel key={index}>
                   <div className=" w-full self-end pb-20 md:top-10">
