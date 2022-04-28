@@ -107,7 +107,7 @@ const Posts = ({ postDatas }) => {
                 </Tab>
               ))}
             </Tab.List>
-            <div className="absolute z-10 right-0">
+            <div className="absolute z-10 -right-6 md:right-0">
               <Dropdown
                 isMenuOpened={isSortMenuOpened}
                 setIsMenuOpened={setIsSortMenuOpened}
@@ -117,7 +117,7 @@ const Posts = ({ postDatas }) => {
               />
             </div>
             <Tab.Panels className="relative">
-              <p className="p-4 text-lg">總共有 {postNumbers} 篇文章</p>
+              <p className="md:px-4 py-4 text-lg">總共有 {postNumbers} 篇文章</p>
               {categories.map((index) => (
                 <Tab.Panel key={index}>
                   <div className=" w-full self-end pb-20 md:top-10">
