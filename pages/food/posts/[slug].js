@@ -35,7 +35,7 @@ const Post = ({ postContent, postData, postImgPaths }) => {
           className="block h-36 w-full md:hidden"
           frameBorder="0"
           referrerPolicy="no-referrer-when-downgrade"
-          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAbFmwpMXyGVjJCkgEHk1J_8hqJ9cvO-Z8&q=${postData.title}`}
+          src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAbFmwpMXyGVjJCkgEHk1J_8hqJ9cvO-Z8&q=${postData.title}&zoom=13`}
           allowFullScreen
         ></iframe>
       </div>
