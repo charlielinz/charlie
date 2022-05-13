@@ -1,3 +1,16 @@
+/*
+  Meta data for food posts contains the following:
+  - slug
+  - cover image
+  - title
+  - date 
+  - rate
+  - price:
+    - average: average price of 1 person, to show on the post. contains "< $200", "$200 - $500", "$500 - $1000", "$1000 - $2000", "> $2000".
+    - tier: the bottom price of average, the index of sort function.
+  - categories: the index of filter function.
+  - menu
+*/
 export const foodPosts = {
   "ji-an-sushi": {
     slug: "ji-an-sushi",
@@ -100,7 +113,20 @@ export const foodPosts = {
       average: "> $2000",
       tier: 2000,
     },
-    categories: ["法式料理"],
+    categories: ["法式料理", "義式料理"],
+    menu: ["單點"],
+  },
+  "nan-chuan-noodle": {
+    slug: "nan-chuan-noodle",
+    cover_image: "/img/food/nan-chuan-noodle/cover-image.jpg",
+    title: "南川麵館",
+    date: "2022-02-23",
+    rate: "8.1",
+    price: {
+      average: "$200 - $500",
+      tier: 200,
+    },
+    categories: ["台式料理"],
     menu: ["單點"],
   },
 };

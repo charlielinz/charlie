@@ -38,8 +38,8 @@ const Carousel = ({ postImgPaths }) => {
     }
   };
   return (
-    <div className="grid gap-4 auto-rows-min shrink-0">
-      <span className="flex justify-center col-start-2 col-end-3">
+    <div className="grid shrink-0 auto-rows-min gap-4 md:fixed">
+      <span className="col-start-2 col-end-3 flex justify-center">
         <Image
           src={postImgPaths[currentIndex]}
           alt={postImgPaths[currentIndex]}
@@ -53,7 +53,7 @@ const Carousel = ({ postImgPaths }) => {
       >
         <i className="fa-solid fa-angle-left"></i>
       </button>
-      <div className="col-start-2 col-end-3 flex justify-between mx-1 md:mx-0">
+      <div className="col-start-2 col-end-3 mx-1 flex justify-between md:mx-0">
         {postImgPaths.map((postImgPath, index) => (
           <span className={`${getImgClassName(index)}`} key={index}>
             <Image
