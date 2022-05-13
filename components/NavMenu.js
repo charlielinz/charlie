@@ -34,31 +34,28 @@ const NavMenu = ({ setIsOpened }) => {
         delay: 0.2,
       },
     },
-  }
+  };
   return (
     <motion.div
-      className="fixed bg-gray-50 top-4 right-4"
+      className="fixed top-4 right-4 bg-gray-50"
       onClick={() => setIsOpened((prevState) => !prevState)}
       variants={navBackground}
     >
-      <motion.div
-        className="pl-10 pt-20"
-        variants={navItems}
-      >
+      <motion.div className="pl-10 pt-20" variants={navItems}>
         <ul className="flex flex-col gap-4">
           <li className="text-xl">
             <Link href="/about">About</Link>
           </li>
           <li className="text-xl">
-            <Link href="/travel/posts">Travel</Link>
+            <Link href="/food/posts">Food</Link>
           </li>
           <li className="text-xl">
-            <Link href="/food/posts">Food</Link>
+            <Link href="/travel/posts">Travel</Link>
           </li>
           <li className="text-xl">
             <Link href="/recital">Recital</Link>
           </li>
-          <ul className="fa-ul flex gap-2 mt-2 -translate-x-3">
+          <ul className="fa-ul mt-2 flex -translate-x-3 gap-2">
             <li className="fa-li">
               <a
                 href="https://www.facebook.com/profile.php?id=100000764741703"

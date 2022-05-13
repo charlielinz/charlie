@@ -12,21 +12,21 @@ const DesktopNavigation = () => {
   };
   return (
     <>
-      <ul className="text-slate-500 font-semibold flex items-end gap-10">
+      <ul className="flex items-end gap-10 font-semibold text-slate-500">
         <li className={classNameByPath("/about")}>
           <Link href="/about">About</Link>
         </li>
-        <li className={classNameByPath("/travel")}>
-          <Link href="/travel/posts">Travel</Link>
-        </li>
         <li className={classNameByPath("/food")}>
           <Link href="/food/posts">Food</Link>
+        </li>
+        <li className={classNameByPath("/travel")}>
+          <Link href="/travel/posts">Travel</Link>
         </li>
         <li className={classNameByPath("/recital")}>
           <Link href="/recital">Recital</Link>
         </li>
       </ul>
-      <ul className="flex gap-2 ml-auto">
+      <ul className="ml-auto flex gap-2">
         <li>
           <a
             href="https://www.facebook.com/profile.php?id=100000764741703"
