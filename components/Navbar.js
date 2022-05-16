@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <div className="max-w-screen-xl mx-6 md:mx-auto md:px-6">
-      <div className="mt-4 flex items-center h-16 gap-10">
+      <div className="flex items-center h-16 gap-10">
         <div className="text-slate-800 text-2xl font-bold">
           <Link href="/">Charlie Lin</Link>
         </div>
