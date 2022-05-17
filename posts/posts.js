@@ -129,6 +129,32 @@ export const foodPosts = {
     categories: ["台式料理"],
     menu: ["單點"],
   },
+  "rolling-thai": {
+    slug: "rolling-thai",
+    cover_image: "/img/food/rolling-thai/cover-image.jpg",
+    title: "泰滾Rolling Thai 泰式火鍋",
+    date: "2022-03-02",
+    rate: "7.0",
+    price: {
+      average: "$500 - $1000",
+      tier: 500,
+    },
+    categories: ["泰式料理"],
+    menu: ["單點"],
+  },
+  "san-chiao-01": {
+    slug: "san-chiao-01",
+    cover_image: "/img/food/san-chiao-01/cover-image.jpg",
+    title: "三樵炭火燒肉（1訪）",
+    date: "2021-11-24",
+    rate: "8.4",
+    price: {
+      average: "> $2000",
+      tier: 2000,
+    },
+    categories: ["日式料理"],
+    menu: ["套餐", "單點"],
+  }
 };
 
 export const travelPosts = {
