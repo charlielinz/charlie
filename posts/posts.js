@@ -154,6 +154,19 @@ export const foodPosts = {
     },
     categories: ["日式料理"],
     menu: ["套餐", "單點"],
+  },
+  "the-tavernist": {
+    slug: "the-tavernist",
+    cover_image: "/img/food/the-tavernist/cover-image.jpg",
+    title: "The Tavernist",
+    date: "2022-05-12",
+    rate: "8.5",
+    price: {
+      average: "> $2000",
+      tier: 2000,
+    },
+    categories: ["法式料理", "fusion"],
+    menu: ["套餐"],
   }
 };
 
