@@ -25,7 +25,9 @@ const MobileNavigation = () => {
   return (
     <>
       <button
-        className="relative z-50 p-2 -mr-2 text-stone-900 hover:text-amber-600 transition-colors"
+        className={`relative z-[70] p-2 -mr-2 transition-colors duration-300 ${
+            isOpened ? "text-stone-50 hover:text-amber-500" : "text-stone-900 hover:text-amber-600"
+        }`}
         onClick={() => setIsOpened(!isOpened)}
         aria-label="Toggle Menu"
       >

@@ -1,7 +1,16 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 const NavMenu = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
+
   const menuVariants = {
     initial: { clipPath: "circle(0% at 100% 0)" },
     animate: { 
@@ -38,13 +47,15 @@ const NavMenu = () => {
     { icon: "fa-brands fa-github", url: "https://github.com/charlielinz" },
   ];
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <motion.div
       variants={menuVariants}
       initial="initial"
       animate="animate"
       exit="exit"
-      className="fixed inset-0 bg-stone-900 z-40 flex flex-col justify-center items-center"
+      className="fixed inset-0 bg-stone-900 z-[9999] flex flex-col justify-center items-center"
     >
         <div className="flex flex-col items-center gap-8">
             {navLinks.map((link, i) => (
@@ -77,7 +88,8 @@ const NavMenu = () => {
                 </a>
             ))}
         </motion.div>
-    </motion.div>
+    </motion.div>,
+    document.body
   );
 };
 
