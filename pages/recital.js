@@ -1,42 +1,66 @@
 import Head from "next/head";
+import { motion } from "framer-motion";
 
 const Recitals = () => {
-  const recitalDatas = Object.values(recitalInfos);
+  const recitalDatas = Object.values(recitalInfos).sort((a, b) => new Date(b.date) - new Date(a.date));
+  
   return (
     <>
       <Head>
-        <title>Recital</title>
-        <meta name="title" content="This is Charlie Lin"></meta>
-        <meta name="author" content="Charlie Lin"></meta>
-        <meta name="og:title" content="This is Charlie Lin"></meta>
-        <meta name="og:author" content="Charlie Lin"></meta>
+        <title>Recitals | Charlie Lin</title>
       </Head>
-      <div className="flex flex-col max-w-screen-xl mx-auto px-6 py-12 gap-6">
-        {recitalDatas.map((recitalData, index) => (
-          <div key={index}>
-            <p className="max-w-fit bg-slate-900 text-gray-50 text-2xl md:space-x-4 px-6 py-2 flex flex-col md:block">
-              <span className="space-x-2">
-                <i className="fa-solid fa-circle-play text-amber-500" />
-                <span>{recitalData.date}</span>
-              </span>
-              <span>{recitalData.title}</span>
-            </p>
-            <div className="flex flex-col gap-2 bg-slate-100 w-full md:w-3/4 border-t-2 border-slate-900 py-8 px-6">
-              <p className="text-xl text-bold pb-4">Programs:</p>
-              {recitalData.program.map((program, index) => (
-                <a
-                  href={program.url}
-                  className="hover:text-amber-900"
-                  target="_blank"
-                  rel="noreferrer"
-                  key={index}
-                >
-                  {program.slug}
-                </a>
-              ))}
+      <div className="bg-stone-900 min-h-screen text-stone-50 pb-20 pt-32 md:pt-48 relative overflow-hidden">
+        {/* Noise Texture */}
+        <div 
+            className="absolute inset-0 opacity-5 pointer-events-none"
+            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
+        ></div>
+
+        <div className="max-w-screen-xl mx-auto px-6 md:px-20 relative z-10">
+            <h1 className="font-serif text-6xl md:text-8xl leading-none mb-20">
+                Performance <br/>
+                <span className="italic text-amber-600 ml-12 md:ml-24">Archive</span>
+            </h1>
+
+            <div className="border-l border-stone-800 ml-0 md:ml-12 pl-8 md:pl-20 space-y-20">
+                {recitalDatas.map((recital, index) => (
+                    <motion.div 
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        className="relative"
+                    >
+                        <div className="absolute -left-[41px] md:-left-[89px] top-2 w-5 h-5 bg-stone-900 border-2 border-amber-600 rounded-full z-10"></div>
+                        
+                        <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-6">
+                             <span className="font-mono text-amber-500 text-sm tracking-widest">{recital.date}</span>
+                             <h2 className="text-3xl md:text-4xl font-serif">{recital.title}</h2>
+                        </div>
+
+                        <div className="bg-stone-800/50 p-8 rounded-sm backdrop-blur-sm border border-stone-800 hover:border-amber-900/50 transition-colors">
+                            <h3 className="text-stone-400 font-serif italic mb-6">Program</h3>
+                            <ul className="space-y-4">
+                                {recital.program.map((prog, idx) => (
+                                    <li key={idx} className="group flex items-start justify-between gap-4">
+                                        <span className="text-stone-300 font-light group-hover:text-amber-500 transition-colors">{prog.slug}</span>
+                                        <a 
+                                            href={prog.url} 
+                                            target="_blank" 
+                                            rel="noreferrer"
+                                            className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-stone-700 text-stone-400 group-hover:bg-amber-600 group-hover:text-stone-900 transition-all"
+                                        >
+                                            <i className="fa-solid fa-play text-xs pl-0.5"></i>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </motion.div>
+                ))}
             </div>
-          </div>
-        ))}
+        </div>
       </div>
     </>
   );

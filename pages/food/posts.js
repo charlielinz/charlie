@@ -1,134 +1,113 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Head from "next/head";
-import { Tab } from "@headlessui/react";
-
-import useWindowWidth from "../../hooks/useWindowWidth";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import PostList from "../../components/PostList";
-import Dropdown from "../../components/Dropdown";
 import { foodPosts } from "../../posts/posts";
 
 const Posts = ({ postDatas }) => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [isSortMenuOpened, setIsSortMenuOpened] = useState(false);
-  const [sortBy, setSortBy] = useState("Sort by");
-  const sortOptions = [
-    "Newest (default)",
-    "Rate: high to low",
-    "Rate: low to high",
-    "Price: high to low",
-    "Price: low to high",
-  ];
-  const getSortFunc = () => {
-    switch (sortBy) {
-      case "Rate: high to low":
-        return (a, b) => b.rate - a.rate;
-      case "Rate: low to high":
-        return (a, b) => a.rate - b.rate;
-      case "Price: high to low":
-        return (a, b) => b.price.tier - a.price.tier;
-      case "Price: low to high":
-        return (a, b) => a.price.tier - b.price.tier;
-      default:
-        return (a, b) => Date.parse(b.date) - Date.parse(a.date);
-    }
-  };
+  const [filter, setFilter] = useState("All");
+  
   const categories = [
-    "全部文章",
-    "台式料理",
-    "港式料理",
-    "日式料理",
-    "韓式料理",
-    "法式料理",
-    "義式料理",
-    "Fusion",
+    "All",
+    "Taipei", 
+    "Japanese",
+    "French", 
+    "Fusion"
   ];
-  const getFilterFunc = () => {
-    switch (categories[selectedIndex]) {
-      case "台式料理":
-        return (post) => post.categories.includes("台式料理");
-      case "日式料理":
-        return (post) => post.categories.includes("日式料理");
-      case "西式料理":
-        return (post) => post.categories.includes("西式料理");
-      case "韓式料理":
-        return (post) => post.categories.includes("韓式料理");
-      case "法式料理":
-        return (post) => post.categories.includes("法式料理");
-      case "義式料理":
-        return (post) => post.categories.includes("義式料理");
-      case "港式料理":
-        return (post) => post.categories.includes("港式料理");
-      case "Fusion":
-        return (post) => post.categories.includes("Fusion");
-      default:
-        return () => true;
-    }
-  };
-  const getPostDatas = () =>
-    [...postDatas.sort(getSortFunc(sortBy))].filter(
-      getFilterFunc(selectedIndex)
-    );
-  const windowWidth = useWindowWidth();
-  const [imageSize, setImageSize] = useState({ width: "120", height: "160" });
-  useEffect(() => {
-    if (windowWidth >= 768) {
-      setImageSize({ width: "240", height: "320" });
-    } else if (windowWidth < 768) {
-      setImageSize({ width: "90", height: "120" });
-    }
-  }, [windowWidth]);
+  
+  // Simple mapping for demo purposes, extending the original logic
+  const getFilteredPosts = () => {
+    if (filter === "All") return postDatas;
+    // Map English filter to Chinese categories in data for compatibility
+    const map = {
+        "Taipei": "台式料理",
+        "Japanese": "日式料理",
+        "French": "法式料理",
+        "Fusion": "Fusion"
+    };
+    const target = map[filter] || filter;
+    return postDatas.filter(post => post.categories.includes(target));
+  }
+
+  const filteredPosts = getFilteredPosts();
+
   return (
     <>
       <Head>
-        <title>Food Posts</title>
-        <meta name="title" content="This is Charlie Lin"></meta>
-        <meta name="author" content="Charlie Lin"></meta>
-        <meta name="og:title" content="This is Charlie Lin"></meta>
-        <meta name="og:author" content="Charlie Lin"></meta>
+        <title>Gastronomy Guide | Charlie Lin</title>
       </Head>
-      <div className="mx-6 max-w-screen-xl space-y-4 md:mx-auto md:py-12 md:px-6">
-        <div className="relative mx-auto max-w-screen-lg">
-          <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-            <Tab.List className="mb-6 grid grid-flow-col grid-rows-2 justify-around rounded-xl bg-slate-200 py-2 px-1 md:grid-rows-1">
-              {categories.map((category, index) => (
-                <Tab
-                  key={index}
-                  onClick={() => console.log(1)}
-                  className={({ selected }) =>
-                    selected
-                      ? "w-full rounded-lg bg-slate-50 px-4 py-1.5 text-amber-800"
-                      : "w-full rounded-lg px-4 py-1.5 hover:bg-slate-100"
-                  }
-                >
-                  {category}
-                </Tab>
-              ))}
-            </Tab.List>
-            <div className="absolute -right-6 z-10 md:right-0">
-              <Dropdown
-                isMenuOpened={isSortMenuOpened}
-                setIsMenuOpened={setIsSortMenuOpened}
-                options={sortOptions}
-                optionName={sortBy}
-                setOptionName={setSortBy}
-              />
+      <div className="bg-stone-50 min-h-screen pb-20 pt-32 md:pt-48 px-6 md:px-20 text-stone-900">
+        <div className="max-w-screen-xl mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div>
+                    <h1 className="font-serif text-6xl md:text-8xl leading-none mb-6">
+                        Taste <br/>
+                        <span className="italic text-amber-600 ml-12 md:ml-24">Review</span>
+                    </h1>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                    {categories.map((cat) => (
+                        <button
+                            key={cat}
+                            onClick={() => setFilter(cat)}
+                            className={`px-4 py-2 rounded-full border transition-all duration-300 ${
+                                filter === cat 
+                                ? "border-stone-900 bg-stone-900 text-stone-50" 
+                                : "border-stone-300 text-stone-500 hover:border-amber-600 hover:text-amber-600"
+                            }`}
+                        >
+                            {cat}
+                        </button>
+                    ))}
+                </div>
             </div>
-            <Tab.Panels className="relative">
-              <p className="py-4 text-lg md:px-4">
-                總共有 {getPostDatas().length} 篇文章
-              </p>
-              {categories.map((index) => (
-                <Tab.Panel key={index}>
-                  <div className=" w-full self-end pb-20 md:top-10">
-                    <PostList
-                      postDatas={getPostDatas()}
-                      imageSize={imageSize}
-                    />
-                  </div>
-                </Tab.Panel>
-              ))}
-            </Tab.Panels>
-          </Tab.Group>
+
+            <div className="w-full">
+                <div className="hidden md:grid grid-cols-12 gap-4 pb-4 border-b border-stone-300 text-stone-400 font-serif italic text-sm">
+                    <div className="col-span-6">Restaurant</div>
+                    <div className="col-span-2">Cuisine</div>
+                    <div className="col-span-2">Date</div>
+                    <div className="col-span-2 text-right">Rating</div>
+                </div>
+                
+                <AnimatePresence mode="wait">
+                    <motion.div 
+                        key={filter}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.5 }}
+                        className="flex flex-col"
+                    >
+                        {filteredPosts.map((post, index) => (
+                            <Link href={`/food/posts/${post.slug}`} key={index} className="group">
+                                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 py-6 border-b border-stone-200 group-hover:bg-stone-100 transition-colors md:items-center">
+                                    <div className="col-span-6">
+                                        <h3 className="font-serif text-2xl md:text-3xl group-hover:text-amber-600 transition-colors">
+                                            {post.title}
+                                        </h3>
+                                        <div className="md:hidden text-sm text-stone-500 mt-2 flex gap-4">
+                                            <span>{post.categories[0]}</span>
+                                            <span>{post.date}</span>
+                                        </div>
+                                    </div>
+                                    <div className="hidden md:block col-span-2 text-stone-500 font-light uppercase tracking-wider text-sm">
+                                        {post.categories[0]}
+                                    </div>
+                                    <div className="hidden md:block col-span-2 text-stone-500 font-mono text-sm">
+                                        {post.date}
+                                    </div>
+                                    <div className="col-span-6 md:col-span-2 flex md:justify-end items-center gap-2">
+                                        <span className="font-serif text-2xl md:text-3xl text-stone-800">{post.rate}</span>
+                                        <i className="fa-solid fa-star text-amber-500 text-xs mb-1"></i>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
+                    </motion.div>
+                </AnimatePresence>
+            </div>
         </div>
       </div>
     </>

@@ -8,6 +8,18 @@ import me from "../public/img/index/me.jpg";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+import { Playfair_Display, Inter } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter();
   useEffect(() => {
@@ -64,7 +76,7 @@ const MyApp = ({ Component, pageProps }) => {
         strategy="lazyOnload"
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
-      <main className="font-inter text-gray-700 selection:bg-slate-900 selection:text-amber-500">
+      <main className={`font-inter text-stone-900 bg-stone-50 selection:bg-stone-900 selection:text-amber-500 ${playfair.variable} ${inter.variable}`}>
         <div className="sticky top-0 z-50 w-full bg-gray-50 md:opacity-95">
           <Navbar />
         </div>

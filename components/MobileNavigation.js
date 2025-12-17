@@ -1,22 +1,41 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import NavMenuIcon from "./NavMenuIcon";
 import NavMenu from "./NavMenu";
 
 const MobileNavigation = () => {
   const [isOpened, setIsOpened] = useState(false);
+  const pathname = usePathname();
+
+  // Close menu when route changes
+  useEffect(() => {
+    setIsOpened(false);
+  }, [pathname]);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isOpened) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpened]);
+
   return (
-    <motion.nav initial={false} animate={isOpened ? "opened" : "closed"}>
+    <>
       <button
-        className="relative pt-4 z-10"
-        onClick={() => {
-          setIsOpened((prevState) => !prevState);
-        }}
+        className="relative z-50 p-2 -mr-2 text-stone-900 hover:text-amber-600 transition-colors"
+        onClick={() => setIsOpened(!isOpened)}
+        aria-label="Toggle Menu"
       >
-        <NavMenuIcon />
+        <NavMenuIcon isOpened={isOpened} />
       </button>
-      <NavMenu setIsOpened={setIsOpened} />
-    </motion.nav>
+      
+      <AnimatePresence>
+        {isOpened && <NavMenu key="nav-menu" />}
+      </AnimatePresence>
+    </>
   );
 };
 

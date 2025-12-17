@@ -1,56 +1,71 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import recitalPoster from "../../public/img/index/recital-poster.jpg";
 import { chamberMusic } from "../../data/home";
 
 const RecitalSection = () => {
-  return (
-    <section className="bg-gradient-to-b from-gray-50 via-slate-100 to-gray-50 mb-12">
-      <div className="flex flex-col-reverse md:flex-row md:items-center justify-between max-w-screen-xl mx-auto py-6">
-        <span className="mx-12 my-6">
-          <Image
-            src={recitalPoster}
-            alt="recital-poster"
-            width={350}
-            height={500}
-          />
-        </span>
-        <div className="max-w-screen-md mx-6 py-16 px-6 min-w-[40%] bg-slate-900 rounded-3xl">
-          <i className="fa-solid fa-music pb-4 text-amber-500 text-xl"></i>
-          <p className="text-gray-50 text-4xl md:text-6xl leading-tight pb-2 font-bold">
-            Approaching to classical music is way too easy.
-          </p>
-          <p className="text-gray-400 pb-4 md:pb-12">
-            Get into the classical music scene with this guide, enjoy several
-            recitals here.
-          </p>
-          <div className="hidden md:block">
-            <p className="text-gray-50 text-2xl font-semibold py-4">
-              One solo & Two chambers
-            </p>
-            <ul className="text-gray-400 pb-12">
-              {chamberMusic.map((item, index) => (
-                <li key={index} className="list-disc list-inside">
-                  {item}
-                </li>
-              ))}
-            </ul>
+    return (
+      <section className="bg-stone-900 text-stone-50 py-32 overflow-hidden relative">
+        <div 
+            className="absolute inset-0 opacity-5 pointer-events-none"
+            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
+        ></div>
+        <div className="max-w-screen-xl mx-auto px-6 md:px-20 relative z-10 flex flex-col md:flex-row items-center gap-16 md:gap-32">
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative w-full md:w-1/2 max-w-sm"
+          >
+            <div className="absolute inset-0 bg-amber-600 blur-3xl opacity-20 transform -rotate-6"></div>
+            <Image
+              src={recitalPoster}
+              alt="recital-poster"
+              width={350}
+              height={500}
+              className="relative z-10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+            />
+          </motion.div>
+  
+          <div className="w-full md:w-1/2 flex flex-col gap-8">
+             <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+             >
+                <h2 className="font-serif text-5xl md:text-7xl mb-6">
+                    Classic <br/>
+                    <span className="italic text-amber-600">Music</span>
+                </h2>
+                <p className="text-stone-400 text-lg leading-relaxed mb-8">
+                    Approaching classical music should be purely emotional. Immerse yourself in the soundscape of solo and chamber performances.
+                </p>
+  
+                <ul className="space-y-4 mb-12 border-l border-stone-800 pl-6">
+                    {chamberMusic.map((item, index) => (
+                        <li key={index} className="font-serif text-xl md:text-2xl text-stone-300 italic">
+                            {item}
+                        </li>
+                    ))}
+                </ul>
+  
+                <Link
+                  href="/recital"
+                  className="group inline-flex items-center gap-4 text-xl font-serif text-amber-600 hover:text-amber-500 transition-colors"
+                >
+                  <span className="border-b border-amber-600 group-hover:border-amber-500 pb-1">View Schedule</span>
+                  <i className="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                </Link>
+             </motion.div>
           </div>
-          <div className="pb-4">
-            <button className="bg-gradient-to-br from-amber-500 to-amber-400 text-slate-900 rounded-full py-2 px-4 md:px-6 hover:to-amber-300 hover:text-slate-800">
-              <Link
-                href="/recital"
-                className="flex items-center gap-2 text-lg md:text-xl font-black"
-              >
-                <span>Watch more</span>
-                <i className="fa-solid fa-angle-right" />
-              </Link>
-            </button>
-          </div>
+  
         </div>
-      </div>
-    </section>
-  );
-};
+      </section>
+    );
+  };
 
 export default RecitalSection;

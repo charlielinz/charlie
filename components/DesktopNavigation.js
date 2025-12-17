@@ -3,72 +3,58 @@ import { useRouter } from "next/router";
 
 const DesktopNavigation = () => {
   const router = useRouter();
-  const classNameByPath = (path) => {
-    if (router.asPath.startsWith(path)) {
-      return "transition duration-200 hover:text-slate-700 text-slate-700";
-    } else {
-      return "transition duration-200 hover:text-slate-700 text-slate-500";
-    }
-  };
+  
+  const navLinks = [
+    { name: "About", path: "/about" },
+    { name: "Travel", path: "/travel/posts" },
+    { name: "Food", path: "/food/posts" },
+    { name: "Recital", path: "/recital" },
+  ];
+
+  const socialLinks = [
+    { icon: "fa-brands fa-facebook-f", url: "https://www.facebook.com/profile.php?id=100000764741703" },
+    { icon: "fa-brands fa-instagram", url: "https://www.instagram.com/eilrahc.c_/" },
+    { icon: "fa-brands fa-linkedin-in", url: "https://www.linkedin.com/in/charlie-lin-0a424b117/" },
+    { icon: "fa-brands fa-github", url: "https://github.com/charlielinz" },
+  ];
+
   return (
-    <>
-      <ul className="text-slate-500 font-semibold flex items-end gap-10">
-        <li className={classNameByPath("/about")}>
-          <Link href="/about">About</Link>
-        </li>
-        <li className={classNameByPath("/travel")}>
-          <Link href="/travel/posts">Travel</Link>
-        </li>
-        <li className={classNameByPath("/food")}>
-          <Link href="/food/posts">Food</Link>
-        </li>
-        <li className={classNameByPath("/recital")}>
-          <Link href="/recital">Recital</Link>
-        </li>
+    <div className="flex items-center gap-12">
+      <ul className="flex items-center gap-8">
+        {navLinks.map((link) => {
+          const isActive = router.asPath.startsWith(link.path) || (link.path === "/travel/posts" && router.asPath.includes("/travel")) || (link.path === "/food/posts" && router.asPath.includes("/food"));
+          return (
+            <li key={link.name}>
+              <Link 
+                href={link.path}
+                className={`text-sm tracking-wider uppercase transition-colors duration-300 relative group py-2
+                    ${isActive ? "text-amber-600 font-medium" : "text-stone-500 hover:text-stone-900"}`}
+              >
+                 {link.name}
+                 <span className={`absolute bottom-0 left-0 w-full h-[1px] bg-amber-600 transform origin-left transition-transform duration-300 ${isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
-      <ul className="flex gap-2 ml-auto">
-        <li>
-          <a
-            href="https://www.facebook.com/profile.php?id=100000764741703"
-            target="_blank"
-            rel="noreferrer"
-            className="fa-brands fa-facebook-square text-3xl opacity-70 hover:opacity-90"
-          ></a>
-        </li>
-        <li>
-          <a
-            href="https://line.me/ti/p/uReKXCIUDz"
-            target="_blank"
-            rel="noreferrer"
-            className="fa-brands fa-line text-3xl opacity-70 hover:opacity-90"
-          ></a>
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com/eilrahc.c_/"
-            target="_blank"
-            rel="noreferrer"
-            className="fa-brands fa-instagram-square text-3xl opacity-70 hover:opacity-90"
-          ></a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/charlie-lin-0a424b117/"
-            target="_blank"
-            rel="noreferrer"
-            className="fa-brands fa-linkedin text-3xl opacity-70 hover:opacity-90"
-          ></a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/charlielinz"
-            target="_blank"
-            rel="noreferrer"
-            className="fa-brands fa-github-square text-3xl opacity-70 hover:opacity-90"
-          ></a>
-        </li>
+
+      <div className="w-[1px] h-6 bg-stone-300"></div>
+
+      <ul className="flex gap-6">
+        {socialLinks.map((social, idx) => (
+            <li key={idx}>
+                <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-stone-400 hover:text-amber-600 transition-colors duration-300"
+                >
+                    <i className={`${social.icon} text-lg`}></i>
+                </a>
+            </li>
+        ))}
       </ul>
-    </>
+    </div>
   );
 };
 

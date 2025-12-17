@@ -1,40 +1,46 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import useWindowWidth from "../hooks/useWindowWidth";
+import { motion } from "framer-motion";
 
 const PostCard = ({ postData }) => {
-  const windowWidth = useWindowWidth();
-  const [imageSize, setImageSize] = useState({ width: "240", height: "180" });
-  useEffect(() => {
-    if (windowWidth >= 768) {
-      setImageSize({ width: "240", height: "180" });
-    } else if (windowWidth < 768 && windowWidth >= 480) {
-      setImageSize({ width: "200", height: "150" });
-    } else {
-      setImageSize({ width: "480", height: "360" });
-    }
-  }, [windowWidth]);
   return (
-    <div className="flex flex-col xs:flex-row gap-2 sm:gap-6 p-4 rounded-md shadow-md shadow-slate-300">
-      <div className="shrink-0">
-        <Image
-          src={postData.cover_image}
-          alt="cover-image"
-          width={imageSize.width}
-          height={imageSize.height}
-        />
-      </div>
-      <div className="flex flex-col gap-2 w-full">
-        <div className="text-xl">{postData.title}</div>
-        <div className="text-gray-400 text-sm">{postData.travel_date}</div>
-        <div className="mt-auto ml-auto mb-1.5 py-1 w-28 bg-gray-200 hover:bg-gray-300 duration-200 rounded-md text-center text-sm">
-          <Link href={`/travel/posts/${postData.slug}`}>
-            Read more...
-          </Link>
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="group flex flex-col gap-4"
+    >
+      <Link href={`/travel/posts/${postData.slug}`} className="block overflow-hidden rounded-sm">
+        <div className="relative aspect-[4/3] w-full">
+            <Image
+            src={postData.cover_image}
+            alt={postData.title}
+            fill
+            style={{ objectFit: "cover" }}
+            className="group-hover:scale-105 transition-transform duration-700 ease-out grayscale group-hover:grayscale-0"
+            />
         </div>
+      </Link>
+      
+      <div className="flex flex-col gap-2">
+        <div className="flex justify-between items-baseline border-b border-stone-200 pb-2">
+            <span className="text-xs font-sans tracking-widest text-stone-500 uppercase">{postData.travel_date}</span>
+            <span className="text-xs font-serif italic text-amber-600">Travel</span>
+        </div>
+        <Link href={`/travel/posts/${postData.slug}`}>
+            <h3 className="font-serif text-2xl group-hover:text-amber-600 transition-colors leading-tight">
+                {postData.title}
+            </h3>
+        </Link>
+        <Link 
+            href={`/travel/posts/${postData.slug}`}
+            className="text-stone-400 text-sm mt-2 hover:text-stone-900 transition-colors flex items-center gap-2"
+        >
+            <span>Read Journal</span>
+            <i className="fa-solid fa-arrow-right -rotate-45 text-xs"></i>
+        </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

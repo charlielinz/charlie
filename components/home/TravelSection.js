@@ -1,49 +1,47 @@
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { travelPhotos } from "../../data/home";
 
 const TravelSection = () => {
   return (
-    <section className="bg-gradient-to-b from-gray-50 via-slate-100 to-gray-50">
-      <div className="flex flex-col-reverse md:flex-row justify-between gap-8 w-full py-6 md:py-16 max-w-screen-xl mx-auto">
-        <div className="mx-6 md:mr-24 md:mt-4 md:mb-24">
-          <div className="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4 md:gap-8">
-            <div className="transform duration-200 md:hover:scale-110 md:-rotate-6 overflow-visible">
-              <Image className="rounded-xl" src={travelPhotos[0].src} alt={travelPhotos[0].alt} />
-            </div>
-            <div className="col-start-3 transform duration-200 md:hover:scale-110 md:rotate-6 md:translate-x-6 md:translate-y-18">
-              <Image className="rounded-xl" src={travelPhotos[1].src} alt={travelPhotos[1].alt} />
-            </div>
-            <div className="transform duration-200 md:hover:scale-110 md:translate-y-11">
-              <Image className="rounded-xl" src={travelPhotos[2].src} alt={travelPhotos[2].alt} />
-            </div>
-            <div className="transform duration-200 md:hover:scale-110 md:translate-y-20">
-              <Image className="rounded-xl" src={travelPhotos[3].src} alt={travelPhotos[3].alt} />
-            </div>
-            <div className="row-start-1 col-start-2 col-span-2 transform duration-200 md:hover:scale-110 md:translate-x-14 md:translate-y-4">
-              <Image className="rounded-xl" src={travelPhotos[4].src} alt={travelPhotos[4].alt} />
-            </div>
-          </div>
+    <section className="bg-stone-900 text-stone-50 py-24 overflow-hidden">
+      <div className="max-w-screen-2xl mx-auto px-6 md:px-20 mb-16 flex flex-col md:flex-row justify-between items-end gap-8">
+        <div>
+          <h2 className="font-serif text-5xl md:text-7xl mb-6">
+            <span className="italic text-amber-600 block mb-2">Private</span>
+            Tour Guide
+          </h2>
+          <p className="text-stone-400 text-lg max-w-md font-light">
+            Discovering hidden gems and local favorites. Travel is not just about the destination, but the perspective.
+          </p>
         </div>
-        <div className="flex flex-col min-w-[45%] bg-slate-900 rounded-l-3xl py-16 px-6 ml-6 md:ml-0 md:mr-6">
-          <i className="fa-solid fa-plane pb-4 text-amber-500 text-xl"></i>
-          <p className="text-gray-50 text-4xl md:text-6xl leading-tight pb-2 font-bold">
-            In-depth travel & private tour guide.
-          </p>
-          <p className="text-gray-400">
-            Close to the local and discover those places you may miss. Find and
-            establish your own travel style.
-          </p>
-          <button className="max-w-fit md:mt-auto mt-6 bg-gradient-to-br from-amber-500 to-amber-400 text-slate-900 rounded-full py-2 px-4 md:px-6 hover:to-amber-300 hover:text-slate-800">
-            <Link
-              href="/travel/posts"
-              className="flex items-center gap-2 text-lg md:text-xl font-black"
+        <Link 
+            href="/travel/posts" 
+            className="group flex items-center gap-4 text-xl font-serif italic hover:text-amber-600 transition-colors"
+        >
+            <span>View All Journals</span>
+            <i className="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+        </Link>
+      </div>
+
+      <div className="flex gap-6 overflow-x-auto pb-12 px-6 md:px-20 -mx-6 md:-mx-20 scrollbar-hide">
+        {travelPhotos.map((photo, index) => (
+            <motion.div 
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4 }}
+                className="relative min-w-[300px] md:min-w-[400px] aspect-[4/5] grayscale hover:grayscale-0 transition-all duration-500 ease-out"
             >
-              <span>Watch more</span>
-              <i className="fa-solid fa-angle-right" />
-            </Link>
-          </button>
-        </div>
+                <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className="rounded-sm"
+                />
+            </motion.div>
+        ))}
       </div>
     </section>
   );

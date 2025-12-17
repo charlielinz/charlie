@@ -6,25 +6,64 @@ import AdInPost from "../../../components/AdInPost";
 import { components } from "../../../posts/travelposts-handler";
 import { travelPosts } from "../../../posts/posts";
 
+import { motion } from "framer-motion";
+import Image from "next/image";
+
 const Post = ({ postContent, postData }) => {
   return (
     <>
       <Head>
-        <title>{postData.title}</title>
-        <meta name="title" content="This is Charlie Lin"></meta>
+        <title>{postData.title} | Charlie Lin</title>
         <meta name="author" content="Charlie Lin"></meta>
-        <meta name="og:title" content="This is Charlie Lin"></meta>
-        <meta name="og:author" content="Charlie Lin"></meta>
       </Head>
-      <div className="py-6 md:px-6 max-w-screen-xl mx-6 md:mx-auto">
-        <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
-          <div className="flex flex-col md:flex-row justify-between pt-4 pb-8 gap-2">
-            <p className="text-2xl">{postData.title}</p>
-            <p className="md:self-end text-gray-400">{postData.travel_date}</p>
-          </div>
-          <ReactMarkdown components={components}>{postContent}</ReactMarkdown>
+
+      <div className="bg-stone-50 min-h-screen">
+        {/* Cinematic Hero */}
+        <div className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden">
+             <Image
+                src={postData.cover_image}
+                alt={postData.title}
+                fill
+                style={{ objectFit: "cover" }}
+                className="brightness-75"
+                priority
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 to-transparent"></div>
+             <div className="absolute bottom-0 left-0 w-full px-6 md:px-20 pb-12 md:pb-20">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="max-w-screen-xl mx-auto"
+                >
+                    <span className="text-amber-500 font-serif italic text-xl mb-4 block">
+                        {postData.travel_date}
+                    </span>
+                    <h1 className="text-5xl md:text-7xl font-serif text-stone-50 leading-tight mb-6">
+                        {postData.title}
+                    </h1>
+                </motion.div>
+             </div>
         </div>
-        <AdInPost />
+
+        {/* Article Content */}
+        <div className="max-w-screen-md mx-auto px-6 py-20">
+            <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="prose prose-stone prose-lg md:prose-xl prose-headings:font-serif prose-headings:font-normal prose-a:text-amber-600 prose-img:rounded-sm bg-white p-8 md:p-16 shadow-xl shadow-stone-200/50 -mt-20 relative z-10"
+            >
+                <ReactMarkdown components={components}>{postContent}</ReactMarkdown>
+            </motion.div>
+            
+            <div className="mt-20 mb-12 flex justify-center">
+                <div className="w-12 h-[1px] bg-amber-600"></div>
+            </div>
+
+            <AdInPost />
+        </div>
       </div>
     </>
   );

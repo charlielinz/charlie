@@ -1,25 +1,27 @@
 import { motion } from "framer-motion";
 
-const NavMenuIcon = () => {
+const NavMenuIcon = ({ isOpened }) => {
   return (
     <>
       <svg width="32" height="32" viewBox="0 0 32 32">
         <motion.path
           fill="transparent"
           strokeWidth="3"
-          stroke="hsl(0, 0%, 18%)"
+          stroke="currentColor"
           strokeLinecap="round"
+          animate={isOpened ? "opened" : "closed"}
           variants={{
-            closed: { d: "M 2 2.5 L 20 2.5" },
-            opened: { d: "M 3 16.5 L 17 2.5" },
+            closed: { d: "M 4 8 L 28 8" },
+            opened: { d: "M 8 24 L 24 8" },
           }}
         />
         <motion.path
           fill="transparent"
           strokeWidth="3"
-          stroke="hsl(0, 0%, 18%)"
+          stroke="currentColor"
           strokeLinecap="round"
-          d="M 2 9.423 L 20 9.423"
+          d="M 4 16 L 28 16"
+          animate={isOpened ? "opened" : "closed"}
           variants={{
             closed: { opacity: 1 },
             opened: { opacity: 0 },
@@ -29,11 +31,12 @@ const NavMenuIcon = () => {
         <motion.path
           fill="transparent"
           strokeWidth="3"
-          stroke="hsl(0, 0%, 18%)"
+          stroke="currentColor"
           strokeLinecap="round"
+          animate={isOpened ? "opened" : "closed"}
           variants={{
-            closed: { d: "M 2 16.346 L 20 16.346" },
-            opened: { d: "M 3 2.5 L 17 16.346" },
+            closed: { d: "M 4 24 L 28 24" },
+            opened: { d: "M 8 8 L 24 24" },
           }}
         />
       </svg>

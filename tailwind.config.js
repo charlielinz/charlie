@@ -8,7 +8,21 @@ export default {
     "./posts/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ["var(--font-inter)", "sans-serif"],
+      serif: ["var(--font-playfair)", "serif"],
+    },
     extend: {
+      colors: {
+        stone: {
+          50: "#fafaf9",
+          900: "#1c1917",
+        },
+        amber: {
+          500: "#f59e0b",
+          600: "#d97706",
+        },
+      },
       transitionDuration: {
         2000: "2000ms",
       },
@@ -16,10 +30,6 @@ export default {
         "screen-xs": "480px",
         "screen-2xs": "375px",
       },
-    },
-    fontFamily: {
-      sans: ["Open Sans", "sans-serif"],
-      inter: ["inter"],
     },
     screens: {
       xs: "480px",

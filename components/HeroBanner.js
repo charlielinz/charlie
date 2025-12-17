@@ -2,36 +2,26 @@ import { motion } from "framer-motion";
 
 const HeroBanner = () => {
   return (
-    <>
-      <div className="flex flex-col justify-end items-center md:items-start gap-4">
-        <div className="text-2xl lg:text-3xl">This is</div>
-        <div className="md:translate-x-0 text-7xl sm:text-8xl lg:text-9xl">
-          <motion.div
-            animate={{ opacity: [1, 0, 0, 0, 1] }}
-            transition={{
-              times: [0, 0.2, 0.4, 0.6, 0.8, 1],
-              duration: 5,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-          >
-            CHARLIE
-          </motion.div>
-          <motion.div
-            className="-translate-y-full"
-            animate={{ opacity: [0, 0, 1, 0, 0] }}
-            transition={{
-              times: [0, 0.2, 0.4, 0.6, 0.8, 1],
-              duration: 5,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-          >
-            EILRAHC
-          </motion.div>
-        </div>
+    <div className="flex flex-col justify-center items-center h-full w-full">
+      <div className="relative z-10 text-center mix-blend-difference text-stone-900 pointer-events-none">
+        <motion.h1
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="font-serif text-[12vw] leading-none tracking-tighter"
+        >
+          CHARLIE
+        </motion.h1>
+        <motion.h1
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          className="font-serif text-[12vw] leading-none tracking-tighter italic text-amber-600"
+        >
+          LIN
+        </motion.h1>
       </div>
-    </>
+    </div>
   );
 };
 

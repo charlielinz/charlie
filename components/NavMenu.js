@@ -1,107 +1,82 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const NavMenu = ({ setIsOpened }) => {
-  const navBackground = {
-    closed: {
-      width: 0,
-      height: 0,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 40,
-      },
+const NavMenu = () => {
+  const menuVariants = {
+    initial: { clipPath: "circle(0% at 100% 0)" },
+    animate: { 
+        clipPath: "circle(150% at 100% 0)",
+        transition: { type: "spring", stiffness: 40, damping: 15 }
     },
-    opened: {
-      top: 0,
-      right: 0,
-      width: "100%",
-      height: "100%",
-      transition: {
-        type: "spring",
-        stiffness: 200,
-        damping: 30,
-      },
-    },
+    exit: { 
+        clipPath: "circle(0% at 100% 0)",
+        transition: { type: "spring", stiffness: 40, damping: 15, delay: 0.1 }
+    }
   };
-  const navItems = {
-    closed: {
-      display: "none",
-    },
-    opened: {
-      display: "inline-block",
-      transition: {
-        delay: 0.2,
-      },
-    },
-  }
+
+  const linkVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: (i) => ({ 
+        opacity: 1, 
+        y: 0, 
+        transition: { delay: 0.2 + (i * 0.1), duration: 0.4 } 
+    }),
+    exit: { opacity: 0, transition: { duration: 0.2 } }
+  };
+
+  const navLinks = [
+    { name: "About", path: "/about" },
+    { name: "Travel", path: "/travel/posts" },
+    { name: "Food", path: "/food/posts" },
+    { name: "Recital", path: "/recital" },
+  ];
+
+  const socialLinks = [
+    { icon: "fa-brands fa-facebook-f", url: "https://www.facebook.com/profile.php?id=100000764741703" },
+    { icon: "fa-brands fa-instagram", url: "https://www.instagram.com/eilrahc.c_/" },
+    { icon: "fa-brands fa-linkedin-in", url: "https://www.linkedin.com/in/charlie-lin-0a424b117/" },
+    { icon: "fa-brands fa-github", url: "https://github.com/charlielinz" },
+  ];
+
   return (
     <motion.div
-      className="fixed bg-gray-50 top-4 right-4"
-      onClick={() => setIsOpened((prevState) => !prevState)}
-      variants={navBackground}
+      variants={menuVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      className="fixed inset-0 bg-stone-900 z-40 flex flex-col justify-center items-center"
     >
-      <motion.div
-        className="pl-10 pt-20"
-        variants={navItems}
-      >
-        <ul className="flex flex-col gap-4">
-          <li className="text-xl">
-            <Link href="/about">About</Link>
-          </li>
-          <li className="text-xl">
-            <Link href="/travel/posts">Travel</Link>
-          </li>
-          <li className="text-xl">
-            <Link href="/food/posts">Food</Link>
-          </li>
-          <li className="text-xl">
-            <Link href="/recital">Recital</Link>
-          </li>
-          <ul className="fa-ul flex gap-2 mt-2 -translate-x-3">
-            <li className="fa-li">
-              <a
-                href="https://www.facebook.com/profile.php?id=100000764741703"
-                target="_blank"
-                rel="noreferrer"
-                className="fa-brands fa-facebook-square text-3xl opacity-70"
-              ></a>
-            </li>
-            <li className="fa-li">
-              <a
-                href="https://line.me/ti/p/uReKXCIUDz"
-                target="_blank"
-                rel="noreferrer"
-                className="fa-brands fa-line text-3xl opacity-70"
-              ></a>
-            </li>
-            <li className="fa-li">
-              <a
-                href="https://www.instagram.com/eilrahc.c_/"
-                target="_blank"
-                rel="noreferrer"
-                className="fa-brands fa-instagram-square text-3xl opacity-70"
-              ></a>
-            </li>
-            <li className="fa-li">
-              <a
-                href="https://www.linkedin.com/in/charlie-lin-0a424b117/"
-                target="_blank"
-                rel="noreferrer"
-                className="fa-brands fa-linkedin text-3xl opacity-70"
-              ></a>
-            </li>
-            <li className="fa-li">
-              <a
-                href="https://github.com/charlielinz"
-                target="_blank"
-                rel="noreferrer"
-                className="fa-brands fa-github-square text-3xl opacity-70"
-              ></a>
-            </li>
-          </ul>
-        </ul>
-      </motion.div>
+        <div className="flex flex-col items-center gap-8">
+            {navLinks.map((link, i) => (
+                <motion.div key={link.name} custom={i} variants={linkVariants}>
+                    <Link 
+                        href={link.path}
+                        className="font-serif text-5xl text-stone-50 hover:text-amber-500 transition-colors"
+                    >
+                        {link.name}
+                    </Link>
+                </motion.div>
+            ))}
+        </div>
+
+        <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 0.6 } }}
+            exit={{ opacity: 0 }}
+            className="absolute bottom-20 flex gap-8"
+        >
+            {socialLinks.map((social, idx) => (
+                <a
+                    key={idx}
+                    href={social.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-stone-400 hover:text-amber-500 transition-colors text-2xl"
+                >
+                    <i className={social.icon}></i>
+                </a>
+            ))}
+        </motion.div>
     </motion.div>
   );
 };
