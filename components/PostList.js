@@ -38,7 +38,7 @@ const PostList = ({ postDatas, imageSize }) => {
               </div>
               <div className="text-sm md:text-lg rounded-md bg-slate-200 px-4 py-1 text-center text-amber-700 duration-200 hover:bg-slate-700 hover:text-amber-400">
                 <Link href={`/food/posts/${postData.slug}`}>
-                  <a>details</a>
+                  details
                 </Link>
               </div>
             </div>

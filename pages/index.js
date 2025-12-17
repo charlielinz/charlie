@@ -46,8 +46,8 @@ const Home = () => {
             <Image
               src={me}
               alt="me"
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{ objectFit: 'contain' }}
               priority={true}
               className="rounded-full"
             />
@@ -137,11 +137,12 @@ const Home = () => {
               and establish your own travel style.
             </p>
             <button className="max-w-fit md:mt-auto mt-6 bg-gradient-to-br from-amber-500 to-amber-400 text-slate-900 rounded-full py-2 px-4 md:px-6 hover:to-amber-300 hover:text-slate-800">
-              <Link href="/travel/posts">
-                <a className="flex items-center gap-2 text-lg md:text-xl font-black">
-                  <span>Watch more</span>
-                  <i className="fa-solid fa-angle-right" />
-                </a>
+              <Link
+                href="/travel/posts"
+                className="flex items-center gap-2 text-lg md:text-xl font-black"
+              >
+                <span>Watch more</span>
+                <i className="fa-solid fa-angle-right" />
               </Link>
             </button>
           </div>
@@ -167,11 +168,12 @@ const Home = () => {
               <li className="list-disc list-inside">Filter by rate</li>
             </ul>
             <button className="max-w-fit md:mt-auto bg-gradient-to-br from-amber-500 to-amber-400 text-slate-900 rounded-full py-2 px-4 md:px-6 hover:to-amber-300 hover:text-slate-800">
-              <Link href="/food/posts">
-                <a className="flex items-center gap-2 text-lg md:text-xl font-black">
-                  <span>Watch more</span>
-                  <i className="fa-solid fa-angle-right" />
-                </a>
+              <Link
+                href="/food/posts"
+                className="flex items-center gap-2 text-lg md:text-xl font-black"
+              >
+                <span>Watch more</span>
+                <i className="fa-solid fa-angle-right" />
               </Link>
             </button>
           </div>
@@ -351,11 +353,12 @@ const Home = () => {
             </div>
             <div className="pb-4">
               <button className="bg-gradient-to-br from-amber-500 to-amber-400 text-slate-900 rounded-full py-2 px-4 md:px-6 hover:to-amber-300 hover:text-slate-800">
-                <Link href="/recital">
-                  <a className="flex items-center gap-2 text-lg md:text-xl font-black">
-                    <span>Watch more</span>
-                    <i className="fa-solid fa-angle-right" />
-                  </a>
+                <Link
+                  href="/recital"
+                  className="flex items-center gap-2 text-lg md:text-xl font-black"
+                >
+                  <span>Watch more</span>
+                  <i className="fa-solid fa-angle-right" />
                 </Link>
               </button>
             </div>

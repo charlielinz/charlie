@@ -1,6 +1,6 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+import defaultTheme from "tailwindcss/defaultTheme";
 
-module.exports = {
+export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./public/**/*.{js,ts,jsx,tsx}",

@@ -16,7 +16,7 @@ const Abouts = () => {
       </Head>
       <div className="max-w-screen-xl mx-auto px-6 py-12">
         <div className="max-w-screen-md mx-auto">
-          <Image src={selfie} alt="selfie" layout="responsive" />
+          <Image src={selfie} alt="selfie" style={{ width: "100%", height: "auto" }} />
         </div>
         <div className="max-w-screen-lg mx-auto border-t-2 border-slate-400 my-12">
           <div className="flex flex-col gap-10 max-w-screen-md mx-auto py-6">
