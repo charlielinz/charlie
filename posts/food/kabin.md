@@ -1,3 +1,16 @@
+---
+slug: "kabin"
+cover_image: "/img/food/kabin/cover-image.jpg"
+title: "Kabin"
+date: "2022-03-13"
+rate: "8.3"
+price:
+  average: "$500 - $1000"
+  tier: "500"
+categories: ["日式料理", "Fusion"]
+menu: ["單點"]
+---
+
 > 隱藏在大安區中的巷弄，別有洞天的餐酒館。
 
 kabin是一家能吃到足夠好的料理，同時享受足夠好的氛圍，卻只要人均六七百的小餐館。餐點樣式雖不多，但有一定的精緻度，空間簡約很舒服，一坐就是一兩小時。

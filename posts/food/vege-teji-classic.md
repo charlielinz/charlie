@@ -1,3 +1,16 @@
+---
+slug: "vege-teji-classic"
+cover_image: "/img/food/vege-teji-classic/cover-image.jpg"
+title: "熟 菜豚屋"
+date: "2022-03-16"
+rate: "8.2"
+price:
+  average: "$1000 - $2000"
+  tier: "1000"
+categories: ["日式料理", "韓式料理", "Fusion"]
+menu: ["套餐"]
+---
+
 > 以日式精緻且高雅的風格呈現韓式烤肉，多樣的桌邊服務體驗很好。
 # Set menu $1600
 ## 本日特製小菜6樣

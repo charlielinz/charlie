@@ -1,6 +1,6 @@
 import Head from "next/head";
 import PostCard from "../../components/PostCard";
-import { travelPosts } from "../../posts/posts";
+import { getSortedPostsData } from "../../lib/posts";
 
 const Posts = ({ postDatas }) => {
   return (
@@ -32,8 +32,7 @@ const Posts = ({ postDatas }) => {
 };
 
 export const getStaticProps = async () => {
-  const postInfos = travelPosts;
-  const postDatas = Object.values(postInfos);
+  const postDatas = getSortedPostsData("travel");
   return {
     props: { postDatas },
   };

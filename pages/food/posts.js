@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import PostList from "../../components/PostList";
-import { foodPosts } from "../../posts/posts";
+import { getSortedPostsData } from "../../lib/posts";
 
 const Posts = ({ postDatas }) => {
   const [filter, setFilter] = useState("All");
@@ -115,9 +115,7 @@ const Posts = ({ postDatas }) => {
 };
 
 export const getStaticProps = async () => {
-  const postInfos = foodPosts;
-  const postDatas = Object.values(postInfos);
-  postDatas.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+  const postDatas = getSortedPostsData("food");
   return {
     props: { postDatas },
   };

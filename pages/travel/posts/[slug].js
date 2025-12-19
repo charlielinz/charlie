@@ -1,19 +1,16 @@
-import fs from "fs";
-import path from "path";
 import Head from "next/head";
 import ReactMarkdown from "react-markdown";
-import AdInPost from "../../../components/AdInPost";
-import { components } from "../../../posts/travelposts-handler";
-import { travelPosts } from "../../../posts/posts";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
+import AdInPost from "../../../components/AdInPost";
+import { components } from "../../../posts/travelposts-handler";
+import { getAllPostSlugs, getPostData } from "../../../lib/posts";
 
 const Post = ({ postContent, postData }) => {
   return (
     <>
       <Head>
-        <title>{postData.title} | Charlie Lin</title>
+        <title>{`${postData.title} | Charlie Lin`}</title>
         <meta name="author" content="Charlie Lin"></meta>
       </Head>
 
@@ -70,24 +67,21 @@ const Post = ({ postContent, postData }) => {
 };
 
 export const getStaticPaths = async () => {
-  const postFiles = fs.readdirSync(path.join("posts/travel"));
-  const postPaths = postFiles.map((filename) => {
-    return { params: { slug: path.basename(filename, ".md") } };
-  });
+  const paths = getAllPostSlugs("travel");
   return {
-    paths: postPaths,
+    paths,
     fallback: false,
   };
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  const postFilePath = "posts/travel/" + slug + ".md";
-  const postContent = fs.readFileSync(postFilePath, "utf8");
-
-  const postInfos = Object.values(travelPosts);
-  const postData = postInfos.filter((post) => post.slug === slug)[0];
+  const postData = await getPostData("travel", slug);
   return {
-    props: { postContent, postData },
+    props: { 
+        postContent: postData.content, 
+        postData 
+    },
   };
 };
+
 export default Post;

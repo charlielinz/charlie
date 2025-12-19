@@ -1,3 +1,16 @@
+---
+slug: "da-wan"
+cover_image: "/img/food/da-wan/cover-image.jpg"
+title: "大腕燒肉"
+date: "2022-03-17"
+rate: "6.6"
+price:
+  average: "> $2000"
+  tier: "2000"
+categories: ["日式料理"]
+menu: ["套餐", "單點"]
+---
+
 慕名而來卻失望透頂，實在有太多不滿。
 # Set menu $2890
 ## 芝麻水菜豆腐沙拉

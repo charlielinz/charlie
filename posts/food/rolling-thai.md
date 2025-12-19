@@ -1,3 +1,16 @@
+---
+slug: "rolling-thai"
+cover_image: "/img/food/rolling-thai/cover-image.jpg"
+title: "泰滾Rolling Thai 泰式火鍋"
+date: "2022-03-02"
+rate: "7.0"
+price:
+  average: "$500 - $1000"
+  tier: "500"
+categories: ["泰式料理"]
+menu: ["單點"]
+---
+
 > 裝潢泰式，可惜食物不太泰。
 
 泰滾網路生量頗高的泰式火鍋店，由於火鍋吃來吃去除了涮涮鍋、麻辣鍋也沒有太多選項，這間看了確實會引起興趣，於是前來嘗鮮。

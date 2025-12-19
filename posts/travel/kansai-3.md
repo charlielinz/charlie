@@ -1,3 +1,10 @@
+---
+slug: "kansai-3"
+cover_image: "/img/travel/kansai-3/cover-image.jpg"
+title: "京都近郊一日遊：保津川遊船"
+travel_date: "2019-10"
+---
+
 > 清風徐來，水波不興；山川相繆，鬱乎蒼蒼。
 
 京都市內的許多景點都已攻略，因此在安排行程時往郊區搜尋，無意間發現了這項特別的活動-保津川遊船。[保津川遊船](https://www.hozugawakudari.jp/zh-tw/tickets)是一項結合刺激與悠閒的乘船體驗，一路從龜岡站附近的乘船點到嵐山的渡月橋，總行程約兩小時坐右，四季都能搭乘。

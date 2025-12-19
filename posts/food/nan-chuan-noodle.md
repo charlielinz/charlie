@@ -1,3 +1,16 @@
+---
+slug: "nan-chuan-noodle"
+cover_image: "/img/food/nan-chuan-noodle/cover-image.jpg"
+title: "南川麵館"
+date: "2022-02-23"
+rate: "8.1"
+price:
+  average: "$200 - $500"
+  tier: "200"
+categories: ["台式料理"]
+menu: ["單點"]
+---
+
 > 使用台灣牛的牛肉麵，除了麵厲害，小菜更是一絕。
 
 友人推薦的小麵館，逮到機會來吃一下了，首次到訪必定點好點滿的日常，嗑完整桌。

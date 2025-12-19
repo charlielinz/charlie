@@ -1,3 +1,16 @@
+---
+slug: "le-plein"
+cover_image: "/img/food/le-plein/cover-image.jpg"
+title: "滿堂Le Plein"
+date: "2022-02-26"
+rate: "8.5"
+price:
+  average: "> $2000"
+  tier: "2000"
+categories: ["台式料理", "法式料理", "Fusion"]
+menu: ["套餐"]
+---
+
 > 隱藏在巷弄間的fusion餐廳，保留老宅造型與年代感的家具，同時賦予現代元素，氛圍喜歡。
 # Set menu $2300/$2600
 ## 開胃小品

@@ -1,3 +1,16 @@
+---
+slug: "the-tavernist"
+cover_image: "/img/food/the-tavernist/cover-image.jpg"
+title: "The Tavernist"
+date: "2022-05-12"
+rate: "8.5"
+price:
+  average: "> $2000"
+  tier: "2000"
+categories: ["法式料理", "fusion"]
+menu: ["套餐"]
+---
+
 > 兼具故事性、擺盤色彩、調味豐富的季節菜單。
 
 The Tavernist是隱藏在飯店中的米其林餐盤推薦的現代料理餐廳，午餐是歐陸料理，晚餐提供以主廚旅行記憶為出發點的菜單。本季的晚間菜單，是以主廚在孟買的回憶發想，透過從早至晚的飲食，呈現孟買的一天。

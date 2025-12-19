@@ -1,3 +1,16 @@
+---
+slug: "huh-pot"
+cover_image: "/img/food/huh-pot/cover-image.jpg"
+title: "蛤？！Huh Pot"
+date: "2022-03-12"
+rate: "7.4"
+price:
+  average: "$1000 - $2000"
+  tier: "1000"
+categories: ["港式料理"]
+menu: ["單點"]
+---
+
 > 主打港式卜卜鍋與港式點心的餐廳，算是有特色。
 ## 正宗原味/辣味卜卜蜆 $680
 ## 海鮮盤 招待

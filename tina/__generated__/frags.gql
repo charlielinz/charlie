@@ -1,0 +1,25 @@
+fragment FoodParts on Food {
+  __typename
+  title
+  slug
+  date
+  cover_image
+  rate
+  price {
+    __typename
+    average
+    tier
+  }
+  categories
+  menu
+  body
+}
+
+fragment TravelParts on Travel {
+  __typename
+  title
+  slug
+  travel_date
+  cover_image
+  body
+}

@@ -1,3 +1,16 @@
+---
+slug: "enowine-food-and-wine"
+cover_image: "/img/food/enowine-food-and-wine/cover-image.jpg"
+title: "Enowine Food and Wine"
+date: "2022-04-08"
+rate: "8.6"
+price:
+  average: "> $2000"
+  tier: "2000"
+categories: ["法式料理", "義式料理"]
+menu: ["單點"]
+---
+
 > 目前的法式餐酒館的No.1，餐點非常多樣，食材搭配、調味都注重且細緻，感受到用心的店家。
 
 深藏在清單中的一間餐酒館，沒想到意外的好訂，不過這次來單純的試菜沒有搭配紅酒。整體餐點在火候跟調味掌握度我覺得都滿細緻，材料搭配上也蠻巧妙的。

@@ -2,18 +2,16 @@ import fs from "fs";
 import path from "path";
 import Head from "next/head";
 import ReactMarkdown from "react-markdown";
-import Carousel from "../../../components/Carousel";
-import { components } from "../../../posts/foodposts-handler";
-import { foodPosts } from "../../../posts/posts";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { components } from "../../../posts/foodposts-handler";
+import { getAllPostSlugs, getPostData } from "../../../lib/posts";
 
 const Post = ({ postContent, postData, postImgPaths }) => {
   return (
     <>
       <Head>
-        <title>{postData.title} | Charlie Lin</title>
+        <title>{`${postData.title} | Charlie Lin`}</title>
         <meta name="author" content="Charlie Lin"></meta>
       </Head>
 
@@ -22,7 +20,7 @@ const Post = ({ postContent, postData, postImgPaths }) => {
         <div className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
              {postImgPaths.length > 0 && (
                 <Image
-                    src={postImgPaths.find(p => p.includes('cover')) || postImgPaths[0]}
+                    src={postData.cover_image || (postImgPaths.find(p => p.includes('cover')) || postImgPaths[0])}
                     alt={postData.title}
                     fill
                     style={{ objectFit: "cover" }}
@@ -110,37 +108,31 @@ const Post = ({ postContent, postData, postImgPaths }) => {
 };
 
 export const getStaticPaths = async () => {
-  const postFiles = fs.readdirSync(path.join("posts/food"));
-  const postFilePaths = postFiles.map((filename) => {
-    return { params: { slug: path.basename(filename, ".md") } };
-  });
+  const paths = getAllPostSlugs("food");
   return {
-    paths: postFilePaths,
+    paths,
     fallback: false,
   };
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  const postFilePath = "posts/food/" + slug + ".md";
-  const postContent = fs.readFileSync(postFilePath, "utf8");
-  const postInfos = Object.values(foodPosts);
-  const postData = postInfos.filter((post) => post.slug === slug)[0];
-  const postImgFolderPath = "public/img/food/" + slug;
-  const postImgFolderFiles = fs.readdirSync(postImgFolderPath);
-  const isPostImg = (file) => {
-    if (file == ".DS_Store" || file == "cover-image.jpg") {
-      return false;
-    } else {
-      return true;
-    }
-  };
-  const postImgPaths = postImgFolderFiles.filter(isPostImg).map((img) => {
-    const imgPath = path.join("/img/food", slug, img);
-    return imgPath;
-  });
+  const postData = await getPostData("food", slug);
+  const postImgFolderPath = path.join(process.cwd(), "public/img/food", slug);
+  let postImgPaths = [];
+  
+  if (fs.existsSync(postImgFolderPath)) {
+      const postImgFolderFiles = fs.readdirSync(postImgFolderPath);
+      postImgPaths = postImgFolderFiles
+        .filter(file => !file.startsWith('.') && file !== "cover-image.jpg")
+        .map(img => `/img/food/${slug}/${img}`);
+  }
 
   return {
-    props: { postContent, postData, postImgPaths },
+    props: { 
+        postContent: postData.content, 
+        postData, 
+        postImgPaths 
+    },
   };
 };
 

@@ -1,3 +1,16 @@
+---
+slug: "san-chiao-01"
+cover_image: "/img/food/san-chiao-01/cover-image.jpg"
+title: "三樵炭火燒肉（1訪）"
+date: "2021-11-24"
+rate: "8.4"
+price:
+  average: "> $2000"
+  tier: "2000"
+categories: ["日式料理"]
+menu: ["套餐", "單點"]
+---
+
 > 純正日式本格派燒肉，可吃到日美澳和牛各種部位。
 
 隱藏在東區巷弄間的日式燒肉，從日本來台開的唯一分店，除了主打的日本和牛，也提供美澳和牛，各種部位任君挑選。
