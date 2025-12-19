@@ -1,12 +1,23 @@
 import Head from "next/head";
-import ReactMarkdown from "react-markdown";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import AdInPost from "../../../components/AdInPost";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { useTina } from "tinacms/dist/react";
+import { client } from "../../../tina/__generated__/client";
 import { components } from "../../../posts/travelposts-handler";
-import { getAllPostSlugs, getPostData } from "../../../lib/posts";
+import { getAllPostSlugs } from "../../../lib/posts";
 
-const Post = ({ postContent, postData }) => {
+const Post = (props) => {
+  const { data } = useTina({
+    query: props.query,
+    variables: props.variables,
+    data: props.data,
+  });
+
+  const postData = data.travel;
+  const postContent = postData.body;
+
   return (
     <>
       <Head>
@@ -52,7 +63,7 @@ const Post = ({ postContent, postData }) => {
                 transition={{ duration: 0.8 }}
                 className="prose prose-stone prose-lg md:prose-xl prose-headings:font-serif prose-headings:font-normal prose-a:text-amber-600 prose-img:rounded-sm bg-white p-8 md:p-16 shadow-xl shadow-stone-200/50 -mt-20 relative z-10"
             >
-                <ReactMarkdown components={components}>{postContent}</ReactMarkdown>
+                <TinaMarkdown components={components} content={postContent}></TinaMarkdown>
             </motion.div>
             
             <div className="mt-20 mb-12 flex justify-center">
@@ -75,11 +86,10 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  const postData = await getPostData("travel", slug);
+  const tinaProps = await client.queries.travel({ relativePath: `${slug}.md` });
   return {
     props: { 
-        postContent: postData.content, 
-        postData 
+        ...tinaProps
     },
   };
 };

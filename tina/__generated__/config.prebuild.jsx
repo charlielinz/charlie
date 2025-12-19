@@ -24,69 +24,93 @@ var config_default = defineConfig({
         label: "Food Posts",
         path: "posts/food",
         format: "md",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) => {
+              return `${values?.slug || "new-post"}`;
+            }
+          }
+        },
         fields: [
           {
             type: "string",
             name: "title",
-            label: "Title",
+            label: "Post Title",
             isTitle: true,
-            required: true
+            required: true,
+            description: "The name of the restaurant or dish"
           },
           {
             type: "string",
             name: "slug",
-            label: "Slug",
-            required: true
+            label: "URL Slug",
+            required: true,
+            description: "Used for the post URL (e.g., 'ad-astra-6\u8A2A'). Do not use spaces."
           },
           {
             type: "datetime",
             name: "date",
-            label: "Date",
-            required: true
+            label: "Publish Date",
+            required: true,
+            ui: {
+              dateFormat: "YYYY-MM-DD"
+            }
           },
           {
             type: "image",
             name: "cover_image",
-            label: "Cover Image"
+            label: "Hero Image",
+            description: "The main image displayed at the top of the post"
           },
           {
             type: "string",
             name: "rate",
-            label: "Rating"
+            label: "Rating (1.0 - 10.0)",
+            description: "Enter a number from 1 to 10"
           },
           {
             type: "object",
             name: "price",
-            label: "Price Information",
+            label: "Price Details",
             fields: [
               {
                 type: "string",
                 name: "average",
-                label: "Average Price Display"
+                label: "Average Cost",
+                description: "e.g., 3980"
               },
               {
                 type: "string",
                 name: "tier",
-                label: "Price Tier (for sorting)"
+                label: "Price Category",
+                description: "e.g., $$$ or 4000"
               }
             ]
           },
           {
             type: "string",
             name: "categories",
-            label: "Categories",
-            list: true
+            label: "Cuisine Categories",
+            list: true,
+            options: [
+              "\u53F0\u5F0F\u6599\u7406",
+              "\u65E5\u5F0F\u6599\u7406",
+              "\u6CD5\u5F0F\u6599\u7406",
+              "Fusion",
+              "Instagram Migration"
+            ]
           },
           {
             type: "string",
             name: "menu",
-            label: "Menu Types",
+            label: "Menu Tags",
             list: true
           },
           {
             type: "rich-text",
             name: "body",
-            label: "Body",
+            label: "Review Content",
             isBody: true
           }
         ]
@@ -96,35 +120,47 @@ var config_default = defineConfig({
         label: "Travel Posts",
         path: "posts/travel",
         format: "md",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) => {
+              return `${values?.slug || "new-travel-post"}`;
+            }
+          }
+        },
         fields: [
           {
             type: "string",
             name: "title",
-            label: "Title",
+            label: "Trip Title",
             isTitle: true,
-            required: true
+            required: true,
+            description: "The name of the destination or trip"
           },
           {
             type: "string",
             name: "slug",
-            label: "Slug",
-            required: true
+            label: "URL Slug",
+            required: true,
+            description: "Used for the post URL. Do not use spaces."
           },
           {
             type: "string",
             name: "travel_date",
-            label: "Travel Date (e.g. 2019-10)",
-            required: true
+            label: "Travel Date",
+            required: true,
+            description: "Format: 2019-10"
           },
           {
             type: "image",
             name: "cover_image",
-            label: "Cover Image"
+            label: "Hero Image",
+            description: "The main cinematic image for this trip"
           },
           {
             type: "rich-text",
             name: "body",
-            label: "Body",
+            label: "Travelogue Content",
             isBody: true
           }
         ]

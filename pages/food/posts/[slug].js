@@ -1,13 +1,25 @@
 import fs from "fs";
 import path from "path";
 import Head from "next/head";
-import ReactMarkdown from "react-markdown";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { useTina } from "tinacms/dist/react";
+import { client } from "../../../tina/__generated__/client";
 import { components } from "../../../posts/foodposts-handler";
-import { getAllPostSlugs, getPostData } from "../../../lib/posts";
+import { getAllPostSlugs } from "../../../lib/posts";
 
-const Post = ({ postContent, postData, postImgPaths }) => {
+const Post = (props) => {
+  const { data } = useTina({
+    query: props.query,
+    variables: props.variables,
+    data: props.data,
+  });
+
+  const postData = data.food;
+  const postContent = postData.body;
+  const { postImgPaths } = props;
+
   return (
     <>
       <Head>
@@ -61,7 +73,7 @@ const Post = ({ postContent, postData, postImgPaths }) => {
                     transition={{ duration: 0.8 }}
                     className="prose prose-stone prose-lg md:prose-xl prose-headings:font-serif prose-headings:font-normal prose-a:text-amber-600 prose-img:rounded-sm"
                 >
-                    <ReactMarkdown components={components}>{postContent}</ReactMarkdown>
+                    <TinaMarkdown components={components} content={postContent}></TinaMarkdown>
                 </motion.div>
 
                 {/* Gallery Grid */}
@@ -97,7 +109,16 @@ const Post = ({ postContent, postData, postImgPaths }) => {
                         allowFullScreen
                     ></iframe>
                     <div className="space-y-4 font-light text-sm text-stone-600">
-                         {/* Price info could go here if available in postData.price */}
+                        {postData.price && (
+                          <div className="flex flex-col gap-1">
+                            {postData.price.average && (
+                                <p>Average Cost: <span className="font-mono">{postData.price.average}</span></p>
+                            )}
+                            {postData.price.tier && (
+                                <p>Price Category: <span className="font-mono">{postData.price.tier}</span></p>
+                            )}
+                          </div>
+                        )}
                     </div>
                 </div>
             </div>
@@ -116,7 +137,8 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  const postData = await getPostData("food", slug);
+  const tinaProps = await client.queries.food({ relativePath: `${slug}.md` });
+  
   const postImgFolderPath = path.join(process.cwd(), "public/img/food", slug);
   let postImgPaths = [];
   
@@ -129,8 +151,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   return {
     props: { 
-        postContent: postData.content, 
-        postData, 
+        ...tinaProps,
         postImgPaths 
     },
   };
